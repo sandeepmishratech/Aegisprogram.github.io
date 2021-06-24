@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="前言：这是我的hexo博客。是的，这个博客是我一开始知道的最早的静态博客，因为在YouTube的一次视频上看到UP主介绍这个静态博客，当时听他介绍完我就有了搭建自己博客的想法。当然，对于一个之前从未接触过静态博客的人来说，要想搭建自己的博客还是需要花费一点时间的。我刚开始搭建的时候就像一个无头苍蝇一样，到处乱撞。虽然看着简单容易上手，但其实只有自己做起来的时候才知道，原来事情远远没有那么简单。我中">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://example.com/about/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言：这是我的hexo博客。是的，这个博客是我一开始知道的最早的静态博客，因为在YouTube的一次视频上看到UP主介绍这个静态博客，当时听他介绍完我就有了搭建自己博客的想法。当然，对于一个之前从未接触过静态博客的人来说，要想搭建自己的博客还是需要花费一点时间的。我刚开始搭建的时候就像一个无头苍蝇一样，到处乱撞。虽然看着简单容易上手，但其实只有自己做起来的时候才知道，原来事情远远没有那么简单。我中">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-24T03:14:00.000Z">
+<meta property="article:modified_time" content="2021-06-24T11:43:08.082Z">
+<meta property="article:author" content="Aegisprogram">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/about/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>about | Hexo
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Practice makes perfect</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">about
+</h1>
+
+<div class="post-meta">
+  
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>这是我的hexo博客。是的，这个博客是我一开始知道的最早的静态博客，因为在YouTube的一次视频上看到UP主介绍这个静态博客，当时听他介绍完我就有了搭建自己博客的想法。当然，对于一个之前从未接触过静态博客的人来说，要想搭建自己的博客还是需要花费一点时间的。我刚开始搭建的时候就像一个无头苍蝇一样，到处乱撞。虽然看着简单容易上手，但其实只有自己做起来的时候才知道，原来事情远远没有那么简单。我中间失败了好几次，官方文档的解释也并没有我想象得那么详细（新手总是不会嫌弃教程详细得，还巴不得一步步做）。以至于后来我转头去学习搭建hugo了。这次搭建的想法，来自一位想要搭建hexo群友的咨询。遗憾的是，我自己之前也没能搭建成功hexo，所以给不了太多的建议。于是我当天晚上决定，明天要把hexo搭建起来，也算是去挑战一下过去的自己。结果让人出乎意料，跟着网上的一篇搭建博客走，我不到半个小时就搭建完成了hexo。不过我想这与我之前成功搭建hugo有关，掌握了一些基本的方法，搭建过程中我也就显得更加的气定神闲了，能给别人提供一些帮助的同时，我也算成功超越了过去的自己。</p>
+<h2 id="博主："><a href="#博主：" class="headerlink" title="博主："></a>博主：</h2><p>博主是一个网上冲浪爱好者，没事儿就喜欢逛逛论坛，社交平台，在telegram水群，<del>吹牛</del>，偶尔还会搞一点儿自己觉得有趣，但是别人看来没用的东西。总而言之，博主不算一个有趣的人，也不是什么大牛，但是博主喜欢GitHub(<del>白嫖谁不喜欢呢</del>)。我还有很多地方需要学习，所以要相信现在的我好于过去的我，将来的我好于现在的我。</p>
+<h2 id="爱好"><a href="#爱好" class="headerlink" title="爱好:"></a>爱好:</h2><p>爱好这个东西真的很奇妙，随着年龄的增长我们可能会喜欢上一些新的东西而忘记我们过去的最爱，这不禁让我想到忒修斯之船。我们改变了容貌，改变了习惯，爱好，性格，而这一切都是因为环境的变化和年龄的增长，那我还是之前的那个我吗。如果我不再是我，那我现在是谁？所以，爱好这个东西对我来说始终是短暂的和奇妙的。</p>
+<h2 id="说在最后："><a href="#说在最后：" class="headerlink" title="说在最后："></a>说在最后：</h2><p>我不是一个完全的唯物主义者也不是一个彻底的唯心主义者。甚至我觉得单纯用唯物和唯心来划分信仰是简单且粗暴的。因为一个虔诚的信教徒，他可能也知道生病就要吃药而不是在家“修仙”（也或许教义中有那个指引），宗教的教义也并非完全与科学割裂开来。只能说在生命起源方面两者的观点对立冲突，对于人生价值的指引二者有差异。至少，我当前是这么认为的。我表达的并非完全正确，我只是表达我的主观感受，而非客观事实。</p>
+
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%9A%E4%B8%BB%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">博主：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%88%B1%E5%A5%BD"><span class="nav-number">3.</span> <span class="nav-text">爱好:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E5%9C%A8%E6%9C%80%E5%90%8E%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">说在最后：</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Aegisprogram</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aegisprogram</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
