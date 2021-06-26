@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo主题美化相关问题</title>
+    <url>/2021/06/26/hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>今天在对hexo进行主题美化配置的过程中我发现了不少的问题。所以特地在这里列举一下问题以及相关的注意事项。可能一次性很难说完说全，因为我自己也是刚使用hexo博客不久（之前自己投入的是hugo的怀抱），所以有关于hexo博客的配置和注意事项我应该会写一个系列。而且我怕一篇文章太长，没有耐心看下去，所以还是选择少量多次的好。</p>
+<p>1.hexo-symbols-count-time下载报错：</p>
+<p>今天我想给自己的hexo博客上添加字数统计和阅读时间估计（我看到许多的hexo博客都使用了这个插件，而且自己也觉得很不错）。但是当我在终端输入</p>
+<p><code>npm install hexo-symbols-count-time --save</code></p>
+<p>时（npm下载慢的朋友可以使用cnpm），我发现我当前版本的一些js文件版本过低，我需要更新版本。<img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1.3lz4gml615w0.png" alt="image"></p>
+<p>看到有人在issues中提交了和我一样问题的截图，有人给出的解答是先更新npm和node.js，于是我决定先将npm和node.js更新一下。输入以下代码：</p>
+<span id="more"></span>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">首先查看当前版本</span><br><span class="line">node -v</span><br><span class="line">node -v </span><br><span class="line">然后更新版本</span><br><span class="line">npm install -g npm</span><br><span class="line">注意：接下来的操作仅适合Mac和Linux用户</span><br><span class="line">npm cache clean -f # 清除缓存</span><br><span class="line">npm install -g n # 安装n模块，Windows系统目前无法使用n模块，所以无法完成后面的操作</span><br><span class="line">n stable # 升级node.js到最新稳定版本,r如果出现升级错误，在命令前面加上sudo</span><br></pre></td></tr></table></figure>
+
+<p>所以现在有一个问题，那么Windows用户该如何更新node.js呢。呃，这个嘛，可能需要重新安装一遍到原来的路径（<del>我也表示很无奈</del>)。当你完成两个地方的更新之后，你再去下载hexo-symbols-count-time这个插件。</p>
+<p>2.配置插件：这个配置插件也是有知识点滴。首先我们需要在站点配置上（也就是博客根目录下的_config.yml文件）添加配置内容，内容如下：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># count<span class="emphasis">_time (名字随意)</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  symbols_</span>count<span class="emphasis">_time:</span></span></span><br><span class="line"><span class="emphasis"><span class="section"> #文章内是否显示</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  symbols: true # 文章字数</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  time: true  # 阅读时长</span></span></span><br><span class="line"><span class="emphasis"><span class="section"> # 网页底部是否显示</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  total_</span>symbols: false # 所有文章总字数</span></span><br><span class="line">  total<span class="emphasis">_time: false  # 所有文章总时长</span></span><br><span class="line"><span class="emphasis">  exclude_</span>codeblock: false # 代码框内不计入字数</span><br></pre></td></tr></table></figure>
+
+<p>然后我们还需要在主题配置文件下进行修改（就是指themes-next-_config.yml文件），内容如下：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">symbols<span class="emphasis">_count_</span>time:</span><br><span class="line">  separated<span class="emphasis">_meta: true # 换行显示</span></span><br><span class="line"><span class="emphasis">  item_</span>text<span class="emphasis">_post: true # 是否显示说明文字</span></span><br><span class="line"><span class="emphasis">  item_</span>text<span class="emphasis">_total: false # 站底总字数统计，不显示</span></span><br><span class="line"><span class="emphasis">  awl: 5  # Average Word Length，也就是平均每个字所占字符长度，默认值为 4(中文占2个，英文单词占5个)</span></span><br><span class="line"><span class="emphasis">  wpm: 275  # Words Per Minute，也就是平均每分钟能读多少字，默认值为 275</span></span><br></pre></td></tr></table></figure>
+
+<p>如果你发现你的字数统计和时间估计显示的是Na这样的样式，说明你的awl配置有问题，需要进行修改。特别注意，如果你的默认hello-world.md文件没有删除的话，可能就会影响你的站底字数统计。</p>
+<p>3.头像设置：最后先说一个网站的头像设置问题，如果你想设置一个自己的头像的话，你只需要进行简单的设置就可以了。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># Sidebar Avatar</span></span><br><span class="line">avatar:</span><br><span class="line">  # Replace the default image and set the url here.</span><br><span class="line">  url: /images/xxx.jpg</span><br><span class="line">  # If true, the avatar will be dispalyed in circle.</span><br><span class="line">  rounded: true # 表示头像采用圆形框，默认为方形（false)。</span><br><span class="line">  # If true, the avatar will be rotated with the cursor.</span><br><span class="line">  rotated: true # 头像会随着鼠标的移动而旋转</span><br></pre></td></tr></table></figure>
+
+<p>顺便说一下，如果你想实现和我一样的文章内容只显示摘要而不显示全文的话，你只需要在自己Markdown工具上合适位置输入&lt;!–more–&gt;就可以了（这几个字符之间是没有任何的空格的）。</p>
+<p>PS：参考博客：<a href="https://zhuanlan.zhihu.com/p/75055816">Next网站配置——功能增添</a></p>
+]]></content>
+      <categories>
+        <category>文字博客</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>文字博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何快速搭建一个hexo博客</title>
     <url>/2021/06/24/How-to-build-your-hexo-blog/</url>
     <content><![CDATA[<p>hexo博客是一个Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。我将在这里说说自己是如何搭建hexo博客的。</p>
@@ -54,42 +90,6 @@
 <p>对于写作工具的话，我推荐使用<a href="https://typora.io/">Typora</a>，轻量写作神器，所见即所得。</p>
 <p>hexo博客还有很多的内容需要自己去探索，在这里不可能一一讲解，不过，着重了解hexo的博客框架各部分的作用还是很有必要的。</p>
 <p>PS：参考博客：<a href="https://www.cnblogs.com/huanhao/p/hexobase.html">基础篇——hexo博客搭建教程</a></p>
-]]></content>
-      <categories>
-        <category>文字博客</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>文字博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo主题美化相关问题</title>
-    <url>/2021/06/26/hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>今天在对hexo进行主题美化配置的过程中我发现了不少的问题。所以特地在这里列举一下问题以及相关的注意事项。可能一次性很难说完说全，因为我自己也是刚使用hexo博客不久（之前自己投入的是hugo的怀抱），所以有关于hexo博客的配置和注意事项我应该会写一个系列。而且我怕一篇文章太长，没有耐心看下去，所以还是选择少量多次的好。</p>
-<p>1.hexo-symbols-count-time下载报错：</p>
-<p>今天我想给自己的hexo博客上添加字数统计和阅读时间估计（我看到许多的hexo博客都使用了这个插件，而且自己也觉得很不错）。但是当我在终端输入</p>
-<p><code>npm install hexo-symbols-count-time --save</code></p>
-<p>时（npm下载慢的朋友可以使用cnpm），我发现我当前版本的一些js文件版本过低，我需要更新版本。<img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1.3lz4gml615w0.png" alt="image"></p>
-<p>看到有人在issues中提交了和我一样问题的截图，有人给出的解答是先更新npm和node.js，于是我决定先将npm和node.js更新一下。输入以下代码：</p>
-<span id="more"></span>
-
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">首先查看当前版本</span><br><span class="line">node -v</span><br><span class="line">node -v </span><br><span class="line">然后更新版本</span><br><span class="line">npm install -g npm</span><br><span class="line">注意：接下来的操作仅适合Mac和Linux用户</span><br><span class="line">npm cache clean -f # 清除缓存</span><br><span class="line">npm install -g n # 安装n模块，Windows系统目前无法使用n模块，所以无法完成后面的操作</span><br><span class="line">n stable # 升级node.js到最新稳定版本,r如果出现升级错误，在命令前面加上sudo</span><br></pre></td></tr></table></figure>
-
-<p>所以现在有一个问题，那么Windows用户该如何更新node.js呢。呃，这个嘛，可能需要重新安装一遍到原来的路径（<del>我也表示很无奈</del>)。当你完成两个地方的更新之后，你再去下载hexo-symbols-count-time这个插件。</p>
-<p>2.配置插件：这个配置插件也是有知识点滴。首先我们需要在站点配置上（也就是博客根目录下的_config.yml文件）添加配置内容，内容如下：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># count<span class="emphasis">_time (名字随意)</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  symbols_</span>count<span class="emphasis">_time:</span></span></span><br><span class="line"><span class="emphasis"><span class="section"> #文章内是否显示</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  symbols: true # 文章字数</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  time: true  # 阅读时长</span></span></span><br><span class="line"><span class="emphasis"><span class="section"> # 网页底部是否显示</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  total_</span>symbols: false # 所有文章总字数</span></span><br><span class="line">  total<span class="emphasis">_time: false  # 所有文章总时长</span></span><br><span class="line"><span class="emphasis">  exclude_</span>codeblock: false # 代码框内不计入字数</span><br></pre></td></tr></table></figure>
-
-<p>然后我们还需要在主题配置文件下进行修改（就是指themes-next-_config.yml文件），内容如下：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">symbols<span class="emphasis">_count_</span>time:</span><br><span class="line">  separated<span class="emphasis">_meta: true # 换行显示</span></span><br><span class="line"><span class="emphasis">  item_</span>text<span class="emphasis">_post: true # 是否显示说明文字</span></span><br><span class="line"><span class="emphasis">  item_</span>text<span class="emphasis">_total: false # 站底总字数统计，不显示</span></span><br><span class="line"><span class="emphasis">  awl: 5  # Average Word Length，也就是平均每个字所占字符长度，默认值为 4(中文占2个，英文单词占5个)</span></span><br><span class="line"><span class="emphasis">  wpm: 275  # Words Per Minute，也就是平均每分钟能读多少字，默认值为 275</span></span><br></pre></td></tr></table></figure>
-
-<p>如果你发现你的字数统计和时间估计显示的是Na这样的样式，说明你的awl配置有问题，需要进行修改。特别注意，如果你的默认hello-world.md文件没有删除的话，可能就会影响你的站底字数统计。</p>
-<p>3.头像设置：最后先说一个网站的头像设置问题，如果你想设置一个自己的头像的话，你只需要进行简单的设置就可以了。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># Sidebar Avatar</span></span><br><span class="line">avatar:</span><br><span class="line">  # Replace the default image and set the url here.</span><br><span class="line">  url: /images/xxx.jpg</span><br><span class="line">  # If true, the avatar will be dispalyed in circle.</span><br><span class="line">  rounded: true # 表示头像采用圆形框，默认为方形（false)。</span><br><span class="line">  # If true, the avatar will be rotated with the cursor.</span><br><span class="line">  rotated: true # 头像会随着鼠标的移动而旋转</span><br></pre></td></tr></table></figure>
-
-<p>顺便说一下，如果你想实现和我一样的文章内容只显示摘要而不显示全文的话，你只需要在自己Markdown工具上合适位置输入&lt;!–more–&gt;就可以了（这几个字符之间是没有任何的空格的）。</p>
-<p>PS：参考博客：<a href="https://zhuanlan.zhihu.com/p/75055816">Next网站配置——功能增添</a></p>
 ]]></content>
       <categories>
         <category>文字博客</category>
