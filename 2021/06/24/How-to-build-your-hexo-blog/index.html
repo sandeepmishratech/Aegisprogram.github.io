@@ -14,12 +14,10 @@
 
 
 <link rel="stylesheet" href="/Aegisprogram.github.io/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="/Aegisprogram.github.io/lib/pace/pace-theme-mac-osx.min.css">
-  <script src="/Aegisprogram.github.io/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"github.com","root":"/Aegisprogram.github.io/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"github.com","root":"/Aegisprogram.github.io/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="hexo博客是一个Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。我将在这里说说自己是如何搭建hexo博客的。 首先第一步，你需要首先下载Node.js（安装的时候记得勾选add to path)和Git,这两个是你搭建hexo博客必备的东西（Hexo是一款基于Node.js的静态博客框架），所以No">
@@ -108,6 +106,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -142,11 +141,38 @@
     <a href="/Aegisprogram.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">2</span></a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -174,7 +200,7 @@
     <link itemprop="mainEntityOfPage" href="https://github.com/Aegisprogram.github.io/2021/06/24/How-to-build-your-hexo-blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Aegisprogram.github.io/images/%E8%95%BE%E5%A7%86.jpg">
+      <meta itemprop="image" content="/Aegisprogram.github.io/image/%E8%95%BE%E5%A7%86.jpg">
       <meta itemprop="name" content="Aegisprogram">
       <meta itemprop="description" content="When ignorance becomes mainstream, sobriety is the original sin">
     </span>
@@ -184,14 +210,10 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          如何快速搭建一个hexo博客<a href="/Aegisprogram.github.io/undefined_posts/How-to-build-your-hexo-blog.md" class="post-edit-link" title="Edit this post"><i class="fa fa-pencil-alt"></i></a>
+          如何快速搭建一个hexo博客
         </h1>
 
         <div class="post-meta">
-       
-  <i class="fa fa-thumb-tack"></i>
-  <font color=7D26CD>置顶</font>
-  <span class="post-meta-divider">|</span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
@@ -322,7 +344,7 @@
     <a href="https://github.com/Aegisprogram.github.io/2021/06/24/How-to-build-your-hexo-blog/" title="如何快速搭建一个hexo博客">https://github.com/Aegisprogram.github.io/2021/06/24/How-to-build-your-hexo-blog/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
   </li>
 </ul>
 </div>
@@ -409,7 +431,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Aegisprogram"
-      src="/Aegisprogram.github.io/images/%E8%95%BE%E5%A7%86.jpg">
+      src="/Aegisprogram.github.io/image/%E8%95%BE%E5%A7%86.jpg">
   <p class="site-author-name" itemprop="name">Aegisprogram</p>
   <div class="site-description" itemprop="description">When ignorance becomes mainstream, sobriety is the original sin</div>
 </div>
@@ -441,14 +463,17 @@
         <a href="https://github.com/Aegisprogram" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Aegisprogram"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://m.cmx.im/web/accounts/103475" title="Mastodon → https:&#x2F;&#x2F;m.cmx.im&#x2F;web&#x2F;accounts&#x2F;103475" rel="noopener" target="_blank"><i class="fab fa-mastodon fa-fw"></i>Mastodon</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://t.me/Soulofheart77" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Soulofheart77" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
-      </span>
-      <span class="links-of-author-item">
         <a href="mailto:haut.fomal@yandex.com" title="E-Mail → mailto:haut.fomal@yandex.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://m.cmx.im/web/accounts/103475" title="Mastodon → https:&#x2F;&#x2F;m.cmx.im&#x2F;web&#x2F;accounts&#x2F;103475" rel="noopener" target="_blank"><i class="fa fa-mastodon fa-fw"></i>Mastodon</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Soulofheart77" title="telegram → https:&#x2F;&#x2F;t.me&#x2F;Soulofheart77" rel="noopener" target="_blank"><i class="fa fa-telegram fa-fw"></i>telegram</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/Aegisprogram.github.io/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
@@ -481,36 +506,17 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
     <span title="Symbols count total">5k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
     <span title="Reading time total">4 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
-
-<br /> 
-<!-- 网站运行时间的设置 -->
-<span id="timeDate">载入天数...</span>
-<span id="times">载入时分秒...</span>
-<script>
-    var now = new Date();
-    function createtime() {
-        var grt= new Date("06/24/2021 15:54:40");//此处修改你的建站时间或者网站上线时间
-        now.setTime(now.getTime()+250);
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-    }
-setInterval("createtime()",250);
-</script>
 
         
 <div class="busuanzi-count">
@@ -567,6 +573,10 @@ setInterval("createtime()",250);
   
 
 
+
+
+  
+<script src="/Aegisprogram.github.io/js/local-search.js"></script>
 
 
 
