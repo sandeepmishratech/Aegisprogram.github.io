@@ -1,48 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo博客相关配置（1）</title>
-    <url>/2021/06/26/hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>今天在对hexo进行主题美化配置的过程中我发现了不少的问题。所以特地在这里列举一下问题以及相关的注意事项。可能一次性很难说完说全，因为我自己也是刚使用hexo博客不久（之前自己投入的是hugo的怀抱），所以有关于hexo博客的配置和注意事项我应该会写一个系列。而且我怕一篇文章太长，没有耐心看下去，所以还是选择少量多次的好。</p>
-<p>1.hexo-symbols-count-time下载报错：</p>
-<p>今天我想给自己的hexo博客上添加字数统计和阅读时间估计（我看到许多的hexo博客都使用了这个插件，而且自己也觉得很不错）。但是当我在终端输入</p>
-<p><code>npm install hexo-symbols-count-time --save</code></p>
-<p>时（npm下载慢的朋友可以使用cnpm），我发现我当前版本的一些js文件版本过低，我需要更新版本。<img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1.3lz4gml615w0.png" alt="image"></p>
-<p>看到有人在issues中提交了和我一样问题的截图，有人给出的解答是先更新npm和node.js，于是我决定先将npm和node.js更新一下。输入以下代码：</p>
-<span id="more"></span>
-
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">首先查看当前版本</span><br><span class="line">node -v</span><br><span class="line">node -v </span><br><span class="line">然后更新版本</span><br><span class="line">npm install -g npm</span><br><span class="line">注意：接下来的操作仅适合Mac和Linux用户</span><br><span class="line">npm cache clean -f # 清除缓存</span><br><span class="line">npm install -g n # 安装n模块，Windows系统目前无法使用n模块，所以无法完成后面的操作</span><br><span class="line">n stable # 升级node.js到最新稳定版本,r如果出现升级错误，在命令前面加上sudo</span><br></pre></td></tr></table></figure>
-
-<p>所以现在有一个问题，那么Windows用户该如何更新node.js呢。呃，这个嘛，可能需要重新安装一遍到原来的路径（<del>我也表示很无奈</del>)。当你完成两个地方的更新之后，你再去下载hexo-symbols-count-time这个插件。</p>
-<p>2.配置插件：这个配置插件也是有知识点滴。首先我们需要在站点配置上（也就是博客根目录下的_config.yml文件）添加配置内容，内容如下：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># count<span class="emphasis">_time (名字随意)</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  symbols_</span>count<span class="emphasis">_time:</span></span></span><br><span class="line"><span class="emphasis"><span class="section"> #文章内是否显示</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  symbols: true # 文章字数</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  time: true  # 阅读时长</span></span></span><br><span class="line"><span class="emphasis"><span class="section"> # 网页底部是否显示</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  total_</span>symbols: false # 所有文章总字数</span></span><br><span class="line">  total<span class="emphasis">_time: false  # 所有文章总时长</span></span><br><span class="line"><span class="emphasis">  exclude_</span>codeblock: false # 代码框内不计入字数</span><br></pre></td></tr></table></figure>
-
-<p>然后我们还需要在主题配置文件下进行修改（就是指themes-next-_config.yml文件），内容如下：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">symbols<span class="emphasis">_count_</span>time:</span><br><span class="line">  separated<span class="emphasis">_meta: true # 换行显示</span></span><br><span class="line"><span class="emphasis">  item_</span>text<span class="emphasis">_post: true # 是否显示说明文字</span></span><br><span class="line"><span class="emphasis">  item_</span>text<span class="emphasis">_total: false # 站底总字数统计，不显示</span></span><br><span class="line"><span class="emphasis">  awl: 5  # Average Word Length，也就是平均每个字所占字符长度，默认值为 4(中文占2个，英文单词占5个)</span></span><br><span class="line"><span class="emphasis">  wpm: 275  # Words Per Minute，也就是平均每分钟能读多少字，默认值为 275</span></span><br></pre></td></tr></table></figure>
-
-<p>如果你发现你的字数统计和时间估计显示的是Na这样的样式，说明你的awl配置有问题，需要进行修改。特别注意，如果你的默认hello-world.md文件没有删除的话，可能就会影响你的站底字数统计。</p>
-<p>3.头像设置：最后先说一个网站的头像设置问题，如果你想设置一个自己的头像的话，你只需要进行简单的设置就可以了。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># Sidebar Avatar</span></span><br><span class="line">avatar:</span><br><span class="line">  # Replace the default image and set the url here.</span><br><span class="line">  url: /images/xxx.jpg</span><br><span class="line">  # If true, the avatar will be dispalyed in circle.</span><br><span class="line">  rounded: true # 表示头像采用圆形框，默认为方形（false)。</span><br><span class="line">  # If true, the avatar will be rotated with the cursor.</span><br><span class="line">  rotated: true # 头像会随着鼠标的移动而旋转</span><br></pre></td></tr></table></figure>
-
-<p>顺便说一下，如果你想实现和我一样的文章内容只显示摘要而不显示全文的话，你只需要在自己Markdown工具上合适位置输入&lt;!—-more—-&gt;就可以了（这几个字符之间是没有任何的空格的）。</p>
-<p>PS：参考博客：<a href="https://zhuanlan.zhihu.com/p/75055816">Next网站配置——功能增添</a></p>
-]]></content>
-      <categories>
-        <category>文字博客</category>
-        <category>笔记</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>主题</tag>
-        <tag>教程</tag>
-        <tag>文字博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何快速搭建一个hexo博客</title>
     <url>/2021/06/24/How-to-build-your-hexo-blog/</url>
     <content><![CDATA[<p>hexo博客是一个Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。我将在这里说说自己是如何搭建hexo博客的。</p>
-<p>首先第一步，你需要首先下载<a href="https://nodejs.org/en/">Node.js</a>（安装的时候记得勾选add to path)和<a href="https://git-scm.com/">Git</a>,这两个是你搭建hexo博客必备的东西（Hexo是一款基于Node.js的静态博客框架），所以Node.js就是根本中的根本。当然，Git主要是为了完成博客的部署，提交问题而准备的。其实你可以下载一个已经集成了git bash的<a href="https://cmder.net/">cmder</a>,建议下载full版本的。之后可以在cmder上面进行博客的搭建，部署。接下来的命令将在cmder中进行，如果使用git bash的话，命令也是一样的。</p>
+<h2 id="安装node-js和Git"><a href="#安装node-js和Git" class="headerlink" title="安装node.js和Git"></a>安装node.js和Git</h2><p>首先第一步，你需要首先下载<a href="https://nodejs.org/en/">Node.js</a>（安装的时候记得勾选add to path)和<a href="https://git-scm.com/">Git</a>,这两个是你搭建hexo博客必备的东西（Hexo是一款基于Node.js的静态博客框架），所以Node.js就是根本中的根本。当然，Git主要是为了完成博客的部署，提交问题而准备的。其实你可以下载一个已经集成了git bash的<a href="https://cmder.net/">cmder</a>,建议下载full版本的。之后可以在cmder上面进行博客的搭建，部署。接下来的命令将在cmder中进行，如果使用git bash的话，命令也是一样的。</p>
 <p>完成安装之后，我们打开cmder分别输入</p>
 <span id="more"></span>
 
@@ -51,7 +13,8 @@
 <p>如果看到有版本号输出的话，那就代表安装成功且环境变量没有问题。如果没有，那就建议看看是不是安装的时候忘记勾选add to path，建议查看node.js的环境变量（卸载重新安装node.js也可以）。</p>
 <p>当你完成这些工具的下载，检查之后，你接着需要去<a href="https://github.com/">GitHub</a>注册一个账号，接下来我以hexo+github pages的部署为例。账号注册过程很简单，这里就不赘述了，不会的话建议自行百度或者Google。</p>
 <p>注：其实上面这些工具完全可以不放入系统盘，就算放在其他硬盘，下载依赖的时候，依赖还是会默认下载到系统盘的。这是没什么影响的。我现在的博客就是这么操作的。</p>
-<p>下面开始正式的安装：</p>
+<hr>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>下面开始正式的安装：</p>
 <p>1.安装cnpm(国内由于众所周知的原因npm下载插件，依赖的时候比较慢，所以采用cnpm下载)</p>
 <p>在cmder中输入</p>
 <p><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
@@ -65,21 +28,14 @@
 <p>到<code>Install dependencies</code></p>
 <p>的时候你可能会卡住，这是大多数人基本都会遇到的，我们只需要在这里的时候结束命令，按<code>Ctrl + c</code>就可以结束命令（我在安装的过程中并没有遇到，如果你遇到了，那么请执行上述操作）。</p>
 <p>下一步执行<code>cnpm install</code> 完成初始化工作，等待完成结束之后，接下来输入<code>hexo s</code>在本地预览。按住ctrl单击<code>http://localhost:4000</code>就可以在本地实现预览效果了。</p>
-<p>3.更换主题</p>
-<p>你可能觉得那个主题并不好看，所以现在我们去挑选一个自己喜欢的主题吧——<a href="https://hexo.io/themes/">hexo主题</a>，所有的主题都在这里了。在上面挑选一个自己喜欢的就好，<strong>不同的主题之间配置不尽相同，略有差异</strong>。下面我以<a href="https://github.com/theme-next/hexo-theme-next">next</a>主题为例,主题的下载你可以直接克隆，也可以下载压缩包解压出来。我这里就直接克隆了。直接在cmder中输入</p>
+<h2 id="配置hexo博客"><a href="#配置hexo博客" class="headerlink" title="配置hexo博客"></a>配置hexo博客</h2><h4 id="1-更换主题"><a href="#1-更换主题" class="headerlink" title="1.更换主题"></a>1.更换主题</h4><p>你可能觉得那个主题并不好看，所以现在我们去挑选一个自己喜欢的主题吧——<a href="https://hexo.io/themes/">hexo主题</a>，所有的主题都在这里了。在上面挑选一个自己喜欢的就好，<strong>不同的主题之间配置不尽相同，略有差异</strong>。下面我以<a href="https://github.com/theme-next/hexo-theme-next">next</a>主题为例,主题的下载你可以直接克隆，也可以下载压缩包解压出来。我这里就直接克隆了。直接在cmder中输入</p>
 <p><code>git clone https://github.com/theme-next/hexo-theme-next.git themes/next</code> </p>
 <p>简单解释一下：前面的git clone就是克隆命令 中间一段是主题的地址 后面是将其命名为next。</p>
-<p>4.修改配置文件</p>
-<p>在博客的根目录下找到__config.yml文件，vi进去找到theme那一行，将原来的主题替换为next。然后执行<code>hexo s</code>在本地预览效果。默认是白色的背景，如果想要使用黑色的背景就在<strong>themes-next-_config.yml</strong>中找到darkmode，将false改为true即可，但是这里有一点我必须说明一下，next主题下的Darkmode会根据设备来自行决定是light还是dark，意思就是如果你的手机是深色模式，电脑是浅色模式，那么你在手机上看到的博客样式就是深色的，而在电脑上看到的就会是浅色的。（注意,博客根目录下的配置文件和主题下面的配置文件都是一样的名字_config.yml，千万不要混淆）</p>
-<p>5.设置语言</p>
-<p>博客页面默认是英文的，我们现在使用的是next主题（不同的主题之间可能有所不一样，前面我已经提到过了，若有差异则以你所使用的主题官方文档为准）我们需要进入根目录下的_config.yml，找到language,然后将其改为zh-CN。</p>
-<p>6.部署到github</p>
-<ul>
-<li><p>新建仓库：进入我们之前已经创建好账号的GitHub，在左侧新建一个仓库，仓库的命名格式为：你的用户名+github.io。例如我的GitHub用户名是Aegisprogram，那么对应的我的仓库名字就是Aegisprogram.github.io。添加仓库描述，勾选public，勾选add README，然后点击创建。</p>
-</li>
-<li><p>接下来创建密钥：打开cmder 输入<code>ssh-keygen -t rsa -C “your_email@youremail.com“</code>,然后接连按回车键，等到命令执行结束后我们输入<code>cat ~/.ssh/id_rsa.pub</code>,我们能看到一大串字母。我们把上面一大串密钥复制下，进入GitHub-点击头像-setting-SSH-New SSH Key，把之前复制的一大串字母添加进去。回到cmder，输入<code> ssh -T git@github.com</code>,接下来你会看到<code>Are you sure you want to continue connecting (yes/no/[fingerprint])? </code>,如果还有别的内容，那也就yes。现在去GitHub自己仓库上面点击code,切换到ssh然后将那一段地址复制下来。</p>
-</li>
-<li><p>之后，我们用cmder打开博客根目录下的_config.yml文件，找到deploy所在地方，修改添加信息。</p>
+<h4 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2.修改配置文件"></a>2.修改配置文件</h4><p>在博客的根目录下找到__config.yml文件，vi进去找到theme那一行，将原来的主题替换为next。然后执行<code>hexo s</code>在本地预览效果。默认是白色的背景，如果想要使用黑色的背景就在<strong>themes-next-_config.yml</strong>中找到darkmode，将false改为true即可，但是这里有一点我必须说明一下，next主题下的Darkmode会根据设备来自行决定是light还是dark，意思就是如果你的手机是深色模式，电脑是浅色模式，那么你在手机上看到的博客样式就是深色的，而在电脑上看到的就会是浅色的。（注意,博客根目录下的配置文件和主题下面的配置文件都是一样的名字_config.yml，千万不要混淆）</p>
+<h4 id="3-设置语言"><a href="#3-设置语言" class="headerlink" title="3.设置语言"></a>3.设置语言</h4><p>博客页面默认是英文的，我们现在使用的是next主题（不同的主题之间可能有所不一样，前面我已经提到过了，若有差异则以你所使用的主题官方文档为准）我们需要进入根目录下的_config.yml，找到language,然后将其改为zh-CN。</p>
+<h2 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h2><h4 id="1-新建仓库"><a href="#1-新建仓库" class="headerlink" title="1.新建仓库"></a>1.新建仓库</h4><p>进入我们之前已经创建好账号的GitHub，在左侧新建一个仓库，仓库的命名格式为：你的用户名+github.io。例如我的GitHub用户名是Aegisprogram，那么对应的我的仓库名字就是Aegisprogram.github.io。添加仓库描述，勾选public，勾选add README，然后点击创建。</p>
+<h4 id="2-接下来创建密钥"><a href="#2-接下来创建密钥" class="headerlink" title="2.接下来创建密钥"></a>2.接下来创建密钥</h4><p>打开cmder 输入<code>ssh-keygen -t rsa -C “your_email@youremail.com“</code>,然后接连按回车键，等到命令执行结束后我们输入<code>cat ~/.ssh/id_rsa.pub</code>,我们能看到一大串字母。我们把上面一大串密钥复制下，进入GitHub-点击头像-setting-SSH-New SSH Key，把之前复制的一大串字母添加进去。回到cmder，输入<code> ssh -T git@github.com</code>,接下来你会看到<code>Are you sure you want to continue connecting (yes/no/[fingerprint])? </code>,如果还有别的内容，那也就yes。现在去GitHub自己仓库上面点击code,切换到ssh然后将那一段地址复制下来。</p>
+<h4 id="3-修改站点配置文件"><a href="#3-修改站点配置文件" class="headerlink" title="3.修改站点配置文件"></a>3.修改站点配置文件</h4><p>我们用cmder打开博客根目录下的_config.yml文件，找到deploy所在地方，修改添加信息。</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="code">	type: git</span></span><br><span class="line"><span class="code">	repo: git@github.com:username/username.github.io.git</span></span><br><span class="line"><span class="code">	branch: main(我们新建仓库的时候就是main，所以这里直接采用main分支)</span></span><br></pre></td></tr></table></figure>
 
 <p>接着在博客根目录下执行：</p>
@@ -87,8 +43,6 @@
 
 <p>之后上传插件：cnpm install hexo-deployer-git –save</p>
 <p>最后我们在博客根目录下执行hexo g -d就可以完成上传了。我们可以去自己的仓库看看文件是否上传成功，接着访问我们的网址就好了。</p>
-</li>
-</ul>
 <p>至此，hexo博客就搭建部署完成了。但是我想你已经迫不及待地想要开始写一篇自己地文章提交上去了吧。我们需要掌握一些博客的命令：</p>
 <ul>
 <li>新建博客<code>hexo new &#39;title&#39;</code>(hexo会直接在D:\BigDataTools\hexo\source_posts下生成.md文件)</li>
@@ -103,8 +57,6 @@
 <p>PS：参考博客：<a href="https://www.cnblogs.com/huanhao/p/hexobase.html">基础篇——hexo博客搭建教程</a></p>
 ]]></content>
       <categories>
-        <category>文字博客</category>
-        <category>笔记</category>
         <category>Hexo</category>
       </categories>
       <tags>
@@ -113,11 +65,96 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo博客相关配置（1）</title>
+    <url>/2021/06/26/hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>今天在对hexo进行主题美化配置的过程中我发现了不少的问题。所以特地在这里列举一下问题以及相关的注意事项。可能一次性很难说完说全，因为我自己也是刚使用hexo博客不久（之前自己投入的是hugo的怀抱），所以有关于hexo博客的配置和注意事项我应该会写一个系列。而且我怕一篇文章太长，没有耐心看下去，所以还是选择少量多次的好。</p>
+<h3 id="1-hexo-symbols-count-time下载报错"><a href="#1-hexo-symbols-count-time下载报错" class="headerlink" title="1.hexo-symbols-count-time下载报错"></a>1.hexo-symbols-count-time下载报错</h3><p>今天我想给自己的hexo博客上添加字数统计和阅读时间估计（我看到许多的hexo博客都使用了这个插件，而且自己也觉得很不错）。但是当我在终端输入</p>
+<p><code>npm install hexo-symbols-count-time --save</code></p>
+<p>时（npm下载慢的朋友可以使用cnpm），我发现我当前版本的一些js文件版本过低，我需要更新版本。<img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1.3lz4gml615w0.png" alt="image"></p>
+<p>看到有人在issues中提交了和我一样问题的截图，有人给出的解答是先更新npm和node.js，于是我决定先将npm和node.js更新一下。输入以下代码：</p>
+<span id="more"></span>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">首先查看当前版本</span><br><span class="line">node -v</span><br><span class="line">node -v </span><br><span class="line">然后更新版本</span><br><span class="line">npm install -g npm</span><br><span class="line">注意：接下来的操作仅适合Mac和Linux用户</span><br><span class="line">npm cache clean -f # 清除缓存</span><br><span class="line">npm install -g n # 安装n模块，Windows系统目前无法使用n模块，所以无法完成后面的操作</span><br><span class="line">n stable # 升级node.js到最新稳定版本,r如果出现升级错误，在命令前面加上sudo</span><br></pre></td></tr></table></figure>
+
+<p>所以现在有一个问题，那么Windows用户该如何更新node.js呢。呃，这个嘛，可能需要重新安装一遍到原来的路径（<del>我也表示很无奈</del>)。当你完成两个地方的更新之后，你再去下载hexo-symbols-count-time这个插件。</p>
+<h3 id="2-配置插件"><a href="#2-配置插件" class="headerlink" title="2.配置插件"></a>2.配置插件</h3><p>这个配置插件也是有知识点滴。首先我们需要在站点配置上（也就是博客根目录下的_config.yml文件）添加配置内容，内容如下：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># count<span class="emphasis">_time (名字随意)</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  symbols_</span>count<span class="emphasis">_time:</span></span></span><br><span class="line"><span class="emphasis"><span class="section"> #文章内是否显示</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  symbols: true # 文章字数</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  time: true  # 阅读时长</span></span></span><br><span class="line"><span class="emphasis"><span class="section"> # 网页底部是否显示</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  total_</span>symbols: false # 所有文章总字数</span></span><br><span class="line">  total<span class="emphasis">_time: false  # 所有文章总时长</span></span><br><span class="line"><span class="emphasis">  exclude_</span>codeblock: false # 代码框内不计入字数</span><br></pre></td></tr></table></figure>
+
+<p>然后我们还需要在主题配置文件下进行修改（就是指themes-next-_config.yml文件），内容如下：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">symbols<span class="emphasis">_count_</span>time:</span><br><span class="line">  separated<span class="emphasis">_meta: true # 换行显示</span></span><br><span class="line"><span class="emphasis">  item_</span>text<span class="emphasis">_post: true # 是否显示说明文字</span></span><br><span class="line"><span class="emphasis">  item_</span>text<span class="emphasis">_total: false # 站底总字数统计，不显示</span></span><br><span class="line"><span class="emphasis">  awl: 5  # Average Word Length，也就是平均每个字所占字符长度，默认值为 4(中文占2个，英文单词占5个)</span></span><br><span class="line"><span class="emphasis">  wpm: 275  # Words Per Minute，也就是平均每分钟能读多少字，默认值为 275</span></span><br></pre></td></tr></table></figure>
+
+<p>如果你发现你的字数统计和时间估计显示的是Na这样的样式，说明你的awl配置有问题，需要进行修改。特别注意，如果你的默认hello-world.md文件没有删除的话，可能就会影响你的站底字数统计。</p>
+<h3 id="3-头像设置"><a href="#3-头像设置" class="headerlink" title="3.头像设置"></a>3.头像设置</h3><p>最后先说一个网站的头像设置问题，如果你想设置一个自己的头像的话，你只需要进行简单的设置就可以了。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># Sidebar Avatar</span></span><br><span class="line">avatar:</span><br><span class="line">  # Replace the default image and set the url here.</span><br><span class="line">  url: /images/xxx.jpg</span><br><span class="line">  # If true, the avatar will be dispalyed in circle.</span><br><span class="line">  rounded: true # 表示头像采用圆形框，默认为方形（false)。</span><br><span class="line">  # If true, the avatar will be rotated with the cursor.</span><br><span class="line">  rotated: true # 头像会随着鼠标的移动而旋转</span><br></pre></td></tr></table></figure>
+
+<p>顺便说一下，如果你想实现和我一样的文章内容只显示摘要而不显示全文的话，你只需要在自己Markdown工具上合适位置输入&lt;!—-more—-&gt;就可以了（这几个字符之间是没有任何的空格的）。</p>
+<p>PS：参考博客：<a href="https://zhuanlan.zhihu.com/p/75055816">Next网站配置——功能增添</a></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>文字博客</tag>
+        <tag>主题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>免费激活Windows和office</title>
+    <url>/2021/06/29/how-to-activate-your-Windows-and-office/</url>
+    <content><![CDATA[<p>Windows系统和office办公软件都是我们现在学习，工作中很难离开的工具。由于各种各样的原因，可能有些人会出现Windows未被激活，office产品密钥过期等情况。所以，在这里列举一下如何免费的激活Windows和office。</p>
+<h2 id="Windows激活"><a href="#Windows激活" class="headerlink" title="Windows激活"></a>Windows激活</h2><p>关于Windows的激活方式一般分为数字权利激活和KMS在线激活。</p>
+<h4 id="1-数字权利激活"><a href="#1-数字权利激活" class="headerlink" title="1.数字权利激活"></a>1.数字权利激活</h4><p>数字权利激活会把当前电脑的硬件信息，上传至微软服务器。当用户重装系统后，设备会自动与服务器中存储的信息进行对比。如果相符，则自动激活。所以，这种激活方式对于用户来说是非常的方便的，有好的。</p>
+<p>首先介绍一个专门用于激活Windows10的数字权利激活工具——云萌激活</p>
+<h5 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h5><p>以数字权利激活Windows10系统（涵盖各个版本）</p>
+<span id="more"></span>
+
+<p><font color='00dd00'>云萌激活</font>：</p>
+<p><a href="https://cmwtat.cloudmoe.com/cn.html">云萌Windows 10激活工具 - 首页 </a></p>
+<p><a href="https://github.com/TGSAN/CMWTAT_Digital_Edition">GitHub开源地址</a></p>
+<p>这是一款开源免费的数字权利激活工具，你可以使用他免费激活windows10系统。只需要简单的几步操作就可以完成。</p>
+<h5 id="激活步骤"><a href="#激活步骤" class="headerlink" title="激活步骤"></a>激活步骤</h5><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">中文版</span><br><span class="line">下载 Releases 里的 .exe 发行文件。</span><br><span class="line"></span><br><span class="line">运行它。</span><br><span class="line"></span><br><span class="line">点按 Activate 按钮。</span><br><span class="line"></span><br><span class="line">完成~</span><br></pre></td></tr></table></figure>
+
+<p>可以说是十分的简单易用。</p>
+<h4 id="2-KMS服务器激活"><a href="#2-KMS服务器激活" class="headerlink" title="2.KMS服务器激活"></a>2.KMS服务器激活</h4><p>密钥管理服务（KMS）是微软为批量许可客户（组织，学校或政府）提供的一种正版激活方法。KMS激活期限最多可以长达180天（6个月），激活每7天自动进行更新（期限自动重置为180天），也就是说如果客户端可以一直连接到KMS主机服务器，那么是可以无限制的使用下去。</p>
+<p>但是对于一些非Windows10系统的用户来说，上面的工具爱莫能助，所以我们需要一款更加强大的激活工具——HEU KMS Activator </p>
+<p><a href="https://github.com/zbezj/HEU_KMS_Activator">GitHub发布地址</a></p>
+<h5 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h5><p>支持KMS激活Microsoft Windows、Office； 2、支持数字许可永久激活、KMS38激活至2038年；  3、支持OEM激活Windows Vista, Windows 7, Windwos Server； 4、支持Microsoft Office  零售版转换为VL批量许可版； 5、支持备份和还原激活信息。 6、支持自定义搭建KMS服务器激活； —激活成功率高、执行速度快、支持几乎所有版本； —在Windows 7上无需依赖安装.NET Framework； —可以自行安装或搭建KMS服务器； —自动识别三种语言（简/繁/英）；  —带参数可静默运行且参数可根据需要自选； —可以一键自动激活、也可以根据需要自选； —包含KMS相关的功能（安装密钥、激活状态查询等）  —完全可离线激活，也可以连接网络服务器进行激活；</p>
+<p>正因为这款激活工具几乎可以解决Windows电脑上所有的激活服务，所以在GitHub上也只是以文件的形式上传，并没有将工具代码开源，个人自行选择是否使用。</p>
+<h5 id="激活步骤-1"><a href="#激活步骤-1" class="headerlink" title="激活步骤"></a>激活步骤</h5><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">1.打开HEU KMS Activator 并选择一个激活方式(下面以数字激活为例)</span><br><span class="line">2.点击数字激活，点击“橘黄色按钮”，将激活 Windows 和 Office，智能识别最佳 的激活方式（优先顺序依次为数字许可证/KMS38/OEM/KMS），并自动跳过已经 永久激活的版本。</span><br><span class="line">3.完成(更多的激活方式自行选择和查询)</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-产品密钥激活"><a href="#3-产品密钥激活" class="headerlink" title="3.产品密钥激活"></a>3.产品密钥激活</h4><p>其实产品密钥激活算不上是另一种激活形式，只是换了一种激活方式。根据密钥的性质（数字权利还是KMS激活密钥）来决定你的设备激活状态。</p>
+<p>如果你能确定自己的密钥是数字权利密钥，那么你可以直接打开设置-更新和安全-激活-更换产品密钥。将你手里面的密钥输入进入激活即可。</p>
+<p>但是如果你是KMS密钥的话建议通过代码来进行激活，代码如下：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX(这里输入你自己的产品密钥)</span><br><span class="line">slmgr /skms kms.03k.org</span><br><span class="line">slmgr /ato</span><br></pre></td></tr></table></figure>
+
+<p>这样用代码激活的好处就是，当激活使用时间达到180天后，他会自动帮你激活，这样你就不需要再通过手动激活了。</p>
+<p>密钥获取处:<a href="https://t.me/getkeys">Windows与office激活密钥公益发布站</a></p>
+<p>本着互联网“传递，共享，自由”的原则，我希望大家使用公益站发布的密钥之后，能给他一个关注。</p>
+<hr>
+<h2 id="office产品激活"><a href="#office产品激活" class="headerlink" title="office产品激活"></a>office产品激活</h2><p>office激活除了上面说到的HEU KMS Activator ，但是可能由于代码没有开源的缘故，可能让人觉得不太放心，那么下面的office tool plus也是一个不错的选择。</p>
+<p><a href="https://otp.landian.vip/zh-cn/">Office Tool Plus 官方网站 - 一键部署 Office </a></p>
+<p><a href="https://github.com/YerongAI/Office-Tool">GitHub开源地址</a></p>
+<h5 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h5><p>一键生成配置，快速激活office,Office Tool Plus从微软服务器上获取office的版本信息以及安装文件，始终确保下载，安装的office为最新版本。</p>
+<h5 id="激活步骤-2"><a href="#激活步骤-2" class="headerlink" title="激活步骤"></a>激活步骤</h5><p>下载Office Tool Plus之后，激活步骤请参考<a href="https://help.coolhub.top/zh-cn/activate/#%E6%BF%80%E6%B4%BB%E6%AD%A5%E9%AA%A4">官方文档</a>，有详细说明。</p>
+<hr>
+<h2 id="其他方案"><a href="#其他方案" class="headerlink" title="其他方案"></a>其他方案</h2><p>也许你实在不想折腾那么多繁琐的步骤，那么你可以使用产品密钥激活(密钥寻找可以前往上面的telegram频道，如果你没有telegram，那就只能求助于万能的网友了)，或者暂时使用office的替代品。我这里推荐两个替代品：一个是<a href="https://www.wps.com/download/">WPS</a>,另一个是<a href="https://www.libreoffice.org/">Libre Office</a>(开源免费，与Office兼容)。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p>1.<a href="https://zhuanlan.zhihu.com/p/349931246">Windows系统激活神器HEU KMS Activator v22.1.0激活工具</a></p>
+<p>2.<a href="https://zhuanlan.zhihu.com/p/260014354">win10激活的几种方式及其原理</a></p>
+]]></content>
+      <categories>
+        <category>文字博客</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客相关配置（2）</title>
     <url>/2021/06/29/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%EF%BC%882%EF%BC%89/</url>
     <content><![CDATA[<p>hexo博客主题配置过程中不仅有不少的踩坑问题，还比较的琐碎，需要不少的耐心。</p>
-<p>1.主题的标签，分类，关于页面的生成</p>
-<p>其实这一部分在next主题配置中还算简单的，也没有什么坑，主要是说说如何生成这些页面以及修改相关内容。</p>
+<h3 id="1-主题的标签，分类，关于页面的生成"><a href="#1-主题的标签，分类，关于页面的生成" class="headerlink" title="1.主题的标签，分类，关于页面的生成"></a>1.主题的标签，分类，关于页面的生成</h3><p>其实这一部分在next主题配置中还算简单的，也没有什么坑，主要是说说如何生成这些页面以及修改相关内容。</p>
 <ul>
 <li><p>标签页</p>
 <p>想要生成标签页，我们首先需要在博客的根目录（例如我将整个博客放在D:\BigDataTools\hexo下，那么hexo文件下就是我的博客根目录）在当下目录输入</p>
@@ -138,11 +175,9 @@
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 关于</span><br><span class="line">date:</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">正文内容</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>然后找到主题的配置文件（hexo/themes/主题名/_config.yml)中的menu，将tags,categories,about对应前面的注释去掉即可。我们可以顺便将主题配置文件中tags_icon设置为true,这样你的博客标签将会以图标的方式展现出来而不再是#。</p>
-<p>2.添加社交方式</p>
-<p>其实主题中会内置一些社交的方式，我们只需要在主题配置文件中打开就可以（我以next主题为例）。我们首先来到主题配置文件中，找到social<img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/social.501i9rss0r40.png" alt="image"></p>
+<h3 id="2-添加社交方式"><a href="#2-添加社交方式" class="headerlink" title="2.添加社交方式"></a>2.添加社交方式</h3><p>其实主题中会内置一些社交的方式，我们只需要在主题配置文件中打开就可以（我以next主题为例）。我们首先来到主题配置文件中，找到social<img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/social.501i9rss0r40.png" alt="image"></p>
 <p>将我们需要的打开，把后面的联系地址填上去就可以了。当然，也许这上面提供的联系方式不能满足你的要求，那么你可以自定义添加自己想要的联系方式。在这个<a href="https://fontawesome.com/v5.15/icons?d=gallery&p=2">图标网站</a>上你不需要复制链接，也不需要下载图标，你只需要在这个网站上找到对应联系方式的图标，确认没有错误就可以。然后我们回到配置文件中，添加自定义的联系方式（需要注意书写的格式）。网站只是帮助你确认联系方式的图标。</p>
-<p>3.博客文章置顶</p>
-<p>比如说我想让进入这个网站的朋友最先看到的就是如何搭建hexo博客的文章，那么文章置顶对于我来说就很有必要的了。我们需要进行如下操作</p>
+<h3 id="3-博客文章置顶"><a href="#3-博客文章置顶" class="headerlink" title="3.博客文章置顶"></a>3.博客文章置顶</h3><p>比如说我想让进入这个网站的朋友最先看到的就是如何搭建hexo博客的文章，那么文章置顶对于我来说就很有必要的了。我们需要进行如下操作</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save(卸载原来的插件)</span><br><span class="line">npm install hexo-generator-index-pin-top --save(安装置顶插件)</span><br></pre></td></tr></table></figure>
 
 <p>设置置顶标志：</p>
@@ -154,14 +189,12 @@
 <p>PS：参考博客：<a href="https://juejin.cn/post/6844904037465194503">hexo next主题设置文章置顶</a></p>
 ]]></content>
       <categories>
-        <category>文字博客</category>
-        <category>笔记</category>
-        <category>hexo</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>主题</tag>
         <tag>教程</tag>
         <tag>文字博客</tag>
+        <tag>主题</tag>
       </tags>
   </entry>
 </search>
