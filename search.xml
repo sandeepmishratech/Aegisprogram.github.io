@@ -1,137 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo博客相关配置（1）</title>
-    <url>/2021/06/26/hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>今天在对hexo进行主题美化配置的过程中我发现了不少的问题。所以特地在这里列举一下问题以及相关的注意事项。可能一次性很难说完说全，因为我自己也是刚使用hexo博客不久（之前自己投入的是hugo的怀抱），所以有关于hexo博客的配置和注意事项我应该会写一个系列。而且我怕一篇文章太长，没有耐心看下去，所以还是选择少量多次的好。</p>
-<h3 id="1-hexo-symbols-count-time下载报错"><a href="#1-hexo-symbols-count-time下载报错" class="headerlink" title="1.hexo-symbols-count-time下载报错"></a>1.hexo-symbols-count-time下载报错</h3><p>今天我想给自己的hexo博客上添加字数统计和阅读时间估计（我看到许多的hexo博客都使用了这个插件，而且自己也觉得很不错）。但是当我在终端输入</p>
-<p><code>npm install hexo-symbols-count-time --save</code></p>
-<p>时（npm下载慢的朋友可以使用cnpm），我发现我当前版本的一些js文件版本过低，我需要更新版本。<img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1.3lz4gml615w0.png" alt="image"></p>
-<p>看到有人在issues中提交了和我一样问题的截图，有人给出的解答是先更新npm和node.js，于是我决定先将npm和node.js更新一下。输入以下代码：</p>
-<span id="more"></span>
-
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">首先查看当前版本</span><br><span class="line">node -v</span><br><span class="line">node -v </span><br><span class="line">然后更新版本</span><br><span class="line">npm install -g npm</span><br><span class="line">注意：接下来的操作仅适合Mac和Linux用户</span><br><span class="line">npm cache clean -f # 清除缓存</span><br><span class="line">npm install -g n # 安装n模块，Windows系统目前无法使用n模块，所以无法完成后面的操作</span><br><span class="line">n stable # 升级node.js到最新稳定版本,r如果出现升级错误，在命令前面加上sudo</span><br></pre></td></tr></table></figure>
-
-<p>所以现在有一个问题，那么Windows用户该如何更新node.js呢。呃，这个嘛，可能需要重新安装一遍到原来的路径（<del>我也表示很无奈</del>)。当你完成两个地方的更新之后，你再去下载hexo-symbols-count-time这个插件。</p>
-<h3 id="2-配置插件"><a href="#2-配置插件" class="headerlink" title="2.配置插件"></a>2.配置插件</h3><p>这个配置插件也是有知识点滴。首先我们需要在站点配置上（也就是博客根目录下的_config.yml文件）添加配置内容，内容如下：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># count<span class="emphasis">_time (名字随意)</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  symbols_</span>count<span class="emphasis">_time:</span></span></span><br><span class="line"><span class="emphasis"><span class="section"> #文章内是否显示</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  symbols: true # 文章字数</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  time: true  # 阅读时长</span></span></span><br><span class="line"><span class="emphasis"><span class="section"> # 网页底部是否显示</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  total_</span>symbols: false # 所有文章总字数</span></span><br><span class="line">  total<span class="emphasis">_time: false  # 所有文章总时长</span></span><br><span class="line"><span class="emphasis">  exclude_</span>codeblock: false # 代码框内不计入字数</span><br></pre></td></tr></table></figure>
-
-<p>然后我们还需要在主题配置文件下进行修改（就是指themes-next-_config.yml文件），内容如下：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">symbols<span class="emphasis">_count_</span>time:</span><br><span class="line">  separated<span class="emphasis">_meta: true # 换行显示</span></span><br><span class="line"><span class="emphasis">  item_</span>text<span class="emphasis">_post: true # 是否显示说明文字</span></span><br><span class="line"><span class="emphasis">  item_</span>text<span class="emphasis">_total: false # 站底总字数统计，不显示</span></span><br><span class="line"><span class="emphasis">  awl: 5  # Average Word Length，也就是平均每个字所占字符长度，默认值为 4(中文占2个，英文单词占5个)</span></span><br><span class="line"><span class="emphasis">  wpm: 275  # Words Per Minute，也就是平均每分钟能读多少字，默认值为 275</span></span><br></pre></td></tr></table></figure>
-
-<p>如果你发现你的字数统计和时间估计显示的是Na这样的样式，说明你的awl配置有问题，需要进行修改。特别注意，如果你的默认hello-world.md文件没有删除的话，可能就会影响你的站底字数统计。</p>
-<h3 id="3-头像设置"><a href="#3-头像设置" class="headerlink" title="3.头像设置"></a>3.头像设置</h3><p>最后先说一个网站的头像设置问题，如果你想设置一个自己的头像的话，你只需要进行简单的设置就可以了。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># Sidebar Avatar</span></span><br><span class="line">avatar:</span><br><span class="line">  # Replace the default image and set the url here.</span><br><span class="line">  url: /images/xxx.jpg</span><br><span class="line">  # If true, the avatar will be dispalyed in circle.</span><br><span class="line">  rounded: true # 表示头像采用圆形框，默认为方形（false)。</span><br><span class="line">  # If true, the avatar will be rotated with the cursor.</span><br><span class="line">  rotated: true # 头像会随着鼠标的移动而旋转</span><br></pre></td></tr></table></figure>
-
-<p>顺便说一下，如果你想实现和我一样的文章内容只显示摘要而不显示全文的话，你只需要在自己Markdown工具上合适位置输入&lt;!—-more—-&gt;就可以了（这几个字符之间是没有任何的空格的）。</p>
-<p>PS：参考博客：<a href="https://zhuanlan.zhihu.com/p/75055816">Next网站配置——功能增添</a></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>主题</tag>
-        <tag>教程</tag>
-        <tag>文字博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客相关配置(3)</title>
-    <url>/2021/06/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE-3/</url>
-    <content><![CDATA[<p>自己这两天在对hexo博客进行相关主题配置中，发现网上的一些博客教程要么过了”保质期”,要么不够严谨。本来想避免踩坑的，结果被带到坑里面去了。为了避免以后再一头乱撞，先把最近伤脑筋的配置环节记录下来。</p>
-<h2 id="添加背景图片"><a href="#添加背景图片" class="headerlink" title="添加背景图片"></a>添加背景图片</h2><p>当我想给自己的博客添加一张图片作为背景时，我看到网上大多数别人搭建博客的教程/笔记都是说让你去hexo\themes\主题名\source\css寻找一个_custom文件夹下面的styles.styl文件，然后添加修改文件，最后到主题的配置文件中找custom的相关配置，将/source/css_custom前面的注释去掉。我看到的大多数都是如此，刚开始的时候，我也是照着这样的方式来，但是很快我发现事情并非如此。</p>
-<span id="more"></span>
-
-<p>其实，这个next主题，GitHub上面有两个仓库</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/next.lxw6xs00akw.png" alt="next"></p>
-<p>上面一个仓库现在已经停止维护了，下面一个仓库是目前在维护和发展的仓库，也是版本比较新的仓库。所以这就导致同样是next主题，但是在一些配置方面，新老版本的方法不一样，添加背景图片就是如此。如果你想从next V5迁移到next V7+,那么就参考这篇<a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md">官方文档</a>，话不多说，下面开始操作。</p>
-<p>首先，我们先去博客根目录下的source下新建一个_data文件夹以及一个styles.styl文件。接着将自己想要作为背景的图片放入themes/next/source/images里面，然后我们回到之前新建的styles.styl文件中，添加如下代码：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">// 添加背景图片</span><br><span class="line">body &#123;</span><br><span class="line">  background: url(/images/xxx.jpg);  //这里引入之前放在images中的图片名，也可以引入外链接</span><br><span class="line">  background-size: cover;</span><br><span class="line">  background-repeat: no-repeat;</span><br><span class="line">  background-attachment: fixed;</span><br><span class="line">  background-position: 50% 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 修改主体透明度</span><br><span class="line">.main-inner &#123;</span><br><span class="line">  background: #fff;</span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 修改菜单栏透明度</span><br><span class="line">.header-inner &#123;</span><br><span class="line">  opacity: 1.2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>透明度可以根据自己的喜好进行修改。之后，我们在主题的配置文件中找到custom_file_path，将下面style前面的#去掉即可。这样，博客的背景图片就添加完成了。</p>
-<h2 id="对代码和超链接进行凸显"><a href="#对代码和超链接进行凸显" class="headerlink" title="对代码和超链接进行凸显"></a>对代码和超链接进行凸显</h2><p>在代码块的配置中，我们可以在主题配置文件中找到codelock</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/codelock.1u0jjztu5gps.png" alt="codelock"></p>
-<p>对其中的highlight_theme,style可以自行选择想要的样式。</p>
-<p>对于代码行，我们可以通过添加css文件来进行高亮显示，我们可以在上面的styles.styl文件中添加以下代码：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">// Custom styles.</span><br><span class="line">code &#123;</span><br><span class="line"><span class="code">    color: #ff7600;</span></span><br><span class="line"><span class="code">    background: #fbf7f8;</span></span><br><span class="line"><span class="code">    margin: 2px;</span></span><br><span class="line"><span class="code">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>颜色可以根据自己的喜好来进行设置。而对于超链接，我们可以在themes\next\source\css\_common\components\post\post.styl中添加如下代码：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">.post-body p a &#123;</span><br><span class="line">  color: #0593d3;</span><br><span class="line">  border-bottom: none;</span><br><span class="line">  border-bottom: 1px solid #0593d3;</span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line"><span class="code">    color: #fc6423;</span></span><br><span class="line"><span class="code">    border-bottom: none;</span></span><br><span class="line"><span class="code">    border-bottom: 1px solid #fc6423;</span></span><br><span class="line"><span class="code">  &#125;</span></span><br><span class="line"><span class="code">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>颜色可以根据自己的喜好进行更改。通过这样的设置，我们文章中的超链接就会变得更加的显眼。</p>
-<h2 id="配置Darkmode"><a href="#配置Darkmode" class="headerlink" title="配置Darkmode"></a>配置Darkmode</h2><p>在next主题的配置文件中，我们可以找到darkmode配置，将其改为true就可以启用darkmode(但是不能进行切换，而是根据系统偏好，是否是夜间模式来判断 是否启用)。但是我想实现的效果就是别人进入我的博客网站就是默认darkmode，并且有切换开关给访客自由切换。看到不少大佬的解决方案，但是大多数都让我觉得不太满意，最后我找到一个完美的解决方案。这位大佬在自己的博客中已经很详细的说明了每一步的操作，我就不赘述了。具体参考<a href="https://wdx.cool/2021/05/05/Hexo-Next8-x%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%B7%B1%E8%89%B2%E6%A8%A1%E5%BC%8F/">大佬的博客</a>。我还是喜欢这个深色的模式，所以我没有给我的博客添加背景图片上去，但是上面的方法可行。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/darkmode.4n8lieq2unw0.png" alt="image"></p>
-<h2 id="移除post-link"><a href="#移除post-link" class="headerlink" title="移除post_link"></a>移除post_link</h2><p>我之前在我的博客文章页作者署名下一行发现有一行post_link，指向的仓库的文章源文件，但是我并不想那么做。所以，我需要移除这个选项，可以进行如下操作：</p>
-<p>在本地找到hemes\next\layout_partials\post\post-copyright.swig文件，将里面有关于post_link的&lt;li&gt;文件全部删除。这样，页面末尾就不会再出现post_link了。</p>
-<h2 id="让红心跳动"><a href="#让红心跳动" class="headerlink" title="让红心跳动"></a>让红心跳动</h2><p>如果想要站底的红心跳动起来，我们只需要在主题配置文件中找到footer的icon，将其中的animated变为true即可。</p>
-<h2 id="指定博客源文件的URL"><a href="#指定博客源文件的URL" class="headerlink" title="指定博客源文件的URL"></a>指定博客源文件的URL</h2><p>关于很多人出现过自己博客没有加载CSS文件的问题，其实根据报错基本都能够找到具体问题出在哪里。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/hexo%E6%A0%B7%E5%BC%8F.5ldq1x1vh080.jpg" alt="image"></p>
-<p>但是对于博客的源文件地址没有指定正确的话，你是看不到任何的报错的，出现的效果就是上面这样。所以你在指定自己的博客源文件地址的时候一定要正确填写格式，要不然你可以选择不填写地址。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/url.60v4mg14sqg0.png" alt="image"></p>
-<p>这个问题之前困扰了我很久，后来自己慢慢的才找到思路。</p>
-<hr>
-<h2 id="说在最后"><a href="#说在最后" class="headerlink" title="说在最后"></a>说在最后</h2><p>关于hexo的主题配置问题应该到这里就差不多告一段落了。自己其实看到有不少hexo布置的很漂亮，有些还添加了一个看板娘的，其实我开始的时候也想搞一个蕾姆模型的看板娘，但是考虑到资源加载，占用和博客访问速度问题，想想还是算了。对于我来说，博客资源的加载速度是优先级更高的，我自然就会舍弃那些动态背景和看板娘之类的，甚至连背景图片我也不想搞。这一切都只是锦上添花，没有加载速度，一切对于我来说没有意义。我觉得GitHub这个平台很不错，所以也没有自己购买域名的想法，况且我还没有对自己的博客进行SEO配置，也就没那个必要。</p>
-<p>参考文章:</p>
-<p>1.<a href="https://github.com/theme-next/hexo-theme-next/issues/973">how to change blog backgroud</a></p>
-<p>2.<a href="https://wdx.cool/2021/05/05/Hexo-Next8-x%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%B7%B1%E8%89%B2%E6%A8%A1%E5%BC%8F/">Hexo_Next8.x主题添加深色模式</a></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>主题</tag>
-        <tag>教程</tag>
-        <tag>文字博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客相关配置（2）</title>
-    <url>/2021/06/29/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%EF%BC%882%EF%BC%89/</url>
-    <content><![CDATA[<p>hexo博客主题配置过程中不仅有不少的踩坑问题，还比较的琐碎，需要不少的耐心。</p>
-<h3 id="1-主题的标签，分类，关于页面的生成"><a href="#1-主题的标签，分类，关于页面的生成" class="headerlink" title="1.主题的标签，分类，关于页面的生成"></a>1.主题的标签，分类，关于页面的生成</h3><p>其实这一部分在next主题配置中还算简单的，也没有什么坑，主要是说说如何生成这些页面以及修改相关内容。</p>
-<ul>
-<li><p>标签页</p>
-<p>想要生成标签页，我们首先需要在博客的根目录（例如我将整个博客放在D:\BigDataTools\hexo下，那么hexo文件下就是我的博客根目录）在当下目录输入</p>
-<p><code>hexo new page tags</code></p>
-<p>之后就会在hexo/source下生成相对应的文件夹和index文件，我们对其进行修改：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: all tags</span><br><span class="line">date: xxxx-xx-xx</span><br><span class="line">type: tags</span><br></pre></td></tr></table></figure></li>
-<li><p>分类页</p>
-<p>同样，我们在博客的根目录下输入</p>
-<p><code>hexo new page  categories</code></p>
-<span id="more"></span>
-
-<p>对index文件进行如下修改：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: all categories</span><br><span class="line">date:  xxxx-xx-xx</span><br><span class="line">type: categories</span><br></pre></td></tr></table></figure></li>
-<li><p>关于页</p>
-<p>在博客的根目录下输入</p>
-<p><code>hexo new page about</code></p>
-<p>对其中的index文件进行如下编辑：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 关于</span><br><span class="line">date:</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">正文内容</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>然后找到主题的配置文件（hexo/themes/主题名/_config.yml)中的menu，将tags,categories,about对应前面的注释去掉即可。我们可以顺便将主题配置文件中tags_icon设置为true,这样你的博客标签将会以图标的方式展现出来而不再是#。</p>
-<h3 id="2-添加社交方式"><a href="#2-添加社交方式" class="headerlink" title="2.添加社交方式"></a>2.添加社交方式</h3><p>其实主题中会内置一些社交的方式，我们只需要在主题配置文件中打开就可以（我以next主题为例）。我们首先来到主题配置文件中，找到social<img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/social.501i9rss0r40.png" alt="image"></p>
-<p>将我们需要的打开，把后面的联系地址填上去就可以了。当然，也许这上面提供的联系方式不能满足你的要求，那么你可以自定义添加自己想要的联系方式。在这个<a href="https://fontawesome.com/v5.15/icons?d=gallery&p=2">图标网站</a>上你不需要复制链接，也不需要下载图标，你只需要在这个网站上找到对应联系方式的图标，确认没有错误就可以。然后我们回到配置文件中，添加自定义的联系方式（需要注意书写的格式）。网站只是帮助你确认联系方式的图标。</p>
-<h3 id="3-博客文章置顶"><a href="#3-博客文章置顶" class="headerlink" title="3.博客文章置顶"></a>3.博客文章置顶</h3><p>比如说我想让进入这个网站的朋友最先看到的就是如何搭建hexo博客的文章，那么文章置顶对于我来说就很有必要的了。我们需要进行如下操作</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save(卸载原来的插件)</span><br><span class="line">npm install hexo-generator-index-pin-top --save(安装置顶插件)</span><br></pre></td></tr></table></figure>
-
-<p>设置置顶标志：</p>
-<p>进入/theme/主题名/layout/_macro/post.swig，找到</p>
-<p><code>&lt;div class = &#39;post-meta&#39;&gt;</code>下面插入代码</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% if post.top %&#125;</span><br><span class="line"><span class="code">    &lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt;</span></span><br><span class="line"><span class="code">    &lt;font color=&quot;RED&quot;&gt;置顶&lt;/font&gt; (置顶文字的颜色可以自行修改)</span></span><br><span class="line"><span class="code">    &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span></span><br><span class="line"><span class="code">&#123;% endif %&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>之后，我们只需要在编写一篇新的博客的时候在元数据中加入<code>top: true</code>就可以了。</p>
-<p>PS：参考博客：<a href="https://juejin.cn/post/6844904037465194503">hexo next主题设置文章置顶</a></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>主题</tag>
-        <tag>教程</tag>
-        <tag>文字博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何快速搭建一个hexo博客</title>
     <url>/2021/06/24/How-to-build-your-hexo-blog/</url>
     <content><![CDATA[<p>hexo博客是一个Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。我将在这里说说自己是如何搭建hexo博客的。</p>
@@ -196,6 +65,111 @@
       </tags>
   </entry>
   <entry>
+    <title>如何挑选博客框架、在线博客平台</title>
+    <url>/2021/07/01/how-to-choose-a-blog/</url>
+    <content><![CDATA[<p>在现在这个信息发达的时代，越来越多非程序员出身的人也想要一个自己的博客。目前也诞生了不少的在线博客网站和博客框架，博客大致分为主要分为动态博客和静态博客两大类。其实关于动态博客和静态博客的选择问题，这个问题的看法还是见仁见智。我在这里简单说说两种博客之间的优劣，以及一些比较友好的在线博客网站。</p>
+<span id="more"></span>
+
+<h2 id="动态博客"><a href="#动态博客" class="headerlink" title="动态博客"></a>动态博客</h2><p>动态博客，一个运行在服务器上的博客程序，一般提供一个在线的编辑器供使用者在线编写，多数都需要使用PHP+数据库。</p>
+<h4 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h4><p><a href="https://wordpress.org/">Wordpress</a>:十分有名的动态博客框架，几乎有涵盖所有功能的插件，搭建自己的动态博客的首选，全球已经有40%的网站使用wordpress驱动。</p>
+<p><a href="http://typecho.org/">Typecho</a>:这是在功能性可以和Wordpress相媲美的博客框架，但是他的程序本体要比后者更加简洁。</p>
+<p><a href="https://www.wix.com/">Wix</a>这是一款以色列的一站式网站创建服务博客框架，不需要了解DNS对应、网页编程语言、服务器创建/租赁等事务，一切都由 Wix 自动化处理，让用户能专心在网页视觉与内容呈现上，更可以调整手机版的设计及版面。</p>
+<p><a href="https://halo.run/">Halo</a>:是一款基于Java语言，使用Spring Boot开发的博客系统，致力于打造最好的 Java 博客系统，比较容易上手。</p>
+<h4 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h4><blockquote>
+<p>1.在线编写比较友好，不需要掌握过多的代码知识。<br>2.插件数量多，元素丰富。<br>3.响应式网页，交互性比较良好。<br>4.不显示后端处理过程，有利于保护自己的源代码</p>
+</blockquote>
+<h4 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h4><blockquote>
+<p>1.由于使用了数据库和PHP等提高了性能，所以消耗的资源比较多。<br>2.后端部署较为繁琐，需要日常维护<br>3.可免费托管的平台较少<br>4.相较于静态博客，动态博客更加容易受到攻击和崩溃。</p>
+</blockquote>
+<hr>
+<h2 id="静态博客"><a href="#静态博客" class="headerlink" title="静态博客"></a>静态博客</h2><p>所谓静态博客，即通过生成工具（eg： Hexo ； Hugo 等），直接将作者所书写的博文编译成最终的 html；css；js 等静态文件。作者/博主，只需将生成的文件部署在静态 server 上面即可被在互联网中访问。 用户通过浏览器访问服务器，直接就回获得已编译的静态资源。比如你现在看到的博客就是基于Hexo博客框架部署的静态博客。</p>
+<h4 id="推荐-1"><a href="#推荐-1" class="headerlink" title="推荐"></a>推荐</h4><p><a href="https://gridea.dev/">Gridea</a>:Gridea 是一个静态博客写作客户端，帮助你更容易地构建并管理博客或任何静态站点。不过作者对于该项目的维护不那么积极，估计是要放弃了。</p>
+<p><a href="https://jekyllrb.com/">Jekyll</a>:Jekyll 是一个简单的博客形态的静态站点生产机器，是GitHub官方推荐部署到GitHub Pages的博客框架，可谓是亲儿子。</p>
+<p><a href="https://hexo.io/zh-cn/">Hexo</a>:Hexo 是一个基于Node.js的快速、简洁且高效的静态博客框架。Hexo 支持Markdown解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<p><a href="https://www.gohugo.org/">Hugo</a>:Hugo是一种用Go语言编写的快速，现代的静态网站生成器，简单、易用、高效、易扩展、快速部署。</p>
+<h4 id="优势-1"><a href="#优势-1" class="headerlink" title="优势"></a>优势</h4><blockquote>
+<p>1.没有过多的元素，专注于内容写作。<br>2.主题大多都比较简约。<br>3.无其他干扰（主要体现在广告比较少）<br>4.占用的资源较少，访问速度快，可免费部署的网站多。<br>5.可高度定制化，可以自写逻辑，插件等。</p>
+</blockquote>
+<h4 id="不足-1"><a href="#不足-1" class="headerlink" title="不足"></a>不足</h4><blockquote>
+<p>1.需要一定的编程经验才能自定义样式。<br>2.插件数量较少。<br>3.缺少评论插件，交互式内容比较难以实现。<br>4.数学公式的支持不是很好，技术资料极少而多为英语资料，门槛较高。</p>
+</blockquote>
+<hr>
+<h2 id="在线平台"><a href="#在线平台" class="headerlink" title="在线平台"></a>在线平台</h2><p>除了上面利用博客框架搭建自己的博客之外，我们也可以寻找一个适合自己的在线平台来写作博客。</p>
+<h4 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a><a href="https://www.blogger.com/about/?bpli=1">Blogger</a></h4><p>Blogger提供免费主机Blogspot.com存放博客，用户不必写任何代码或者安装服务器软件或脚本，透过所见即所得界面轻松地创建、发布、维护和修改自己的网志。允许用户自定义自己的域名（但是后面需接.blogspot.com）。具有较为成熟的中文博客书写和发布功能，使用起来较为简单轻松，内置许多的主题模板，自定义程度较高。</p>
+<h4 id="不足-2"><a href="#不足-2" class="headerlink" title="不足"></a>不足</h4><p>.blogspot.com域名被GFW所屏蔽，内陆地区用户访问较为困难，需要使用科学上网手段。</p>
+<h4 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a><a href="https://github.com/">GitHub</a></h4><p>GitHub是当今世界上最流行，最大的代码托管网站和开源社区。如果你不想用GitHub Pages网页托管博客，那么你可以选择使用GitHub issues直接在GitHub上写自己的博客。只需要简单新建一个仓库，勾选添加issues，可以愉快的在GitHub issues上利用Markdown语法进行书写。不需要你掌握任何的代码能力，只需要简单掌握Markdown语法即可，支持本地内容预览，可以通过给issues加上不同的标签来进行分类。</p>
+<h4 id="不足-3"><a href="#不足-3" class="headerlink" title="不足"></a>不足</h4><p>GFM（GitHub Flavored Markdown）语法对于在GitHub issues中编写中文的时候易出现标红，影响写作体验。对于HTML标签元素支持不够多。</p>
+<h4 id="Notion"><a href="#Notion" class="headerlink" title="Notion"></a><a href="https://www.notion.so/">Notion</a></h4><p>Notion是一款提供笔记、任务、数据库、看板、维基、日历和提醒等组件的应用程序。用户可以将这些组件连接起来，来创建自己的系统，用于知识管理、笔记记录、数据管理、项目管理等，可以进行跨平台使用。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/notion.5xa5276cpmo0.png" alt="image"></p>
+<h4 id="不足-4"><a href="#不足-4" class="headerlink" title="不足"></a>不足</h4><p>要想把Notion作为公开页面，需要一定的配置操作，Notion官方目前还没有提供自定义域名的服务（承诺日后提供），但是我们可以通过自己来进行实现公开页面的功能，以此来达到实现个人网站页面的效果。相关配置——<a href="https://sspai.com/post/58441">如何为Notion公开页面自定义域名</a></p>
+<p>像Notion这类在线笔记服务其实有很多种，我很难一一列举，每个人的喜好也不完全相同，只要能实现个人网站效果就可以。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>1.文中的博客框架我也没有办法亲自一一搭建体验，所以这只是一个参考方向，更何况每个人对于博客什么要求，自己什么需求，只有自己最清楚。</p>
+<p>2.动态博客和静态博客各自的优缺点都很明显，按需，按能力选择就好。</p>
+<p>3.无论你是使用自建博客，还是在线网站，亦或者是笔记服务，重要的是你有坚持写博客的毅力。平台重要，但不是最重要的因素。</p>
+<hr>
+<p>参考文章:</p>
+<p>1.<a href="https://blog.csdn.net/weixin_42365530/article/details/107840934">七大开源blog框架介绍</a></p>
+<p>2.<a href="https://zhuanlan.zhihu.com/p/164959395">静态博客是什么？常用的静态博客程序有哪些？静态博客的优缺点！</a></p>
+]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>文字博客</tag>
+        <tag>分享</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客相关配置(3)</title>
+    <url>/2021/06/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE-3/</url>
+    <content><![CDATA[<p>自己这两天在对hexo博客进行相关主题配置中，发现网上的一些博客教程要么过了”保质期”,要么不够严谨。本来想避免踩坑的，结果被带到坑里面去了。为了避免以后再一头乱撞，先把最近伤脑筋的配置环节记录下来。</p>
+<h2 id="添加背景图片"><a href="#添加背景图片" class="headerlink" title="添加背景图片"></a>添加背景图片</h2><p>当我想给自己的博客添加一张图片作为背景时，我看到网上大多数别人搭建博客的教程/笔记都是说让你去hexo\themes\主题名\source\css寻找一个_custom文件夹下面的styles.styl文件，然后添加修改文件，最后到主题的配置文件中找custom的相关配置，将/source/css_custom前面的注释去掉。我看到的大多数都是如此，刚开始的时候，我也是照着这样的方式来，但是很快我发现事情并非如此。</p>
+<span id="more"></span>
+
+<p>其实，这个next主题，GitHub上面有两个仓库</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/next.lxw6xs00akw.png" alt="next"></p>
+<p>上面一个仓库现在已经停止维护了，下面一个仓库是目前在维护和发展的仓库，也是版本比较新的仓库。所以这就导致同样是next主题，但是在一些配置方面，新老版本的方法不一样，添加背景图片就是如此。如果你想从next V5迁移到next V7+,那么就参考这篇<a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md">官方文档</a>，话不多说，下面开始操作。</p>
+<p>首先，我们先去博客根目录下的source下新建一个_data文件夹以及一个styles.styl文件。接着将自己想要作为背景的图片放入themes/next/source/images里面，然后我们回到之前新建的styles.styl文件中，添加如下代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">// 添加背景图片</span><br><span class="line">body &#123;</span><br><span class="line">  background: url(/images/xxx.jpg);  //这里引入之前放在images中的图片名，也可以引入外链接</span><br><span class="line">  background-size: cover;</span><br><span class="line">  background-repeat: no-repeat;</span><br><span class="line">  background-attachment: fixed;</span><br><span class="line">  background-position: 50% 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 修改主体透明度</span><br><span class="line">.main-inner &#123;</span><br><span class="line">  background: #fff;</span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 修改菜单栏透明度</span><br><span class="line">.header-inner &#123;</span><br><span class="line">  opacity: 1.2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>透明度可以根据自己的喜好进行修改。之后，我们在主题的配置文件中找到custom_file_path，将下面style前面的#去掉即可。这样，博客的背景图片就添加完成了。</p>
+<h2 id="对代码和超链接进行凸显"><a href="#对代码和超链接进行凸显" class="headerlink" title="对代码和超链接进行凸显"></a>对代码和超链接进行凸显</h2><p>在代码块的配置中，我们可以在主题配置文件中找到codelock</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/codelock.1u0jjztu5gps.png" alt="codelock"></p>
+<p>对其中的highlight_theme,style可以自行选择想要的样式。</p>
+<p>对于代码行，我们可以通过添加css文件来进行高亮显示，我们可以在上面的styles.styl文件中添加以下代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">// Custom styles.</span><br><span class="line">code &#123;</span><br><span class="line"><span class="code">    color: #ff7600;</span></span><br><span class="line"><span class="code">    background: #fbf7f8;</span></span><br><span class="line"><span class="code">    margin: 2px;</span></span><br><span class="line"><span class="code">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>颜色可以根据自己的喜好来进行设置。而对于超链接，我们可以在themes\next\source\css\_common\components\post\post.styl中添加如下代码：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">.post-body p a &#123;</span><br><span class="line">  color: #0593d3;</span><br><span class="line">  border-bottom: none;</span><br><span class="line">  border-bottom: 1px solid #0593d3;</span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line"><span class="code">    color: #fc6423;</span></span><br><span class="line"><span class="code">    border-bottom: none;</span></span><br><span class="line"><span class="code">    border-bottom: 1px solid #fc6423;</span></span><br><span class="line"><span class="code">  &#125;</span></span><br><span class="line"><span class="code">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>颜色可以根据自己的喜好进行更改。通过这样的设置，我们文章中的超链接就会变得更加的显眼。</p>
+<h2 id="配置Darkmode"><a href="#配置Darkmode" class="headerlink" title="配置Darkmode"></a>配置Darkmode</h2><p>在next主题的配置文件中，我们可以找到darkmode配置，将其改为true就可以启用darkmode(但是不能进行切换，而是根据系统偏好，是否是夜间模式来判断 是否启用)。但是我想实现的效果就是别人进入我的博客网站就是默认darkmode，并且有切换开关给访客自由切换。看到不少大佬的解决方案，但是大多数都让我觉得不太满意，最后我找到一个完美的解决方案。这位大佬在自己的博客中已经很详细的说明了每一步的操作，我就不赘述了。具体参考<a href="https://wdx.cool/2021/05/05/Hexo-Next8-x%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%B7%B1%E8%89%B2%E6%A8%A1%E5%BC%8F/">大佬的博客</a>。我还是喜欢这个深色的模式，所以我没有给我的博客添加背景图片上去，但是上面的方法可行。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/darkmode.4n8lieq2unw0.png" alt="image"></p>
+<h2 id="移除post-link"><a href="#移除post-link" class="headerlink" title="移除post_link"></a>移除post_link</h2><p>我之前在我的博客文章页作者署名下一行发现有一行post_link，指向的仓库的文章源文件，但是我并不想那么做。所以，我需要移除这个选项，可以进行如下操作：</p>
+<p>在本地找到hemes\next\layout_partials\post\post-copyright.swig文件，将里面有关于post_link的&lt;li&gt;文件全部删除。这样，页面末尾就不会再出现post_link了。</p>
+<h2 id="让红心跳动"><a href="#让红心跳动" class="headerlink" title="让红心跳动"></a>让红心跳动</h2><p>如果想要站底的红心跳动起来，我们只需要在主题配置文件中找到footer的icon，将其中的animated变为true即可。</p>
+<h2 id="指定博客源文件的URL"><a href="#指定博客源文件的URL" class="headerlink" title="指定博客源文件的URL"></a>指定博客源文件的URL</h2><p>关于很多人出现过自己博客没有加载CSS文件的问题，其实根据报错基本都能够找到具体问题出在哪里。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/hexo%E6%A0%B7%E5%BC%8F.5ldq1x1vh080.jpg" alt="image"></p>
+<p>但是对于博客的源文件地址没有指定正确的话，你是看不到任何的报错的，出现的效果就是上面这样。所以你在指定自己的博客源文件地址的时候一定要正确填写格式，要不然你可以选择不填写地址。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/url.60v4mg14sqg0.png" alt="image"></p>
+<p>这个问题之前困扰了我很久，后来自己慢慢的才找到思路。</p>
+<hr>
+<h2 id="说在最后"><a href="#说在最后" class="headerlink" title="说在最后"></a>说在最后</h2><p>关于hexo的主题配置问题应该到这里就差不多告一段落了。自己其实看到有不少hexo布置的很漂亮，有些还添加了一个看板娘的，其实我开始的时候也想搞一个蕾姆模型的看板娘，但是考虑到资源加载，占用和博客访问速度问题，想想还是算了。对于我来说，博客资源的加载速度是优先级更高的，我自然就会舍弃那些动态背景和看板娘之类的，甚至连背景图片我也不想搞。这一切都只是锦上添花，没有加载速度，一切对于我来说没有意义。我觉得GitHub这个平台很不错，所以也没有自己购买域名的想法，况且我还没有对自己的博客进行SEO配置，也就没那个必要。</p>
+<p>参考文章:</p>
+<p>1.<a href="https://github.com/theme-next/hexo-theme-next/issues/973">how to change blog backgroud</a></p>
+<p>2.<a href="https://wdx.cool/2021/05/05/Hexo-Next8-x%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%B7%B1%E8%89%B2%E6%A8%A1%E5%BC%8F/">Hexo_Next8.x主题添加深色模式</a></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>主题</tag>
+        <tag>教程</tag>
+        <tag>文字博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>免费激活Windows和office</title>
     <url>/2021/06/29/how-to-activate-your-Windows-and-office/</url>
     <content><![CDATA[<p>Windows系统和office办公软件都是我们现在学习，工作中很难离开的工具。由于各种各样的原因，可能有些人会出现Windows未被激活，office产品密钥过期等情况。所以，在这里列举一下如何免费的激活Windows和office。</p>
@@ -247,51 +221,85 @@
       </tags>
   </entry>
   <entry>
-    <title>如何挑选博客框架、在线博客平台</title>
-    <url>/2021/07/01/how-to-choose-a-blog/</url>
-    <content><![CDATA[<p>在现在这个信息发达的时代，越来越多非程序员出身的人也想要一个自己的博客。目前也诞生了不少的在线博客网站和博客框架，博客大致分为主要分为动态博客和静态博客两大类。其实关于动态博客和静态博客的选择问题，这个问题的看法还是见仁见智。我在这里简单说说两种博客之间的优劣，以及一些比较友好的在线博客网站。</p>
+    <title>hexo博客相关配置（2）</title>
+    <url>/2021/06/29/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%EF%BC%882%EF%BC%89/</url>
+    <content><![CDATA[<p>hexo博客主题配置过程中不仅有不少的踩坑问题，还比较的琐碎，需要不少的耐心。</p>
+<h3 id="1-主题的标签，分类，关于页面的生成"><a href="#1-主题的标签，分类，关于页面的生成" class="headerlink" title="1.主题的标签，分类，关于页面的生成"></a>1.主题的标签，分类，关于页面的生成</h3><p>其实这一部分在next主题配置中还算简单的，也没有什么坑，主要是说说如何生成这些页面以及修改相关内容。</p>
+<ul>
+<li><p>标签页</p>
+<p>想要生成标签页，我们首先需要在博客的根目录（例如我将整个博客放在D:\BigDataTools\hexo下，那么hexo文件下就是我的博客根目录）在当下目录输入</p>
+<p><code>hexo new page tags</code></p>
+<p>之后就会在hexo/source下生成相对应的文件夹和index文件，我们对其进行修改：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: all tags</span><br><span class="line">date: xxxx-xx-xx</span><br><span class="line">type: tags</span><br></pre></td></tr></table></figure></li>
+<li><p>分类页</p>
+<p>同样，我们在博客的根目录下输入</p>
+<p><code>hexo new page  categories</code></p>
 <span id="more"></span>
 
-<h2 id="动态博客"><a href="#动态博客" class="headerlink" title="动态博客"></a>动态博客</h2><p>动态博客，一个运行在服务器上的博客程序，一般提供一个在线的编辑器供使用者在线编写，多数都需要使用PHP+数据库。</p>
-<h4 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h4><p><a href="https://wordpress.org/">Wordpress</a>:十分有名的动态博客框架，几乎有涵盖所有功能的插件，搭建自己的动态博客的首选，全球已经有40%的网站使用wordpress驱动。</p>
-<p><a href="http://typecho.org/">Typecho</a>:这是在功能性可以和Wordpress相媲美的博客框架，但是他的程序本体要比后者更加简洁。</p>
-<p><a href="https://www.wix.com/">Wix</a>这是一款以色列的一站式网站创建服务博客框架，不需要了解DNS对应、网页编程语言、服务器创建/租赁等事务，一切都由 Wix 自动化处理，让用户能专心在网页视觉与内容呈现上，更可以调整手机版的设计及版面。</p>
-<p><a href="https://halo.run/">Halo</a>:是一款基于Java语言，使用Spring Boot开发的博客系统，致力于打造最好的 Java 博客系统，比较容易上手。</p>
-<h4 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h4><p>1.在线编写比较友好，不需要掌握过多的代码知识。<br>2.插件数量多，元素丰富。<br>3.响应式网页，交互性比较良好。<br>4.不显示后端处理过程，有利于保护自己的源代码</p>
-<h4 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h4><p>1.由于使用了数据库和PHP等提高了性能，所以消耗的资源比较多。<br>2.后端部署较为繁琐，需要日常维护<br>3.可免费托管的平台较少<br>4.相较于静态博客，动态博客更加容易受到攻击和崩溃。</p>
-<hr>
-<h2 id="静态博客"><a href="#静态博客" class="headerlink" title="静态博客"></a>静态博客</h2><p>所谓静态博客，即通过生成工具（eg： Hexo ； Hugo 等），直接将作者所书写的博文编译成最终的 html；css；js 等静态文件。作者/博主，只需将生成的文件部署在静态 server 上面即可被在互联网中访问。 用户通过浏览器访问服务器，直接就回获得已编译的静态资源。比如你现在看到的博客就是基于Hexo博客框架部署的静态博客。</p>
-<h4 id="推荐-1"><a href="#推荐-1" class="headerlink" title="推荐"></a>推荐</h4><p><a href="https://gridea.dev/">Gridea</a>:Gridea 是一个静态博客写作客户端，帮助你更容易地构建并管理博客或任何静态站点。不过作者对于该项目的维护不那么积极，估计是要放弃了。</p>
-<p><a href="https://jekyllrb.com/">Jekyll</a>:Jekyll 是一个简单的博客形态的静态站点生产机器，是GitHub官方推荐部署到GitHub Pages的博客框架，可谓是亲儿子。</p>
-<p><a href="https://hexo.io/zh-cn/">Hexo</a>:Hexo 是一个基于Node.js的快速、简洁且高效的静态博客框架。Hexo 支持Markdown解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<p><a href="https://www.gohugo.org/">Hugo</a>:Hugo是一种用Go语言编写的快速，现代的静态网站生成器，简单、易用、高效、易扩展、快速部署。</p>
-<h4 id="优势-1"><a href="#优势-1" class="headerlink" title="优势"></a>优势</h4><p>1.没有过多的元素，专注于内容写作。<br>2.主题大多都比较简约。<br>3.无其他干扰（主要体现在广告比较少）<br>4.占用的资源较少，访问速度快，可免费部署的网站多。<br>5.可高度定制化，可以自写逻辑，插件等。</p>
-<h4 id="不足-1"><a href="#不足-1" class="headerlink" title="不足"></a>不足</h4><p>1.需要一定的编程经验才能自定义样式。<br>2.插件数量较少。<br>3.缺少评论插件，交互式内容比较难以实现。<br>4.数学公式的支持不是很好，技术资料极少而多为英语资料，门槛较高。</p>
-<hr>
-<h2 id="在线平台"><a href="#在线平台" class="headerlink" title="在线平台"></a>在线平台</h2><p>除了上面利用博客框架搭建自己的博客之外，我们也可以寻找一个适合自己的在线平台来写作博客。</p>
-<h4 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a><a href="https://www.blogger.com/about/?bpli=1">Blogger</a></h4><p>Blogger提供免费主机Blogspot.com存放博客，用户不必写任何代码或者安装服务器软件或脚本，透过所见即所得界面轻松地创建、发布、维护和修改自己的网志。允许用户自定义自己的域名（但是后面需接.blogspot.com）。具有较为成熟的中文博客书写和发布功能，使用起来较为简单轻松，内置许多的主题模板，自定义程度较高。</p>
-<h4 id="不足-2"><a href="#不足-2" class="headerlink" title="不足"></a>不足</h4><p>.blogspot.com域名被GFW所屏蔽，内陆地区用户访问较为困难，需要使用科学上网手段。</p>
-<h4 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a><a href="https://github.com/">GitHub</a></h4><p>GitHub是当今世界上最流行，最大的代码托管网站和开源社区。如果你不想用GitHub Pages网页托管博客，那么你可以选择使用GitHub issues直接在GitHub上写自己的博客。只需要简单新建一个仓库，勾选添加issues，可以愉快的在GitHub issues上利用Markdown语法进行书写。不需要你掌握任何的代码能力，只需要简单掌握Markdown语法即可，支持本地内容预览，可以通过给issues加上不同的标签来进行分类。</p>
-<h4 id="不足-3"><a href="#不足-3" class="headerlink" title="不足"></a>不足</h4><p>GFM（GitHub Flavored Markdown）语法对于在GitHub issues中编写中文的时候易出现标红，影响写作体验。对于HTML标签元素支持不够多。</p>
-<h4 id="Notion"><a href="#Notion" class="headerlink" title="Notion"></a><a href="https://www.notion.so/">Notion</a></h4><p>Notion是一款提供笔记、任务、数据库、看板、维基、日历和提醒等组件的应用程序。用户可以将这些组件连接起来，来创建自己的系统，用于知识管理、笔记记录、数据管理、项目管理等，可以进行跨平台使用。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/notion.5xa5276cpmo0.png" alt="image"></p>
-<h4 id="不足-4"><a href="#不足-4" class="headerlink" title="不足"></a>不足</h4><p>要想把Notion作为公开页面，需要一定的配置操作，Notion官方目前还没有提供自定义域名的服务（承诺日后提供），但是我们可以通过自己来进行实现公开页面的功能，以此来达到实现个人网站页面的效果。相关配置——<a href="https://sspai.com/post/58441">如何为Notion公开页面自定义域名</a></p>
-<p>像Notion这类在线笔记服务其实有很多种，我很难一一列举，每个人的喜好也不完全相同，只要能实现个人网站效果就可以。</p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>1.文中的博客框架我也没有办法亲自一一搭建体验，所以这只是一个参考方向，更何况每个人对于博客什么要求，自己什么需求，只有自己最清楚。</p>
-<p>2.动态博客和静态博客各自的优缺点都很明显，按需，按能力选择就好。</p>
-<p>3.无论你是使用自建博客，还是在线网站，亦或者是笔记服务，重要的是你有坚持写博客的毅力。平台重要，但不是最重要的因素。</p>
-<hr>
-<p>参考文章:</p>
-<p>1.<a href="https://blog.csdn.net/weixin_42365530/article/details/107840934">七大开源blog框架介绍</a></p>
-<p>2.<a href="https://zhuanlan.zhihu.com/p/164959395">静态博客是什么？常用的静态博客程序有哪些？静态博客的优缺点！</a></p>
+<p>对index文件进行如下修改：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: all categories</span><br><span class="line">date:  xxxx-xx-xx</span><br><span class="line">type: categories</span><br></pre></td></tr></table></figure></li>
+<li><p>关于页</p>
+<p>在博客的根目录下输入</p>
+<p><code>hexo new page about</code></p>
+<p>对其中的index文件进行如下编辑：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 关于</span><br><span class="line">date:</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">正文内容</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>然后找到主题的配置文件（hexo/themes/主题名/_config.yml)中的menu，将tags,categories,about对应前面的注释去掉即可。我们可以顺便将主题配置文件中tags_icon设置为true,这样你的博客标签将会以图标的方式展现出来而不再是#。</p>
+<h3 id="2-添加社交方式"><a href="#2-添加社交方式" class="headerlink" title="2.添加社交方式"></a>2.添加社交方式</h3><p>其实主题中会内置一些社交的方式，我们只需要在主题配置文件中打开就可以（我以next主题为例）。我们首先来到主题配置文件中，找到social<img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/social.501i9rss0r40.png" alt="image"></p>
+<p>将我们需要的打开，把后面的联系地址填上去就可以了。当然，也许这上面提供的联系方式不能满足你的要求，那么你可以自定义添加自己想要的联系方式。在这个<a href="https://fontawesome.com/v5.15/icons?d=gallery&p=2">图标网站</a>上你不需要复制链接，也不需要下载图标，你只需要在这个网站上找到对应联系方式的图标，确认没有错误就可以。然后我们回到配置文件中，添加自定义的联系方式（需要注意书写的格式）。网站只是帮助你确认联系方式的图标。</p>
+<h3 id="3-博客文章置顶"><a href="#3-博客文章置顶" class="headerlink" title="3.博客文章置顶"></a>3.博客文章置顶</h3><p>比如说我想让进入这个网站的朋友最先看到的就是如何搭建hexo博客的文章，那么文章置顶对于我来说就很有必要的了。我们需要进行如下操作</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save(卸载原来的插件)</span><br><span class="line">npm install hexo-generator-index-pin-top --save(安装置顶插件)</span><br></pre></td></tr></table></figure>
+
+<p>设置置顶标志：</p>
+<p>进入/theme/主题名/layout/_macro/post.swig，找到</p>
+<p><code>&lt;div class = &#39;post-meta&#39;&gt;</code>下面插入代码</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% if post.top %&#125;</span><br><span class="line"><span class="code">    &lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt;</span></span><br><span class="line"><span class="code">    &lt;font color=&quot;RED&quot;&gt;置顶&lt;/font&gt; (置顶文字的颜色可以自行修改)</span></span><br><span class="line"><span class="code">    &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span></span><br><span class="line"><span class="code">&#123;% endif %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>之后，我们只需要在编写一篇新的博客的时候在元数据中加入<code>top: true</code>就可以了。</p>
+<p>PS：参考博客：<a href="https://juejin.cn/post/6844904037465194503">hexo next主题设置文章置顶</a></p>
 ]]></content>
       <categories>
-        <category>分享</category>
+        <category>Hexo</category>
       </categories>
       <tags>
+        <tag>主题</tag>
+        <tag>教程</tag>
         <tag>文字博客</tag>
-        <tag>分享</tag>
-        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客相关配置（1）</title>
+    <url>/2021/06/26/hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>今天在对hexo进行主题美化配置的过程中我发现了不少的问题。所以特地在这里列举一下问题以及相关的注意事项。可能一次性很难说完说全，因为我自己也是刚使用hexo博客不久（之前自己投入的是hugo的怀抱），所以有关于hexo博客的配置和注意事项我应该会写一个系列。而且我怕一篇文章太长，没有耐心看下去，所以还是选择少量多次的好。</p>
+<h3 id="1-hexo-symbols-count-time下载报错"><a href="#1-hexo-symbols-count-time下载报错" class="headerlink" title="1.hexo-symbols-count-time下载报错"></a>1.hexo-symbols-count-time下载报错</h3><p>今天我想给自己的hexo博客上添加字数统计和阅读时间估计（我看到许多的hexo博客都使用了这个插件，而且自己也觉得很不错）。但是当我在终端输入</p>
+<p><code>npm install hexo-symbols-count-time --save</code></p>
+<p>时（npm下载慢的朋友可以使用cnpm），我发现我当前版本的一些js文件版本过低，我需要更新版本。<img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1.3lz4gml615w0.png" alt="image"></p>
+<p>看到有人在issues中提交了和我一样问题的截图，有人给出的解答是先更新npm和node.js，于是我决定先将npm和node.js更新一下。输入以下代码：</p>
+<span id="more"></span>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">首先查看当前版本</span><br><span class="line">node -v</span><br><span class="line">node -v </span><br><span class="line">然后更新版本</span><br><span class="line">npm install -g npm</span><br><span class="line">注意：接下来的操作仅适合Mac和Linux用户</span><br><span class="line">npm cache clean -f # 清除缓存</span><br><span class="line">npm install -g n # 安装n模块，Windows系统目前无法使用n模块，所以无法完成后面的操作</span><br><span class="line">n stable # 升级node.js到最新稳定版本,r如果出现升级错误，在命令前面加上sudo</span><br></pre></td></tr></table></figure>
+
+<p>所以现在有一个问题，那么Windows用户该如何更新node.js呢。呃，这个嘛，可能需要重新安装一遍到原来的路径（<del>我也表示很无奈</del>)。当你完成两个地方的更新之后，你再去下载hexo-symbols-count-time这个插件。</p>
+<h3 id="2-配置插件"><a href="#2-配置插件" class="headerlink" title="2.配置插件"></a>2.配置插件</h3><p>这个配置插件也是有知识点滴。首先我们需要在站点配置上（也就是博客根目录下的_config.yml文件）添加配置内容，内容如下：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># count<span class="emphasis">_time (名字随意)</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  symbols_</span>count<span class="emphasis">_time:</span></span></span><br><span class="line"><span class="emphasis"><span class="section"> #文章内是否显示</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  symbols: true # 文章字数</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  time: true  # 阅读时长</span></span></span><br><span class="line"><span class="emphasis"><span class="section"> # 网页底部是否显示</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  total_</span>symbols: false # 所有文章总字数</span></span><br><span class="line">  total<span class="emphasis">_time: false  # 所有文章总时长</span></span><br><span class="line"><span class="emphasis">  exclude_</span>codeblock: false # 代码框内不计入字数</span><br></pre></td></tr></table></figure>
+
+<p>然后我们还需要在主题配置文件下进行修改（就是指themes-next-_config.yml文件），内容如下：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">symbols<span class="emphasis">_count_</span>time:</span><br><span class="line">  separated<span class="emphasis">_meta: true # 换行显示</span></span><br><span class="line"><span class="emphasis">  item_</span>text<span class="emphasis">_post: true # 是否显示说明文字</span></span><br><span class="line"><span class="emphasis">  item_</span>text<span class="emphasis">_total: false # 站底总字数统计，不显示</span></span><br><span class="line"><span class="emphasis">  awl: 5  # Average Word Length，也就是平均每个字所占字符长度，默认值为 4(中文占2个，英文单词占5个)</span></span><br><span class="line"><span class="emphasis">  wpm: 275  # Words Per Minute，也就是平均每分钟能读多少字，默认值为 275</span></span><br></pre></td></tr></table></figure>
+
+<p>如果你发现你的字数统计和时间估计显示的是Na这样的样式，说明你的awl配置有问题，需要进行修改。特别注意，如果你的默认hello-world.md文件没有删除的话，可能就会影响你的站底字数统计。</p>
+<h3 id="3-头像设置"><a href="#3-头像设置" class="headerlink" title="3.头像设置"></a>3.头像设置</h3><p>最后先说一个网站的头像设置问题，如果你想设置一个自己的头像的话，你只需要进行简单的设置就可以了。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># Sidebar Avatar</span></span><br><span class="line">avatar:</span><br><span class="line">  # Replace the default image and set the url here.</span><br><span class="line">  url: /images/xxx.jpg</span><br><span class="line">  # If true, the avatar will be dispalyed in circle.</span><br><span class="line">  rounded: true # 表示头像采用圆形框，默认为方形（false)。</span><br><span class="line">  # If true, the avatar will be rotated with the cursor.</span><br><span class="line">  rotated: true # 头像会随着鼠标的移动而旋转</span><br></pre></td></tr></table></figure>
+
+<p>顺便说一下，如果你想实现和我一样的文章内容只显示摘要而不显示全文的话，你只需要在自己Markdown工具上合适位置输入&lt;!—-more—-&gt;就可以了（这几个字符之间是没有任何的空格的）。</p>
+<p>PS：参考博客：<a href="https://zhuanlan.zhihu.com/p/75055816">Next网站配置——功能增添</a></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>主题</tag>
+        <tag>教程</tag>
+        <tag>文字博客</tag>
       </tags>
   </entry>
 </search>
