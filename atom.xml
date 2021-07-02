@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Asgisprogram&#39;s blog</title>
+  <title>Rem Blue</title>
   
-  <subtitle>有人住高楼，有人在深渊；有人光万丈，有人一身锈。世人千万种，浮云莫去求。斯人若彩虹，遇上方知有。</subtitle>
+  <subtitle>繁华三千异世界,只取一瓢真爱蓝。</subtitle>
   <link href="https://example.github.io/atom.xml" rel="self"/>
   
   <link href="https://example.github.io/"/>
@@ -59,11 +59,11 @@
     <category term="Hexo" scheme="https://example.github.io/categories/Hexo/"/>
     
     
-    <category term="主题" scheme="https://example.github.io/tags/%E4%B8%BB%E9%A2%98/"/>
-    
     <category term="教程" scheme="https://example.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="文字博客" scheme="https://example.github.io/tags/%E6%96%87%E5%AD%97%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="主题" scheme="https://example.github.io/tags/%E4%B8%BB%E9%A2%98/"/>
     
   </entry>
   
@@ -121,11 +121,11 @@
     <category term="Hexo" scheme="https://example.github.io/categories/Hexo/"/>
     
     
-    <category term="主题" scheme="https://example.github.io/tags/%E4%B8%BB%E9%A2%98/"/>
-    
     <category term="教程" scheme="https://example.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="文字博客" scheme="https://example.github.io/tags/%E6%96%87%E5%AD%97%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="主题" scheme="https://example.github.io/tags/%E4%B8%BB%E9%A2%98/"/>
     
   </entry>
   
@@ -150,11 +150,11 @@
     <category term="Hexo" scheme="https://example.github.io/categories/Hexo/"/>
     
     
-    <category term="主题" scheme="https://example.github.io/tags/%E4%B8%BB%E9%A2%98/"/>
-    
     <category term="教程" scheme="https://example.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="文字博客" scheme="https://example.github.io/tags/%E6%96%87%E5%AD%97%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="主题" scheme="https://example.github.io/tags/%E4%B8%BB%E9%A2%98/"/>
     
   </entry>
   
