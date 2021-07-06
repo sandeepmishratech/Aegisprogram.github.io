@@ -75,7 +75,7 @@
 <p>总而言之一句话，基于机器学习的搜索引擎。提供结果的同时还会列举出自己的学习来源。在国内来说值得一试。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/magi.242eccywj7wg.png" alt="image"></p>
 <h2 id="bing"><a href="#bing" class="headerlink" title="bing"></a>bing</h2><p>国内版/大陆国际版：<a href="https://cn.bing.com/">https://cn.bing.com</a></p>
-<p>原生bing：<a href="https://www,bing.com/">https://www,bing.com</a></p>
+<p>原生bing：<a href="https://www.bing.com/">https://www.bing.com</a></p>
 <p>相信你已经看出来了，是的，bing虽说有三个版本，但是上面两个版本是大陆的定制版，搜索页面下方是有公安备案的，海外原生bing是没有备案的，这是两者外观上很显著的差别。当大陆地区使用bing的时候，就会被强制重定向到cn.bing.com——也就是国内定制版bing。但是，虽说是大陆定制版，搜索的效率和结果比百度逊色不了多少，而且结果中广告更少。在国内不失为一个好用的搜索引擎。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/bing.72texs8qw440.png" alt="image"></p>
 <p>注意：下面的搜索引擎大多数国内都无法访问，如果点击链接没有打开页面，那就证明已经被GFW拦截了。</p>
@@ -297,9 +297,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
+        <tag>主题</tag>
         <tag>教程</tag>
         <tag>文字博客</tag>
-        <tag>主题</tag>
       </tags>
   </entry>
   <entry>
@@ -395,9 +395,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
+        <tag>主题</tag>
         <tag>教程</tag>
         <tag>文字博客</tag>
-        <tag>主题</tag>
       </tags>
   </entry>
   <entry>
@@ -430,9 +430,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
+        <tag>主题</tag>
         <tag>教程</tag>
         <tag>文字博客</tag>
-        <tag>主题</tag>
       </tags>
   </entry>
 </search>
