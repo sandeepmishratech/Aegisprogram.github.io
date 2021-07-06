@@ -76,7 +76,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/magi.242eccywj7wg.png" alt="image"></p>
 <h2 id="bing"><a href="#bing" class="headerlink" title="bing"></a>bing</h2><p>国内版/大陆国际版：<a href="https://cn.bing.com/">https://cn.bing.com</a></p>
 <p>原生bing：<a href="https://www,bing.com/">https://www,bing.com</a></p>
-<p>相信你已经看出来了，是的，bing虽说有三个版本，但是上面两个版本是大陆的定制版，搜索页面下方是有公安备案。的，海外原生bing是没有备案的，这是两者外观上很显著的差别。当大陆地区使用bing的时候，就会被强制重定向到cn.bing.com——也就是国内定制版bing。但是，虽说是大陆定制版，搜索的效率和结果比百度逊色不了多少，而且结果中广告更少。在国内不失为一个好用的搜索引擎。</p>
+<p>相信你已经看出来了，是的，bing虽说有三个版本，但是上面两个版本是大陆的定制版，搜索页面下方是有公安备案的，海外原生bing是没有备案的，这是两者外观上很显著的差别。当大陆地区使用bing的时候，就会被强制重定向到cn.bing.com——也就是国内定制版bing。但是，虽说是大陆定制版，搜索的效率和结果比百度逊色不了多少，而且结果中广告更少。在国内不失为一个好用的搜索引擎。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/bing.72texs8qw440.png" alt="image"></p>
 <p>注意：下面的搜索引擎大多数国内都无法访问，如果点击链接没有打开页面，那就证明已经被GFW拦截了。</p>
 <h2 id="Google"><a href="#Google" class="headerlink" title="Google"></a><a href="https://www.google.com/">Google</a></h2><p>海外使用人数最大的搜索引擎，搜索引擎界的老大哥。搜索效率高，广告少，准确率高。但是国内大陆地区无法访问和使用。但是会追踪用户，分析用户行为，收集用户信息用于投放广告。</p>
@@ -103,6 +103,16 @@
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/onesearch.2uuk33zgnu00.png" alt="image"></p>
 <h2 id="BraveSearch"><a href="#BraveSearch" class="headerlink" title="BraveSearch"></a><a href="https://search.brave.com/">BraveSearch</a></h2><p>这是brave公司刚推出不久的搜索引擎，目前还是beta阶段，对于中文的部分检索词不是很准确。但是界面美观，没有明显的广告，不分析用户行为，也不追踪用户，也是一款注重用户隐私的搜索引擎。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/brave.2d9fmzrypglc.png" alt="image"></p>
+<h2 id="Oscobo"><a href="#Oscobo" class="headerlink" title="Oscobo"></a><a href="https://www.oscobo.com/">Oscobo</a></h2><p>Oscobo是专门为了保护用户隐私而创立的搜索引擎，它不会跟踪用户信息。对用户的搜索字词完全加密，因此只有用户自己知道搜索的内容，对于中文搜索也算还可以，值得试试。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/oscobo.4kp4hbvgdsw0.png" alt="image"></p>
+<h2 id="Discrete-Search"><a href="#Discrete-Search" class="headerlink" title="Discrete Search "></a><a href="https://www.discretesearch.com/">Discrete Search </a></h2><p>Discrete Search 是一种元搜索引擎，不会跟踪任何可识别的信息。对于那些以干净和用户友好的形式寻求快速结果的人来说，这是一个不错的选择。它使用端到端加密来使您的搜索尽可能保密。但是对于中文搜索极为不友好，不适合用来检索中文关键词。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/discretes.9io5a2lowag.png" alt="image"></p>
+<h2 id="Swisscows"><a href="#Swisscows" class="headerlink" title="Swisscows"></a><a href="https://swisscows.com/">Swisscows</a></h2><p>这是一款由瑞士Hulbee AG 科技公司开发的语义搜索引擎，它使用人工智能和机器学习来评估用户搜索的上下文，同时与前面的隐私保护搜索引擎一样，它并不会收集用户的任何信息，对于中文关键词检索的支持也很友好。唯一的问题就是搜索引擎主页有广告。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/swisscows.gmhadb26sns.png" alt="image"></p>
+<h2 id="gibiru"><a href="#gibiru" class="headerlink" title="gibiru"></a><a href="https://gibiru.com/">gibiru</a></h2><p>Gibiru 是从改进的 Google 算法中获取搜索结果，为用户提供可靠的结果。它不会在您的系统上安装各种个性化和跟踪 cookie。同样也是注重用户隐私的搜索引擎。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/gibiru.37gkptk7mmu0.png" alt="image"></p>
+<h2 id="Search-Encrypt"><a href="#Search-Encrypt" class="headerlink" title="Search Encrypt"></a><a href="https://www.searchencrypt.com/home">Search Encrypt</a></h2><p>Search Encrypt 使用本地加密来保护您的搜索。它结合了 AES-256 加密和安全套接字层加密。搜索加密然后从其搜索合作伙伴网络中检索您的搜索结果。完成搜索后，即使其他人可以访问您的计算机，您的搜索字词也会过期，因此它们是私密的，用户无需担心自己的搜索内容被他人窥探。唯一的不足就是搜索引擎主页有广告存在。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/search.264xomzokly8.png" alt="image"></p>
 <p>从效率上来说：在海量信息时代，一个优秀的搜索引擎总是能让我们事半功倍。</p>
 <p>从安全隐私上来说：在互联网公司虎视眈眈下，一个注重用户隐私的搜索引擎能在我们保护个人隐私时助我们一臂之力。</p>
 <p>我没法说哪一个搜索引擎是最优秀的，因为它们各有千秋，我们各取所需。</p>
@@ -287,9 +297,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>主题</tag>
         <tag>教程</tag>
         <tag>文字博客</tag>
+        <tag>主题</tag>
       </tags>
   </entry>
   <entry>
@@ -385,9 +395,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>主题</tag>
         <tag>教程</tag>
         <tag>文字博客</tag>
+        <tag>主题</tag>
       </tags>
   </entry>
   <entry>
@@ -420,9 +430,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>主题</tag>
         <tag>教程</tag>
         <tag>文字博客</tag>
+        <tag>主题</tag>
       </tags>
   </entry>
 </search>
