@@ -22,24 +22,24 @@
     var CONFIG = {"hostname":"example.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="在现在这个信息发达的时代，越来越多非程序员出身的人也想要一个自己的博客。目前也诞生了不少的在线博客网站和博客框架，博客大致分为主要分为动态博客和静态博客两大类。其实关于动态博客和静态博客的选择问题，这个问题的看法还是见仁见智。我在这里简单说说两种博客之间的优劣，以及一些比较友好的在线博客网站。">
+  <meta name="description" content="hexo博客主题配置过程中不仅有不少的踩坑问题，还比较的琐碎，需要不少的耐心。 1.主题的标签，分类，关于页面的生成其实这一部分在next主题配置中还算简单的，也没有什么坑，主要是说说如何生成这些页面以及修改相关内容。  标签页 想要生成标签页，我们首先需要在博客的根目录（例如我将整个博客放在D:\BigDataTools\hexo下，那么hexo文件下就是我的博客根目录）在当下目录输入 hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何挑选博客框架、在线博客平台">
-<meta property="og:url" content="https://example.github.io/2021/07/01/how-to-choose-a-blog/index.html">
+<meta property="og:title" content="hexo博客相关配置（2）">
+<meta property="og:url" content="https://example.github.io/posts/e863b3d6.html">
 <meta property="og:site_name" content="Rem Blue">
-<meta property="og:description" content="在现在这个信息发达的时代，越来越多非程序员出身的人也想要一个自己的博客。目前也诞生了不少的在线博客网站和博客框架，博客大致分为主要分为动态博客和静态博客两大类。其实关于动态博客和静态博客的选择问题，这个问题的看法还是见仁见智。我在这里简单说说两种博客之间的优劣，以及一些比较友好的在线博客网站。">
+<meta property="og:description" content="hexo博客主题配置过程中不仅有不少的踩坑问题，还比较的琐碎，需要不少的耐心。 1.主题的标签，分类，关于页面的生成其实这一部分在next主题配置中还算简单的，也没有什么坑，主要是说说如何生成这些页面以及修改相关内容。  标签页 想要生成标签页，我们首先需要在博客的根目录（例如我将整个博客放在D:\BigDataTools\hexo下，那么hexo文件下就是我的博客根目录）在当下目录输入 hexo">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/notion.5xa5276cpmo0.png">
-<meta property="article:published_time" content="2021-07-01T14:48:46.000Z">
-<meta property="article:modified_time" content="2021-07-02T14:14:59.018Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/social.501i9rss0r40.png">
+<meta property="article:published_time" content="2021-06-29T01:43:42.000Z">
+<meta property="article:modified_time" content="2021-07-05T14:44:58.263Z">
 <meta property="article:author" content="Aegisprogram">
+<meta property="article:tag" content="主题">
+<meta property="article:tag" content="教程">
 <meta property="article:tag" content="文字博客">
-<meta property="article:tag" content="分享">
-<meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/notion.5xa5276cpmo0.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/social.501i9rss0r40.png">
 
-<link rel="canonical" href="https://example.github.io/2021/07/01/how-to-choose-a-blog/">
+<link rel="canonical" href="https://example.github.io/posts/e863b3d6.html">
 
 
 <script id="page-configurations">
@@ -52,7 +52,7 @@
   };
 </script>
 
-  <title>如何挑选博客框架、在线博客平台 | Rem Blue</title>
+  <title>hexo博客相关配置（2） | Rem Blue</title>
   
 
 
@@ -134,7 +134,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">8</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -144,7 +144,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">7</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">8</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -203,7 +203,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.github.io/2021/07/01/how-to-choose-a-blog/">
+    <link itemprop="mainEntityOfPage" href="https://example.github.io/posts/e863b3d6.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E8%95%BE%E5%A7%86.jpg">
@@ -216,7 +216,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          如何挑选博客框架、在线博客平台
+          hexo博客相关配置（2）
         </h1>
 
         <div class="post-meta">
@@ -227,14 +227,14 @@
               
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-07-01 23:48:46" itemprop="dateCreated datePublished" datetime="2021-07-01T23:48:46+09:00">2021-07-01</time>
+              <time title="Created: 2021-06-29 10:43:42" itemprop="dateCreated datePublished" datetime="2021-06-29T10:43:42+09:00">2021-06-29</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-02 23:14:59" itemprop="dateModified" datetime="2021-07-02T23:14:59+09:00">2021-07-02</time>
+                <time title="Modified: 2021-07-05 23:44:58" itemprop="dateModified" datetime="2021-07-05T23:44:58+09:00">2021-07-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,7 +242,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">分享</span></a>
+                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
                 </span>
             </span>
 
@@ -259,14 +259,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.4k</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
+              <span>1 mins.</span>
             </span>
 
         </div>
@@ -278,49 +278,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在现在这个信息发达的时代，越来越多非程序员出身的人也想要一个自己的博客。目前也诞生了不少的在线博客网站和博客框架，博客大致分为主要分为动态博客和静态博客两大类。其实关于动态博客和静态博客的选择问题，这个问题的看法还是见仁见智。我在这里简单说说两种博客之间的优劣，以及一些比较友好的在线博客网站。</p>
+        <p>hexo博客主题配置过程中不仅有不少的踩坑问题，还比较的琐碎，需要不少的耐心。</p>
+<h3 id="1-主题的标签，分类，关于页面的生成"><a href="#1-主题的标签，分类，关于页面的生成" class="headerlink" title="1.主题的标签，分类，关于页面的生成"></a>1.主题的标签，分类，关于页面的生成</h3><p>其实这一部分在next主题配置中还算简单的，也没有什么坑，主要是说说如何生成这些页面以及修改相关内容。</p>
+<ul>
+<li><p>标签页</p>
+<p>想要生成标签页，我们首先需要在博客的根目录（例如我将整个博客放在D:\BigDataTools\hexo下，那么hexo文件下就是我的博客根目录）在当下目录输入</p>
+<p><code>hexo new page tags</code></p>
+<p>之后就会在hexo/source下生成相对应的文件夹和index文件，我们对其进行修改：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: all tags</span><br><span class="line">date: xxxx-xx-xx</span><br><span class="line">type: tags</span><br></pre></td></tr></table></figure></li>
+<li><p>分类页</p>
+<p>同样，我们在博客的根目录下输入</p>
+<p><code>hexo new page  categories</code></p>
 <span id="more"></span>
 
-<h2 id="动态博客"><a href="#动态博客" class="headerlink" title="动态博客"></a>动态博客</h2><p>动态博客，一个运行在服务器上的博客程序，一般提供一个在线的编辑器供使用者在线编写，多数都需要使用PHP+数据库。</p>
-<h4 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h4><p><a target="_blank" rel="noopener" href="https://wordpress.org/">Wordpress</a>:十分有名的动态博客框架，几乎有涵盖所有功能的插件，搭建自己的动态博客的首选，全球已经有40%的网站使用wordpress驱动。</p>
-<p><a target="_blank" rel="noopener" href="http://typecho.org/">Typecho</a>:这是在功能性可以和Wordpress相媲美的博客框架，但是他的程序本体要比后者更加简洁。</p>
-<p><a target="_blank" rel="noopener" href="https://www.wix.com/">Wix</a>这是一款以色列的一站式网站创建服务博客框架，不需要了解DNS对应、网页编程语言、服务器创建/租赁等事务，一切都由 Wix 自动化处理，让用户能专心在网页视觉与内容呈现上，更可以调整手机版的设计及版面。</p>
-<p><a target="_blank" rel="noopener" href="https://halo.run/">Halo</a>:是一款基于Java语言，使用Spring Boot开发的博客系统，致力于打造最好的 Java 博客系统，比较容易上手。</p>
-<h4 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h4><blockquote>
-<p>1.在线编写比较友好，不需要掌握过多的代码知识。<br>2.插件数量多，元素丰富。<br>3.响应式网页，交互性比较良好。<br>4.不显示后端处理过程，有利于保护自己的源代码</p>
-</blockquote>
-<h4 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h4><blockquote>
-<p>1.由于使用了数据库和PHP等提高了性能，所以消耗的资源比较多。<br>2.后端部署较为繁琐，需要日常维护<br>3.可免费托管的平台较少<br>4.相较于静态博客，动态博客更加容易受到攻击和崩溃。</p>
-</blockquote>
-<hr>
-<h2 id="静态博客"><a href="#静态博客" class="headerlink" title="静态博客"></a>静态博客</h2><p>所谓静态博客，即通过生成工具（eg： Hexo ； Hugo 等），直接将作者所书写的博文编译成最终的 html；css；js 等静态文件。作者/博主，只需将生成的文件部署在静态 server 上面即可被在互联网中访问。 用户通过浏览器访问服务器，直接就回获得已编译的静态资源。比如你现在看到的博客就是基于Hexo博客框架部署的静态博客。</p>
-<h4 id="推荐-1"><a href="#推荐-1" class="headerlink" title="推荐"></a>推荐</h4><p><a target="_blank" rel="noopener" href="https://gridea.dev/">Gridea</a>:Gridea 是一个静态博客写作客户端，帮助你更容易地构建并管理博客或任何静态站点。不过作者对于该项目的维护不那么积极，估计是要放弃了。</p>
-<p><a target="_blank" rel="noopener" href="https://jekyllrb.com/">Jekyll</a>:Jekyll 是一个简单的博客形态的静态站点生产机器，是GitHub官方推荐部署到GitHub Pages的博客框架，可谓是亲儿子。</p>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>:Hexo 是一个基于Node.js的快速、简洁且高效的静态博客框架。Hexo 支持Markdown解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<p><a target="_blank" rel="noopener" href="https://www.gohugo.org/">Hugo</a>:Hugo是一种用Go语言编写的快速，现代的静态网站生成器，简单、易用、高效、易扩展、快速部署。</p>
-<h4 id="优势-1"><a href="#优势-1" class="headerlink" title="优势"></a>优势</h4><blockquote>
-<p>1.没有过多的元素，专注于内容写作。<br>2.主题大多都比较简约。<br>3.无其他干扰（主要体现在广告比较少）<br>4.占用的资源较少，访问速度快，可免费部署的网站多。<br>5.可高度定制化，可以自写逻辑，插件等。</p>
-</blockquote>
-<h4 id="不足-1"><a href="#不足-1" class="headerlink" title="不足"></a>不足</h4><blockquote>
-<p>1.需要一定的编程经验才能自定义样式。<br>2.插件数量较少。<br>3.缺少评论插件，交互式内容比较难以实现。<br>4.数学公式的支持不是很好，技术资料极少而多为英语资料，门槛较高。</p>
-</blockquote>
-<hr>
-<h2 id="在线平台"><a href="#在线平台" class="headerlink" title="在线平台"></a>在线平台</h2><p>除了上面利用博客框架搭建自己的博客之外，我们也可以寻找一个适合自己的在线平台来写作博客。</p>
-<h4 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a><a target="_blank" rel="noopener" href="https://www.blogger.com/about/?bpli=1">Blogger</a></h4><p>Blogger提供免费主机Blogspot.com存放博客，用户不必写任何代码或者安装服务器软件或脚本，透过所见即所得界面轻松地创建、发布、维护和修改自己的网志。允许用户自定义自己的域名（但是后面需接.blogspot.com）。具有较为成熟的中文博客书写和发布功能，使用起来较为简单轻松，内置许多的主题模板，自定义程度较高。</p>
-<h4 id="不足-2"><a href="#不足-2" class="headerlink" title="不足"></a>不足</h4><p>.blogspot.com域名被GFW所屏蔽，内陆地区用户访问较为困难，需要使用科学上网手段。</p>
-<h4 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a><a target="_blank" rel="noopener" href="https://github.com/">GitHub</a></h4><p>GitHub是当今世界上最流行，最大的代码托管网站和开源社区。如果你不想用GitHub Pages网页托管博客，那么你可以选择使用GitHub issues直接在GitHub上写自己的博客。只需要简单新建一个仓库，勾选添加issues，可以愉快的在GitHub issues上利用Markdown语法进行书写。不需要你掌握任何的代码能力，只需要简单掌握Markdown语法即可，支持本地内容预览，可以通过给issues加上不同的标签来进行分类。</p>
-<h4 id="不足-3"><a href="#不足-3" class="headerlink" title="不足"></a>不足</h4><p>GFM（GitHub Flavored Markdown）语法对于在GitHub issues中编写中文的时候易出现标红，影响写作体验。对于HTML标签元素支持不够多。</p>
-<h4 id="Notion"><a href="#Notion" class="headerlink" title="Notion"></a><a target="_blank" rel="noopener" href="https://www.notion.so/">Notion</a></h4><p>Notion是一款提供笔记、任务、数据库、看板、维基、日历和提醒等组件的应用程序。用户可以将这些组件连接起来，来创建自己的系统，用于知识管理、笔记记录、数据管理、项目管理等，可以进行跨平台使用。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/notion.5xa5276cpmo0.png" alt="image"></p>
-<h4 id="不足-4"><a href="#不足-4" class="headerlink" title="不足"></a>不足</h4><p>要想把Notion作为公开页面，需要一定的配置操作，Notion官方目前还没有提供自定义域名的服务（承诺日后提供），但是我们可以通过自己来进行实现公开页面的功能，以此来达到实现个人网站页面的效果。相关配置——<a target="_blank" rel="noopener" href="https://sspai.com/post/58441">如何为Notion公开页面自定义域名</a></p>
-<p>像Notion这类在线笔记服务其实有很多种，我很难一一列举，每个人的喜好也不完全相同，只要能实现个人网站效果就可以。</p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>1.文中的博客框架我也没有办法亲自一一搭建体验，所以这只是一个参考方向，更何况每个人对于博客什么要求，自己什么需求，只有自己最清楚。</p>
-<p>2.动态博客和静态博客各自的优缺点都很明显，按需，按能力选择就好。</p>
-<p>3.无论你是使用自建博客，还是在线网站，亦或者是笔记服务，重要的是你有坚持写博客的毅力。平台重要，但不是最重要的因素。</p>
-<hr>
-<p>参考文章:</p>
-<p>1.<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42365530/article/details/107840934">七大开源blog框架介绍</a></p>
-<p>2.<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/164959395">静态博客是什么？常用的静态博客程序有哪些？静态博客的优缺点！</a></p>
+<p>对index文件进行如下修改：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: all categories</span><br><span class="line">date:  xxxx-xx-xx</span><br><span class="line">type: categories</span><br></pre></td></tr></table></figure></li>
+<li><p>关于页</p>
+<p>在博客的根目录下输入</p>
+<p><code>hexo new page about</code></p>
+<p>对其中的index文件进行如下编辑：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title: 关于</span><br><span class="line">date:</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">正文内容</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>然后找到主题的配置文件（hexo/themes/主题名/_config.yml)中的menu，将tags,categories,about对应前面的注释去掉即可。我们可以顺便将主题配置文件中tags_icon设置为true,这样你的博客标签将会以图标的方式展现出来而不再是#。</p>
+<h3 id="2-添加社交方式"><a href="#2-添加社交方式" class="headerlink" title="2.添加社交方式"></a>2.添加社交方式</h3><p>其实主题中会内置一些社交的方式，我们只需要在主题配置文件中打开就可以（我以next主题为例）。我们首先来到主题配置文件中，找到social<img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/social.501i9rss0r40.png" alt="image"></p>
+<p>将我们需要的打开，把后面的联系地址填上去就可以了。当然，也许这上面提供的联系方式不能满足你的要求，那么你可以自定义添加自己想要的联系方式。在这个<a target="_blank" rel="noopener" href="https://fontawesome.com/v5.15/icons?d=gallery&p=2">图标网站</a>上你不需要复制链接，也不需要下载图标，你只需要在这个网站上找到对应联系方式的图标，确认没有错误就可以。然后我们回到配置文件中，添加自定义的联系方式（需要注意书写的格式）。网站只是帮助你确认联系方式的图标。</p>
+<h3 id="3-博客文章置顶"><a href="#3-博客文章置顶" class="headerlink" title="3.博客文章置顶"></a>3.博客文章置顶</h3><p>比如说我想让进入这个网站的朋友最先看到的就是如何搭建hexo博客的文章，那么文章置顶对于我来说就很有必要的了。我们需要进行如下操作</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save(卸载原来的插件)</span><br><span class="line">npm install hexo-generator-index-pin-top --save(安装置顶插件)</span><br></pre></td></tr></table></figure>
+
+<p>设置置顶标志：</p>
+<p>进入/theme/主题名/layout/_macro/post.swig，找到</p>
+<p><code>&lt;div class = &#39;post-meta&#39;&gt;</code>下面插入代码</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if post.top %&#125;</span><br><span class="line"><span class="code">    &lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt;</span></span><br><span class="line"><span class="code">    &lt;font color=&quot;RED&quot;&gt;置顶&lt;/font&gt; (置顶文字的颜色可以自行修改)</span></span><br><span class="line"><span class="code">    &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span></span><br><span class="line"><span class="code">&#123;% endif %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>之后，我们只需要在编写一篇新的博客的时候在元数据中加入<code>top: true</code>就可以了。</p>
+<p>PS：参考博客：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904037465194503">hexo next主题设置文章置顶</a></p>
 
     </div>
 
@@ -345,9 +336,9 @@
       <footer class="post-footer">
           
           <div class="post-tags">
+              <a href="/tags/%E4%B8%BB%E9%A2%98/" rel="tag"><i class="fa fa-tag"></i> 主题</a>
+              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 教程</a>
               <a href="/tags/%E6%96%87%E5%AD%97%E5%8D%9A%E5%AE%A2/" rel="tag"><i class="fa fa-tag"></i> 文字博客</a>
-              <a href="/tags/%E5%88%86%E4%BA%AB/" rel="tag"><i class="fa fa-tag"></i> 分享</a>
-              <a href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"><i class="fa fa-tag"></i> 博客</a>
           </div>
 
         
@@ -356,12 +347,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/06/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE-3/" rel="prev" title="hexo博客相关配置(3)">
-      <i class="fa fa-chevron-left"></i> hexo博客相关配置(3)
+    <a href="/posts/fad61c38.html" rel="prev" title="hexo博客相关配置（1）">
+      <i class="fa fa-chevron-left"></i> hexo博客相关配置（1）
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/07/03/how-to-launch-your-WSL2/" rel="next" title="WSL2、Windows Terminal 完整配置">
-      WSL2、Windows Terminal 完整配置 <i class="fa fa-chevron-right"></i>
+    <a href="/posts/541ef572.html" rel="next" title="免费激活Windows和office">
+      免费激活Windows和office <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -421,7 +412,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%8D%9A%E5%AE%A2"><span class="nav-text">动态博客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90"><span class="nav-text">推荐</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF"><span class="nav-text">优势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E8%B6%B3"><span class="nav-text">不足</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2"><span class="nav-text">静态博客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90-1"><span class="nav-text">推荐</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF-1"><span class="nav-text">优势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E8%B6%B3-1"><span class="nav-text">不足</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%BA%BF%E5%B9%B3%E5%8F%B0"><span class="nav-text">在线平台</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Blogger"><span class="nav-text">Blogger</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E8%B6%B3-2"><span class="nav-text">不足</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GitHub"><span class="nav-text">GitHub</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E8%B6%B3-3"><span class="nav-text">不足</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Notion"><span class="nav-text">Notion</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E8%B6%B3-4"><span class="nav-text">不足</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-text">最后</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%BB%E9%A2%98%E7%9A%84%E6%A0%87%E7%AD%BE%EF%BC%8C%E5%88%86%E7%B1%BB%EF%BC%8C%E5%85%B3%E4%BA%8E%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%94%9F%E6%88%90"><span class="nav-text">1.主题的标签，分类，关于页面的生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%B7%BB%E5%8A%A0%E7%A4%BE%E4%BA%A4%E6%96%B9%E5%BC%8F"><span class="nav-text">2.添加社交方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E7%BD%AE%E9%A1%B6"><span class="nav-text">3.博客文章置顶</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -437,7 +428,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -450,7 +441,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -517,13 +508,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">17k</span>
+    <span title="Symbols count total">20k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">15 mins.</span>
+    <span title="Reading time total">18 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
