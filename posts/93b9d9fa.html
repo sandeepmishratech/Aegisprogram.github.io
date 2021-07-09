@@ -30,10 +30,9 @@
 <meta property="og:description" content="对于过于冗长的Linux或者是git命令，我想要一个快速得出结果的过程，所以学会自定义alias就很必要了。 之前我自己在电脑上给Windows Terminal配置了Vim和Git Bash，相关的过程也就在这里了，这样我平时操作一些文件的时候更加“爽”，万一需要执行什么命令，我基本上可以用WindowsTerminal来取代Windows power shell和CMD。为了进一步提升自己的使">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-07-08T11:27:25.000Z">
-<meta property="article:modified_time" content="2021-07-09T07:46:29.096Z">
+<meta property="article:modified_time" content="2021-07-09T16:34:46.797Z">
 <meta property="article:author" content="Aegisprogram">
-<meta property="article:tag" content="alias">
-<meta property="article:tag" content="apt">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://example.github.io/posts/93b9d9fa.html">
@@ -131,7 +130,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">10</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -231,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-09 16:46:29" itemprop="dateModified" datetime="2021-07-09T16:46:29+09:00">2021-07-09</time>
+                <time title="Modified: 2021-07-10 01:34:46" itemprop="dateModified" datetime="2021-07-10T01:34:46+09:00">2021-07-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -256,14 +255,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.7k</span>
+              <span>2.9k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -279,27 +278,30 @@
 <p>之前我自己在电脑上给Windows Terminal配置了Vim和Git Bash，相关的过程也就在<a target="_blank" rel="noopener" href="https://aegisprogram.github.io/posts/f5bc5ed5.html#more">这里</a>了，这样我平时操作一些文件的时候更加“爽”，万一需要执行什么命令，我基本上可以用WindowsTerminal来取代Windows power shell和CMD。为了进一步提升自己的使用体验，我决定对一些命令设置自定义的别名。</p>
 <span id="more"></span>
 
-<h2 id="alias命令"><a href="#alias命令" class="headerlink" title="alias命令"></a>alias命令</h2><h3 id="Git-Bash"><a href="#Git-Bash" class="headerlink" title="Git Bash"></a>Git Bash</h3><p>可以这样对于WindowsTerminal中的git bash 进行设置命令别名。</p>
+<h3 id="alias命令"><a href="#alias命令" class="headerlink" title="alias命令"></a>alias命令</h3><h4 id="Git-Bash"><a href="#Git-Bash" class="headerlink" title="Git Bash"></a>Git Bash</h4><p>可以这样对于WindowsTerminal中的git bash 进行设置命令别名。</p>
 <p> 临时别名</p>
 <p>当不需要设置永久别名的时候，可以直接使用alias命令进行设置。例如：</p>
 <p><code>alias gc=&quot;git commit&quot;</code></p>
 <p>这样当我需要使用git commit命令时，我们就可以使用gc来代替它。不过，一旦关闭了终端，那么下次再重新登录的时候，该别名就失效了。所以这只是临时的。</p>
 <p>永久别名</p>
-<p>首先查看用户名下面（系统盘/User/用户名）有没有<code>~/.bash_profile</code>文件，如果没有就新建。然后按照格式自定义自己想要的别名。例如：</p>
-<p><code>alias ga=&quot;git add&quot;</code></p>
-<p>添加保存之后可能不会立刻生效，接下来输入</p>
-<p><code>source ~/.bash_profile</code>来使得文件生效</p>
-<p>这样我在使用git commit命令时我只需要输入ga就可以了，大大节省了时间。</p>
-<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>在Linux中的临时设置变量和上面的一样，主要是在Linux中设置永久的命令别名。永久设置别名只要按照如下操作即可：</p>
+<p>先在用户目录下(系统盘/User/用户名)看看有没有.bashrc文件，没有就新建一个。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">`vim .bashrc`</span></span><br><span class="line">编辑你想要设置的别名</span><br><span class="line"><span class="code">`alias lsl=&quot;ls -lh&quot;`</span></span><br><span class="line"><span class="code">`alias lm=&quot;ls -lah&quot;`</span></span><br><span class="line">保存退出</span><br><span class="line">然后 <span class="code">`source ~/.bashrc`</span>，使其生效.</span><br></pre></td></tr></table></figure>
+
+<p>如果单纯完成到这里的话，你可能当前能够使用别名，但是当关闭终端再打开之后就会发现命令未找到了，所以我们需要进一步的配置。</p>
+<p>接着查看用户名下面有没有<code>~/.bash_profile</code>文件，如果没有就新建。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">`vim .bash_profile`</span></span><br><span class="line">在里面输入</span><br><span class="line"><span class="code">`source ~/.bashrc`</span></span><br><span class="line">保存退出</span><br><span class="line">然后<span class="code">`source ~/.bash_profile`</span></span><br></pre></td></tr></table></figure>
+
+<p>这样就算关闭终端之后再次启动我还是能够使用 我自己设置好的命令别名。</p>
+<h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><p>在Linux中的临时设置变量和上面的一样，主要是在Linux中设置永久的命令别名。永久设置别名只要按照如下操作即可：</p>
 <p>1.cd/home/用户名，然后使用<code>ls -a</code>列出隐藏的文件</p>
 <p>2.找到下面的.bashrc或者是bash.bashrc，对其进行vi编辑。</p>
 <p>例如：<code>alias lsl=&quot;ls -lrt&quot;</code></p>
 <p>3.使其立即生效：<code>source ~/.bashrc</code></p>
 <p>这样我们可以使用lsl来代替之前的<code>ls -lrt</code>（按时间排序，以列表的方式显示目录项）</p>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>查看我们的命令别名列表只需要直接输入<code>alias</code></p>
+<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p>查看我们的命令别名列表只需要直接输入<code>alias</code></p>
 <p>删除别名：<code>alias 别名</code></p>
 <p>删除所有别名：<code>unalias -a</code></p>
-<h2 id="apt源的更换"><a href="#apt源的更换" class="headerlink" title="apt源的更换"></a>apt源的更换</h2><p>有时候内置的apt源比较慢，那么就需要对它进行更换，以此来提高访问的速度。</p>
+<h3 id="apt源的更换"><a href="#apt源的更换" class="headerlink" title="apt源的更换"></a>apt源的更换</h3><p>有时候内置的apt源比较慢，那么就需要对它进行更换，以此来提高访问的速度。</p>
 <p>首先：先将sources.list进行备份<code>sudo cp /etc/apt/sources.list /etc/apt/sources.list.bat</code></p>
 <p>然后查看自己Linux系统发行版的版本号：<code>lsb_release -c</code>，版本号在编辑源的时候会用到。</p>
 <p>下一步开始编辑源文件：<code>sudo vim /etc/apt/sources/list</code>，编辑源文件的时候需要按照自己的版本号进行编辑，例如我的是Ubuntu18.04,对应的版本号就是bionic。参照以下的源文件修改为自己的发行版版本号即可，使用的为阿里云。</p>
@@ -311,10 +313,7 @@
 <p>到此，工作就完成了。</p>
 <h4 id="常用的apt命令"><a href="#常用的apt命令" class="headerlink" title="常用的apt命令"></a>常用的apt命令</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update  更新源</span><br><span class="line">sudo apt-get install package 安装包</span><br><span class="line">sudo apt-get remove package 删除包</span><br><span class="line">sudo apt-cache search package 搜索软件包</span><br><span class="line">sudo apt-cache show package  获取包的相关信息，如说明、大小、版本等</span><br><span class="line">sudo apt-get install package --reinstall  重新安装包</span><br><span class="line">sudo apt-get -f install  修复安装</span><br><span class="line">sudo apt-get remove package --purge 删除包，包括配置文件等</span><br><span class="line">sudo apt-get build-dep package 安装相关的编译环境</span><br><span class="line">sudo apt-get upgrade 更新已安装的包</span><br><span class="line">sudo apt-get dist-upgrade 升级系统</span><br><span class="line">sudo apt-cache depends package 了解使用该包依赖那些包</span><br><span class="line">sudo apt-cache rdepends package 查看该包被哪些包依赖</span><br><span class="line">sudo apt-get source package  下载该包的源代码</span><br><span class="line">sudo apt-get clean &amp;&amp; sudo apt-get autoclean 清理无用的包</span><br><span class="line">sudo apt-get check 检查是否有损坏的依赖</span><br></pre></td></tr></table></figure>
 
-
-
-
-
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/84306720">配置一个永久生效的alias</a></p>
 
     </div>
 
@@ -339,8 +338,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/alias/" rel="tag"><i class="fa fa-tag"></i> alias</a>
-              <a href="/tags/apt/" rel="tag"><i class="fa fa-tag"></i> apt</a>
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
           </div>
 
         
@@ -411,7 +409,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#alias%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">alias命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-Bash"><span class="nav-number">1.1.</span> <span class="nav-text">Git Bash</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux"><span class="nav-number">2.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-number">3.</span> <span class="nav-text">补充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apt%E6%BA%90%E7%9A%84%E6%9B%B4%E6%8D%A2"><span class="nav-number">4.</span> <span class="nav-text">apt源的更换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84apt%E5%91%BD%E4%BB%A4"><span class="nav-number">4.0.1.</span> <span class="nav-text">常用的apt命令</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#alias%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">alias命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Git-Bash"><span class="nav-number">1.1.</span> <span class="nav-text">Git Bash</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux"><span class="nav-number">1.2.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-number">1.3.</span> <span class="nav-text">补充</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apt%E6%BA%90%E7%9A%84%E6%9B%B4%E6%8D%A2"><span class="nav-number">2.</span> <span class="nav-text">apt源的更换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84apt%E5%91%BD%E4%BB%A4"><span class="nav-number">2.1.</span> <span class="nav-text">常用的apt命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -440,7 +438,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
