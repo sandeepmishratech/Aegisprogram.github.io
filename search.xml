@@ -4,7 +4,7 @@
     <title>如何快速搭建一个hexo博客</title>
     <url>/posts/4223bff5.html</url>
     <content><![CDATA[<p>hexo博客是一个Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。我将在这里说说自己是如何搭建hexo博客的。</p>
-<h2 id="安装node-js和Git"><a href="#安装node-js和Git" class="headerlink" title="安装node.js和Git"></a>安装node.js和Git</h2><p>首先第一步，你需要首先下载<a href="https://nodejs.org/en/">Node.js</a>（安装的时候记得勾选add to path)和<a href="https://git-scm.com/">Git</a>,这两个是你搭建hexo博客必备的东西（Hexo是一款基于Node.js的静态博客框架），所以Node.js就是根本中的根本。当然，Git主要是为了完成博客的部署，提交问题而准备的。其实你可以下载一个已经集成了git bash的<a href="https://cmder.net/">cmder</a>,建议下载full版本的。之后可以在cmder上面进行博客的搭建，部署。接下来的命令将在cmder中进行，如果使用git bash的话，命令也是一样的。</p>
+<h3 id="安装node-js和Git"><a href="#安装node-js和Git" class="headerlink" title="安装node.js和Git"></a>安装node.js和Git</h3><p>首先第一步，你需要首先下载<a href="https://nodejs.org/en/">Node.js</a>（安装的时候记得勾选add to path)和<a href="https://git-scm.com/">Git</a>,这两个是你搭建hexo博客必备的东西（Hexo是一款基于Node.js的静态博客框架），所以Node.js就是根本中的根本。当然，Git主要是为了完成博客的部署，提交问题而准备的。其实你可以下载一个已经集成了git bash的<a href="https://cmder.net/">cmder</a>,建议下载full版本的。之后可以在cmder上面进行博客的搭建，部署。接下来的命令将在cmder中进行，如果使用git bash的话，命令也是一样的。</p>
 <p>完成安装之后，我们打开cmder分别输入</p>
 <span id="more"></span>
 
@@ -14,7 +14,7 @@
 <p>当你完成这些工具的下载，检查之后，你接着需要去<a href="https://github.com/">GitHub</a>注册一个账号，接下来我以hexo+github pages的部署为例。账号注册过程很简单，这里就不赘述了，不会的话建议自行百度或者Google。</p>
 <p>注：其实上面这些工具完全可以不放入系统盘，就算放在其他硬盘，下载依赖的时候，依赖还是会默认下载到系统盘的。这是没什么影响的。我现在的博客就是这么操作的。</p>
 <hr>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>下面开始正式的安装：</p>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>下面开始正式的安装：</p>
 <p>1.安装cnpm(国内由于众所周知的原因npm下载插件，依赖的时候比较慢，所以采用cnpm下载)</p>
 <p>在cmder中输入</p>
 <p><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
@@ -28,14 +28,14 @@
 <p>到<code>Install dependencies</code></p>
 <p>的时候你可能会卡住，这是大多数人基本都会遇到的，我们只需要在这里的时候结束命令，按<code>Ctrl + c</code>就可以结束命令（我在安装的过程中并没有遇到，如果你遇到了，那么请执行上述操作）。</p>
 <p>下一步执行<code>cnpm install</code> 完成初始化工作，等待完成结束之后，接下来输入<code>hexo s</code>在本地预览。按住ctrl单击<code>http://localhost:4000</code>就可以在本地实现预览效果了。</p>
-<h2 id="配置hexo博客"><a href="#配置hexo博客" class="headerlink" title="配置hexo博客"></a>配置hexo博客</h2><h4 id="1-更换主题"><a href="#1-更换主题" class="headerlink" title="1.更换主题"></a>1.更换主题</h4><p>你可能觉得那个主题并不好看，所以现在我们去挑选一个自己喜欢的主题吧——<a href="https://hexo.io/themes/">hexo主题</a>，所有的主题都在这里了。在上面挑选一个自己喜欢的就好，<strong>不同的主题之间配置不尽相同，略有差异</strong>。下面我以<a href="https://github.com/theme-next/hexo-theme-next">next</a>主题为例,主题的下载你可以直接克隆，也可以下载压缩包解压出来。我这里就直接克隆了。直接在cmder中输入</p>
+<h3 id="配置hexo博客"><a href="#配置hexo博客" class="headerlink" title="配置hexo博客"></a>配置hexo博客</h3><h4 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h4><p>你可能觉得那个主题并不好看，所以现在我们去挑选一个自己喜欢的主题吧——<a href="https://hexo.io/themes/">hexo主题</a>，所有的主题都在这里了。在上面挑选一个自己喜欢的就好，<strong>不同的主题之间配置不尽相同，略有差异</strong>。下面我以<a href="https://github.com/theme-next/hexo-theme-next">next</a>主题为例,主题的下载你可以直接克隆，也可以下载压缩包解压出来。我这里就直接克隆了。直接在cmder中输入</p>
 <p><code>git clone https://github.com/theme-next/hexo-theme-next.git themes/next</code> </p>
 <p>简单解释一下：前面的git clone就是克隆命令 中间一段是主题的地址 后面是将其命名为next。</p>
-<h4 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2.修改配置文件"></a>2.修改配置文件</h4><p>在博客的根目录下找到__config.yml文件，vi进去找到theme那一行，将原来的主题替换为next。然后执行<code>hexo s</code>在本地预览效果。默认是白色的背景，如果想要使用黑色的背景就在<strong>themes-next-_config.yml</strong>中找到darkmode，将false改为true即可，但是这里有一点我必须说明一下，next主题下的Darkmode会根据设备来自行决定是light还是dark，意思就是如果你的手机是深色模式，电脑是浅色模式，那么你在手机上看到的博客样式就是深色的，而在电脑上看到的就会是浅色的。（注意,博客根目录下的配置文件和主题下面的配置文件都是一样的名字_config.yml，千万不要混淆）</p>
-<h4 id="3-设置语言"><a href="#3-设置语言" class="headerlink" title="3.设置语言"></a>3.设置语言</h4><p>博客页面默认是英文的，我们现在使用的是next主题（不同的主题之间可能有所不一样，前面我已经提到过了，若有差异则以你所使用的主题官方文档为准）我们需要进入根目录下的_config.yml，找到language,然后将其改为zh-CN。</p>
-<h2 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h2><h4 id="1-新建仓库"><a href="#1-新建仓库" class="headerlink" title="1.新建仓库"></a>1.新建仓库</h4><p>进入我们之前已经创建好账号的GitHub，在左侧新建一个仓库，仓库的命名格式为：你的用户名+github.io。例如我的GitHub用户名是Aegisprogram，那么对应的我的仓库名字就是Aegisprogram.github.io。添加仓库描述，勾选public，勾选add README，然后点击创建。</p>
-<h4 id="2-接下来创建密钥"><a href="#2-接下来创建密钥" class="headerlink" title="2.接下来创建密钥"></a>2.接下来创建密钥</h4><p>打开cmder 输入<code>ssh-keygen -t rsa -C “your_email@youremail.com“</code>,然后接连按回车键，等到命令执行结束后我们输入<code>cat ~/.ssh/id_rsa.pub</code>,我们能看到一大串字母。我们把上面一大串密钥复制下，进入GitHub-点击头像-setting-SSH-New SSH Key，把之前复制的一大串字母添加进去。回到cmder，输入<code> ssh -T git@github.com</code>,接下来你会看到<code>Are you sure you want to continue connecting (yes/no/[fingerprint])? </code>,如果还有别的内容，那也就yes。现在去GitHub自己仓库上面点击code,切换到ssh然后将那一段地址复制下来。</p>
-<h4 id="3-修改站点配置文件"><a href="#3-修改站点配置文件" class="headerlink" title="3.修改站点配置文件"></a>3.修改站点配置文件</h4><p>我们用cmder打开博客根目录下的_config.yml文件，找到deploy所在地方，修改添加信息。</p>
+<h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><p>在博客的根目录下找到__config.yml文件，vi进去找到theme那一行，将原来的主题替换为next。然后执行<code>hexo s</code>在本地预览效果。默认是白色的背景，如果想要使用黑色的背景就在<strong>themes-next-_config.yml</strong>中找到darkmode，将false改为true即可，但是这里有一点我必须说明一下，next主题下的Darkmode会根据设备来自行决定是light还是dark，意思就是如果你的手机是深色模式，电脑是浅色模式，那么你在手机上看到的博客样式就是深色的，而在电脑上看到的就会是浅色的。（注意,博客根目录下的配置文件和主题下面的配置文件都是一样的名字_config.yml，千万不要混淆）</p>
+<h4 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h4><p>博客页面默认是英文的，我们现在使用的是next主题（不同的主题之间可能有所不一样，前面我已经提到过了，若有差异则以你所使用的主题官方文档为准）我们需要进入根目录下的_config.yml，找到language,然后将其改为zh-CN。</p>
+<h3 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h3><h4 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h4><p>进入我们之前已经创建好账号的GitHub，在左侧新建一个仓库，仓库的命名格式为：你的用户名+github.io。例如我的GitHub用户名是Aegisprogram，那么对应的我的仓库名字就是Aegisprogram.github.io。添加仓库描述，勾选public，勾选add README，然后点击创建。</p>
+<h4 id="接下来创建密钥"><a href="#接下来创建密钥" class="headerlink" title="接下来创建密钥"></a>接下来创建密钥</h4><p>打开cmder 输入<code>ssh-keygen -t rsa -C “your_email@youremail.com“</code>,然后接连按回车键，等到命令执行结束后我们输入<code>cat ~/.ssh/id_rsa.pub</code>,我们能看到一大串字母。我们把上面一大串密钥复制下，进入GitHub-点击头像-setting-SSH-New SSH Key，把之前复制的一大串字母添加进去。回到cmder，输入<code> ssh -T git@github.com</code>,接下来你会看到<code>Are you sure you want to continue connecting (yes/no/[fingerprint])? </code>,如果还有别的内容，那也就yes。现在去GitHub自己仓库上面点击code,切换到ssh然后将那一段地址复制下来。</p>
+<h4 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h4><p>我们用cmder打开博客根目录下的_config.yml文件，找到deploy所在地方，修改添加信息。</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="code">	type: git</span></span><br><span class="line"><span class="code">	repo: git@github.com:username/username.github.io.git</span></span><br><span class="line"><span class="code">	branch: main(我们新建仓库的时候就是main，所以这里直接采用main分支)</span></span><br></pre></td></tr></table></figure>
 
 <p>接着在博客根目录下执行：</p>
@@ -54,7 +54,7 @@
 <p>当然，这些都是十分简单的但是却很需要的命令，除此之外，使用静态博客你还需要对Markdown写作语法熟练，这是基本要求，顺带了解一下GitHub网站，最好能掌握一些HTML，CSS和JavaScript，当然如果你注重内容输出本身的话，那么掌握Markdown语法基本够用。</p>
 <p>对于写作工具的话，我推荐使用<a href="https://typora.io/">Typora</a>，轻量写作神器，所见即所得。</p>
 <p>hexo博客还有很多的内容需要自己去探索，在这里不可能一一讲解，不过，着重了解hexo的博客框架各部分的作用还是很有必要的。</p>
-<p>PS：参考博客：<a href="https://www.cnblogs.com/huanhao/p/hexobase.html">基础篇——hexo博客搭建教程</a></p>
+<h4 id="参考博客："><a href="#参考博客：" class="headerlink" title="参考博客："></a>参考博客：</h4><p><a href="https://www.cnblogs.com/huanhao/p/hexobase.html">基础篇——hexo博客搭建教程</a></p>
 ]]></content>
       <categories>
         <category>Hexo</category>
@@ -62,6 +62,58 @@
       <tags>
         <tag>教程</tag>
         <tag>文字博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>alias命令使用以及apt源的更换</title>
+    <url>/posts/93b9d9fa.html</url>
+    <content><![CDATA[<p>对于过于冗长的Linux或者是git命令，我想要一个快速得出结果的过程，所以学会自定义alias就很必要了。</p>
+<p>之前我自己在电脑上给Windows Terminal配置了Vim和Git Bash，相关的过程也就在<a href="https://aegisprogram.github.io/posts/f5bc5ed5.html#more">这里</a>了，这样我平时操作一些文件的时候更加“爽”，万一需要执行什么命令，我基本上可以用WindowsTerminal来取代Windows power shell和CMD。为了进一步提升自己的使用体验，我决定对一些命令设置自定义的别名。</p>
+<span id="more"></span>
+
+<h2 id="alias命令"><a href="#alias命令" class="headerlink" title="alias命令"></a>alias命令</h2><h3 id="Git-Bash"><a href="#Git-Bash" class="headerlink" title="Git Bash"></a>Git Bash</h3><p>可以这样对于WindowsTerminal中的git bash 进行设置命令别名。</p>
+<p> 临时别名</p>
+<p>当不需要设置永久别名的时候，可以直接使用alias命令进行设置。例如：</p>
+<p><code>alias gc=&quot;git commit&quot;</code></p>
+<p>这样当我需要使用git commit命令时，我们就可以使用gc来代替它。不过，一旦关闭了终端，那么下次再重新登录的时候，该别名就失效了。所以这只是临时的。</p>
+<p>永久别名</p>
+<p>首先查看用户名下面（系统盘/User/用户名）有没有<code>~/.bash_profile</code>文件，如果没有就新建。然后按照格式自定义自己想要的别名。例如：</p>
+<p><code>alias ga=&quot;git add&quot;</code></p>
+<p>添加保存之后可能不会立刻生效，接下来输入</p>
+<p><code>source ~/.bash_profile</code>来使得文件生效</p>
+<p>这样我在使用git commit命令时我只需要输入ga就可以了，大大节省了时间。</p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>在Linux中的临时设置变量和上面的一样，主要是在Linux中设置永久的命令别名。永久设置别名只要按照如下操作即可：</p>
+<p>1.cd/home/用户名，然后使用<code>ls -a</code>列出隐藏的文件</p>
+<p>2.找到下面的.bashrc或者是bash.bashrc，对其进行vi编辑。</p>
+<p>例如：<code>alias lsl=&quot;ls -lrt&quot;</code></p>
+<p>3.使其立即生效：<code>source ~/.bashrc</code></p>
+<p>这样我们可以使用lsl来代替之前的<code>ls -lrt</code>（按时间排序，以列表的方式显示目录项）</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>查看我们的命令别名列表只需要直接输入<code>alias</code></p>
+<p>删除别名：<code>alias 别名</code></p>
+<p>删除所有别名：<code>unalias -a</code></p>
+<h2 id="apt源的更换"><a href="#apt源的更换" class="headerlink" title="apt源的更换"></a>apt源的更换</h2><p>有时候内置的apt源比较慢，那么就需要对它进行更换，以此来提高访问的速度。</p>
+<p>首先：先将sources.list进行备份<code>sudo cp /etc/apt/sources.list /etc/apt/sources.list.bat</code></p>
+<p>然后查看自己Linux系统发行版的版本号：<code>lsb_release -c</code>，版本号在编辑源的时候会用到。</p>
+<p>下一步开始编辑源文件：<code>sudo vim /etc/apt/sources/list</code>，编辑源文件的时候需要按照自己的版本号进行编辑，例如我的是Ubuntu18.04,对应的版本号就是bionic。参照以下的源文件修改为自己的发行版版本号即可，使用的为阿里云。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line"> </span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line"> </span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line"> </span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line"> </span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line"> </span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line"> </span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line"> </span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line"> </span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line"> </span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+
+<p>最后执行</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">sudo apt-get update(更新源)</span><br><span class="line">sudo apt-get upgrade(更新软件列表)</span><br><span class="line">sudo apt-get clean &amp;&amp; sudo apt-get autoclean (清理无用包)</span><br></pre></td></tr></table></figure>
+
+<p>到此，工作就完成了。</p>
+<h4 id="常用的apt命令"><a href="#常用的apt命令" class="headerlink" title="常用的apt命令"></a>常用的apt命令</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">sudo apt-get update  更新源</span><br><span class="line">sudo apt-get install package 安装包</span><br><span class="line">sudo apt-get remove package 删除包</span><br><span class="line">sudo apt-cache search package 搜索软件包</span><br><span class="line">sudo apt-cache show package  获取包的相关信息，如说明、大小、版本等</span><br><span class="line">sudo apt-get install package --reinstall  重新安装包</span><br><span class="line">sudo apt-get -f install  修复安装</span><br><span class="line">sudo apt-get remove package --purge 删除包，包括配置文件等</span><br><span class="line">sudo apt-get build-dep package 安装相关的编译环境</span><br><span class="line">sudo apt-get upgrade 更新已安装的包</span><br><span class="line">sudo apt-get dist-upgrade 升级系统</span><br><span class="line">sudo apt-cache depends package 了解使用该包依赖那些包</span><br><span class="line">sudo apt-cache rdepends package 查看该包被哪些包依赖</span><br><span class="line">sudo apt-get source package  下载该包的源代码</span><br><span class="line">sudo apt-get clean &amp;&amp; sudo apt-get autoclean 清理无用的包</span><br><span class="line">sudo apt-get check 检查是否有损坏的依赖</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>alias</tag>
+        <tag>apt</tag>
       </tags>
   </entry>
   <entry>
@@ -124,7 +176,6 @@
         <category>分享</category>
       </categories>
       <tags>
-        <tag>分享</tag>
         <tag>搜索引擎</tag>
       </tags>
   </entry>
@@ -147,13 +198,13 @@
 <h2 id="安装Linux"><a href="#安装Linux" class="headerlink" title="安装Linux"></a>安装Linux</h2><p>完成上面的步骤之后，我们现在去Microsoft store安装Linux发行版本，我这里选择的是Ubuntu18.04，个人可以随意选择，自己用着顺手就行。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/linux%E5%8F%91%E8%A1%8C%E7%89%88.1lks55li1tj4.png" alt="image"></p>
 <p>下载完成之后，我们点击启动，创建用户和密码。</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>我们输入wsl -l -v 查看当前的版本，如果你的WSL处于1的话，我建议切换至2。因为我个人在安装Linux发行版的时候，当我点击启动Ubuntu打算创建用户和密码的时候，上面显示“当前的网络名已经不再可用”。如果你在过程中也遇到了这样的问题，那么请这样操作。</p>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>我们输入<code>wsl -l -v </code>查看当前的版本，如果你的WSL处于1的话，我建议切换至2。因为我个人在安装Linux发行版的时候，当我点击启动Ubuntu打算创建用户和密码的时候，上面显示“当前的网络名已经不再可用”。如果你在过程中也遇到了这样的问题，那么请这样操作。</p>
 <p><code>wsl --set-version Ubuntu-18.04 2</code></p>
 <p>你也可以使用命令默认使用WSL2</p>
 <p><code>wsl --set-default-version 2</code></p>
-<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>启动Ubuntu的方式有两种，一是通过点击Ubuntu的图标使其运行，另一种就是使用wsl命令运行。因为接下来要与WindowsTerminal结合使用，所以我将会用wsl命令来启用Ubuntu。</p>
+<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>启动Ubuntu的方式有两种，一是通过点击Ubuntu的图标使其运行，另一种就是使用wsl命令运行。因为接下来要与WindowsTerminal结合使用，所以我将会用wsl命令来启用Ubuntu。</p>
 <hr>
-<h2 id="Windows-Terminal"><a href="#Windows-Terminal" class="headerlink" title="Windows Terminal"></a>Windows Terminal</h2><p>注意：以下是关于Windows Terminal的相关的一些配置，可以选择跳过，不影响WSL2和Linux发行版的使用，但是如果希望把Windows Terminal作为一个命令行工具，那么下面的配置你可以考虑一下。</p>
+<h3 id="Windows-Terminal"><a href="#Windows-Terminal" class="headerlink" title="Windows Terminal"></a>Windows Terminal</h3><p>注意：以下是关于Windows Terminal的相关的一些配置，可以选择跳过，不影响WSL2和Linux发行版的使用，但是如果希望把Windows Terminal作为一个命令行工具，那么下面的配置你可以考虑一下。</p>
 <p><a href="https://github.com/microsoft/terminal">Windows Terminal</a>是一款集成了Windows上的<em>PowerShell、CMD以及Windows Linux</em>子系统的终端。<em>Windows</em>自身的命令控制台过于简陋，所以我们不妨使用<em>Windows Terminal</em>来替代<em>cmd和power shell</em>，只需要简单的配置一些功能，就能实现很多常用的<em>Linux</em>操作命令。</p>
 <h4 id="vim配置"><a href="#vim配置" class="headerlink" title="vim配置"></a>vim配置</h4><p>Vim是一款优秀的Linux文本编辑器。我们在Windows下编辑一些一些配置文件的时候很有作用。</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">1.首先，我建议先去下载一个Vim,安装的时候注意路径中不要包含中文路径。</span><br><span class="line">2.然后，配置环境变量。找到Vim.exe的二进制文件位置，例如我的Vim安装位置</span><br><span class="line">在C:\Program Files (x86)\Vim\vim82,</span><br><span class="line">然后到设置——系统——关于——高级系统设置——环境变量——path——编辑——新建。</span><br><span class="line">然后将Vim.exe的路径复制粘贴上去。（例如我的就是C:\Program Files (x86)\Vim\vim82）。</span><br><span class="line">然后重新打开Windows Terminal终端就可以了。</span><br></pre></td></tr></table></figure>
@@ -174,7 +225,7 @@
 
 
 
-<h2 id="WSL1和WSL2"><a href="#WSL1和WSL2" class="headerlink" title="WSL1和WSL2"></a>WSL1和WSL2</h2><p>WSL1和WSL2到底有哪些不一样呢？</p>
+<h3 id="WSL1和WSL2"><a href="#WSL1和WSL2" class="headerlink" title="WSL1和WSL2"></a>WSL1和WSL2</h3><p>WSL1和WSL2到底有哪些不一样呢？</p>
 <p>WSL1的主要问题是</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">文件 I/O 慢，尤其是在大量IO操作时，例如使用 git 克隆仓库；</span><br><span class="line">不支持内核程序；</span><br></pre></td></tr></table></figure>
 
@@ -182,13 +233,41 @@
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">相比较于 WSL 1 使用翻译层将 linux 系统调用转化成 windows 系统调用，</span><br><span class="line">WSL 2 使用了一个轻量级的、无需维护的虚拟机，并在这个虚拟机中运行了一个完整的 linux 内核。</span><br><span class="line">WSL 2 使用一个 VHD 虚拟磁盘文件作为 linux 发行版的根目录，</span><br><span class="line">其中使用 ext4文件系统格式，极大提升了IO性能。</span><br><span class="line">WSL 1 不支持，WSL2 支持可以运行例如 Docker 等程序</span><br></pre></td></tr></table></figure>
 
 <p>还有许多的地方二者都有不一样的地方，以及什么情况下选择哪一种版本更加合适，内容太多我没有办法一一列举，我强烈建议阅读微软<a href="https://docs.microsoft.com/en-us/windows/wsl/compare-versions">官方文档</a>,上面对于二者的描述很详细，很清楚。</p>
-<h2 id="VM虚拟机还是WSL2"><a href="#VM虚拟机还是WSL2" class="headerlink" title="VM虚拟机还是WSL2"></a>VM虚拟机还是WSL2</h2><p>就安装配置来说，WSL2的安装可比新建虚拟机导入ISO镜像文件来的快多了。而且WSL2启动快，资源占用也少一些，共享文件和网络系统，节省了不少的折腾时间。所以是不是意味着我们可以和VM虚拟机说byebye了？</p>
+<h3 id="在WSL2下安装Docker"><a href="#在WSL2下安装Docker" class="headerlink" title="在WSL2下安装Docker"></a>在WSL2下安装Docker</h3><p><a href="https://docs.docker.com/docker-for-windows/install/">Docker Desktop for Windows</a> 支持 64 位版本的 Windows 10 Pro，且必须开启 Hyper-V（若版本为 v1903 及以上则无需开启 Hyper-V），或者 64 位版本的 Windows 10 Home v1903 及以上版本。更多的详细情况可以参阅<a href="https://docs.docker.com/docker-for-windows/wsl/">官方文档</a></p>
+<p>在安装好WSL2，并且没有问题出现之后，开始着手安装docker。在Docker Desktop官方下载地址下载好.exe文件。</p>
+<p>双击.exe文件进行安装，勾选为WSL2添加需要的配置文件和创建开始菜单（看到两个勾就可以了），点击下一步开始安装。等待一会儿就会安装完成，点击close。</p>
+<p>这个时候如果你能够正常打开docker那么是最好的，如果出现了报错的话，例如</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/docker3.214xyr1hpgkg.png" alt="图片来源于网络"></p>
+<p>那么你就需要下载WSL2内核的更新包，前往上面给出的链接下载。</p>
+<p>又或者是下面这个样子的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/docker4.2q8jpr1aqra0.png" alt="image"></p>
+<p>这里需要需要注意三点：</p>
+<p>1.我们首先要保证该启用的功能都启用了。</p>
+<p>2.我们需要使用的是WSL2版本来操作docker，所以你要先确定自己当前的版本。</p>
+<p><code>wsl -l -v</code>  查看当前版本</p>
+<p><code>wsl --set-default-version 2</code>  将WSL2设置为默认版本</p>
+<p>3.输入在cmd中输入 bash 或者 wsl 都报错， 提示参考的对象类型不支持尝试的操作。</p>
+<p>输入 <code>netsh winsock reset</code> ,使用管理员权限运行该命令。然后重新启动docker。</p>
+<p>启动docker之后，我们需要对docker在WSL2下进行一些设置：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/docker5.5l6xgvs3en80.png" alt="image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/docker6.2gowp4df3jw0.png" alt="image"></p>
+<p>默认的访问方式去访问官方仓库太慢了，我们需要配置一个镜像源。我们在docker engine registry-mirrors中配置镜像站点。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&quot;https://hub-mirror.c.163.com&quot;,</span><br><span class="line">&quot;https://mirror.baidubce.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>这两个分别是网易源和百度源，可以根据自己的情况进行更换，只要保持相对应的格式就可以。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/docker7.5fj7h4zvdt00.png" alt="image"></p>
+<p>完成这些配置之后，我们现在进行检查。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">检查wsl2下的安装docker是否成功</span><br><span class="line">输入wsl（一定要保证是wsl2),接着输入 docker version</span><br><span class="line">查看本地的镜像</span><br><span class="line">docker image ls ,如果没有结果就去点击docker上面的image,然后等待一会儿。</span><br><span class="line">检查镜像加速配置</span><br><span class="line">docker info</span><br></pre></td></tr></table></figure>
+
+<p>关于更多docker操作命令，使用方法等，这里有一份<a href="https://yeasy.gitbook.io/docker_practice/">docker从入门到精通</a>的教程。</p>
+<h4 id="VM虚拟机还是WSL2"><a href="#VM虚拟机还是WSL2" class="headerlink" title="VM虚拟机还是WSL2"></a>VM虚拟机还是WSL2</h4><p>就安装配置来说，WSL2的安装可比新建虚拟机导入ISO镜像文件来的快多了。而且WSL2启动快，资源占用也少一些，共享文件和网络系统，节省了不少的折腾时间。所以是不是意味着我们可以和VM虚拟机说byebye了？</p>
 <p>这可不见得，对于是使用WSL2还是VM虚拟机，还得看自己的需求。</p>
 <p>1.如果你是一个萌新,那么建议使用虚拟机，对于命令不熟悉的你，最好不要直接在Windows上直接操作，万一出现什么问题解决起来可能要比你新建虚拟机长不少时间。在VM虚拟机就无所谓了，快照谁用谁真香，万一有什么错误还可以通过快照恢复。而且VM虚拟机有着更加友好的GUI界面，这对于新手来说也是很重要的一点，但是WSL2就显得比较简陋了。</p>
 <p>2.VM虚拟机中的系统是一个较为完整的系统，能够很大程度上模拟真实的环境。而WSL2就只有一个轻量级的Linux内核而已，所以二者在功能性上丰富程度是相差较大，在这一点上VM虚拟机完胜WSL2。所以，如果你想体验一个较为完整的Linux系统，建议VM虚拟机。</p>
 <p>目前，微软正在与VM进行合作，现在的VMWorkstation16允许Hyper-V与VM虚拟机同时使用了。相信以后估计不用再为两者的二选一问题而伤脑筋了。</p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p>1.<a href="https://blog.csdn.net/jun8148/article/details/97245249">解决idea Terminal配置git bash中文乱码</a></p>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p>1.<a href="https://blog.csdn.net/jun8148/article/details/97245249">解决idea Terminal配置git bash中文乱码</a></p>
 <p>2.<a href="https://docs.microsoft.com/en-us/windows/wsl/">Windows Subsystem for Linux Documentation</a></p>
+<p>3.<a href="https://docs.docker.com/docker-for-windows/wsl/">docker for windows_wsl</a></p>
 ]]></content>
       <categories>
         <category>笔记</category>
@@ -251,8 +330,7 @@
       </categories>
       <tags>
         <tag>文字博客</tag>
-        <tag>分享</tag>
-        <tag>博客</tag>
+        <tag>博客推荐</tag>
       </tags>
   </entry>
   <entry>
@@ -308,8 +386,8 @@
     <title>免费激活Windows和office</title>
     <url>/posts/541ef572.html</url>
     <content><![CDATA[<p>Windows系统和office办公软件都是我们现在学习，工作中很难离开的工具。由于各种各样的原因，可能有些人会出现Windows未被激活，office产品密钥过期等情况。所以，在这里列举一下如何免费的激活Windows和office。</p>
-<h2 id="Windows激活"><a href="#Windows激活" class="headerlink" title="Windows激活"></a>Windows激活</h2><p>关于Windows的激活方式一般分为数字权利激活和KMS在线激活。</p>
-<h4 id="1-数字权利激活"><a href="#1-数字权利激活" class="headerlink" title="1.数字权利激活"></a>1.数字权利激活</h4><p>数字权利激活会把当前电脑的硬件信息，上传至微软服务器。当用户重装系统后，设备会自动与服务器中存储的信息进行对比。如果相符，则自动激活。所以，这种激活方式对于用户来说是非常的方便的，有好的。</p>
+<h3 id="Windows激活"><a href="#Windows激活" class="headerlink" title="Windows激活"></a>Windows激活</h3><p>关于Windows的激活方式一般分为数字权利激活和KMS在线激活。</p>
+<h4 id="数字权利激活"><a href="#数字权利激活" class="headerlink" title="数字权利激活"></a>数字权利激活</h4><p>数字权利激活会把当前电脑的硬件信息，上传至微软服务器。当用户重装系统后，设备会自动与服务器中存储的信息进行对比。如果相符，则自动激活。所以，这种激活方式对于用户来说是非常的方便的，有好的。</p>
 <p>首先介绍一个专门用于激活Windows10的数字权利激活工具——云萌激活</p>
 <h5 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h5><p>以数字权利激活Windows10系统（涵盖各个版本）</p>
 <span id="more"></span>
@@ -321,14 +399,14 @@
 <h5 id="激活步骤"><a href="#激活步骤" class="headerlink" title="激活步骤"></a>激活步骤</h5><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">中文版</span><br><span class="line">下载 Releases 里的 .exe 发行文件。</span><br><span class="line"></span><br><span class="line">运行它。</span><br><span class="line"></span><br><span class="line">点按 Activate 按钮。</span><br><span class="line"></span><br><span class="line">完成~</span><br></pre></td></tr></table></figure>
 
 <p>可以说是十分的简单易用。</p>
-<h4 id="2-KMS服务器激活"><a href="#2-KMS服务器激活" class="headerlink" title="2.KMS服务器激活"></a>2.KMS服务器激活</h4><p>密钥管理服务（KMS）是微软为批量许可客户（组织，学校或政府）提供的一种正版激活方法。KMS激活期限最多可以长达180天（6个月），激活每7天自动进行更新（期限自动重置为180天），也就是说如果客户端可以一直连接到KMS主机服务器，那么是可以无限制的使用下去。</p>
+<h4 id="KMS服务器激活"><a href="#KMS服务器激活" class="headerlink" title="KMS服务器激活"></a>KMS服务器激活</h4><p>密钥管理服务（KMS）是微软为批量许可客户（组织，学校或政府）提供的一种正版激活方法。KMS激活期限最多可以长达180天（6个月），激活每7天自动进行更新（期限自动重置为180天），也就是说如果客户端可以一直连接到KMS主机服务器，那么是可以无限制的使用下去。</p>
 <p>但是对于一些非Windows10系统的用户来说，上面的工具爱莫能助，所以我们需要一款更加强大的激活工具——HEU KMS Activator </p>
 <p><a href="https://github.com/zbezj/HEU_KMS_Activator">GitHub发布地址</a></p>
 <h5 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h5><p>支持KMS激活Microsoft Windows、Office； 2、支持数字许可永久激活、KMS38激活至2038年；  3、支持OEM激活Windows Vista, Windows 7, Windwos Server； 4、支持Microsoft Office  零售版转换为VL批量许可版； 5、支持备份和还原激活信息。 6、支持自定义搭建KMS服务器激活； —激活成功率高、执行速度快、支持几乎所有版本； —在Windows 7上无需依赖安装.NET Framework； —可以自行安装或搭建KMS服务器； —自动识别三种语言（简/繁/英）；  —带参数可静默运行且参数可根据需要自选； —可以一键自动激活、也可以根据需要自选； —包含KMS相关的功能（安装密钥、激活状态查询等）  —完全可离线激活，也可以连接网络服务器进行激活；</p>
 <p>正因为这款激活工具几乎可以解决Windows电脑上所有的激活服务，所以在GitHub上也只是以文件的形式上传，并没有将工具代码开源，个人自行选择是否使用。</p>
 <h5 id="激活步骤-1"><a href="#激活步骤-1" class="headerlink" title="激活步骤"></a>激活步骤</h5><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">1.打开HEU KMS Activator 并选择一个激活方式(下面以数字激活为例)</span><br><span class="line">2.点击数字激活，点击“橘黄色按钮”，将激活 Windows 和 Office，智能识别最佳 的激活方式（优先顺序依次为数字许可证/KMS38/OEM/KMS），并自动跳过已经 永久激活的版本。</span><br><span class="line">3.完成(更多的激活方式自行选择和查询)</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-产品密钥激活"><a href="#3-产品密钥激活" class="headerlink" title="3.产品密钥激活"></a>3.产品密钥激活</h4><p>其实产品密钥激活算不上是另一种激活形式，只是换了一种激活方式。根据密钥的性质（数字权利还是KMS激活密钥）来决定你的设备激活状态。</p>
+<h4 id="产品密钥激活"><a href="#产品密钥激活" class="headerlink" title="产品密钥激活"></a>产品密钥激活</h4><p>其实产品密钥激活算不上是另一种激活形式，只是换了一种激活方式。根据密钥的性质（数字权利还是KMS激活密钥）来决定你的设备激活状态。</p>
 <p>如果你能确定自己的密钥是数字权利密钥，那么你可以直接打开设置-更新和安全-激活-更换产品密钥。将你手里面的密钥输入进入激活即可。</p>
 <p>但是如果你是KMS密钥的话建议通过代码来进行激活，代码如下：</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX(这里输入你自己的产品密钥)</span><br><span class="line">slmgr /skms kms.03k.org</span><br><span class="line">slmgr /ato</span><br></pre></td></tr></table></figure>
@@ -337,14 +415,14 @@
 <p>密钥获取处:<a href="https://t.me/getkeys">Windows与office激活密钥公益发布站</a></p>
 <p>本着互联网“传递，共享，自由”的原则，我希望大家使用公益站发布的密钥之后，能给他一个关注。</p>
 <hr>
-<h2 id="office产品激活"><a href="#office产品激活" class="headerlink" title="office产品激活"></a>office产品激活</h2><p>office激活除了上面说到的HEU KMS Activator ，但是可能由于代码没有开源的缘故，可能让人觉得不太放心，那么下面的office tool plus也是一个不错的选择。</p>
+<h3 id="office产品激活"><a href="#office产品激活" class="headerlink" title="office产品激活"></a>office产品激活</h3><p>office激活除了上面说到的HEU KMS Activator ，但是可能由于代码没有开源的缘故，可能让人觉得不太放心，那么下面的office tool plus也是一个不错的选择。</p>
 <p><a href="https://otp.landian.vip/zh-cn/">Office Tool Plus 官方网站 - 一键部署 Office </a></p>
 <p><a href="https://github.com/YerongAI/Office-Tool">GitHub开源地址</a></p>
 <h5 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h5><p>一键生成配置，快速激活office,Office Tool Plus从微软服务器上获取office的版本信息以及安装文件，始终确保下载，安装的office为最新版本。</p>
 <h5 id="激活步骤-2"><a href="#激活步骤-2" class="headerlink" title="激活步骤"></a>激活步骤</h5><p>下载Office Tool Plus之后，激活步骤请参考<a href="https://help.coolhub.top/zh-cn/activate/#%E6%BF%80%E6%B4%BB%E6%AD%A5%E9%AA%A4">官方文档</a>，有详细说明。</p>
 <hr>
-<h2 id="其他方案"><a href="#其他方案" class="headerlink" title="其他方案"></a>其他方案</h2><p>也许你实在不想折腾那么多繁琐的步骤，那么你可以使用产品密钥激活(密钥寻找可以前往上面的telegram频道，如果你没有telegram，那就只能求助于万能的网友了)，或者暂时使用office的替代品。我这里推荐两个替代品：一个是<a href="https://www.wps.com/download/">WPS</a>,另一个是<a href="https://www.libreoffice.org/">Libre Office</a>(开源免费，与Office兼容)。</p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p>1.<a href="https://zhuanlan.zhihu.com/p/349931246">Windows系统激活神器HEU KMS Activator v22.1.0激活工具</a></p>
+<h4 id="其他方案"><a href="#其他方案" class="headerlink" title="其他方案"></a>其他方案</h4><p>也许你实在不想折腾那么多繁琐的步骤，那么你可以使用产品密钥激活(密钥寻找可以前往上面的telegram频道，如果你没有telegram，那就只能求助于万能的网友了)，或者暂时使用office的替代品。我这里推荐两个替代品：一个是<a href="https://www.wps.com/download/">WPS</a>,另一个是<a href="https://www.libreoffice.org/">Libre Office</a>(开源免费，与Office兼容)。</p>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p>1.<a href="https://zhuanlan.zhihu.com/p/349931246">Windows系统激活神器HEU KMS Activator v22.1.0激活工具</a></p>
 <p>2.<a href="https://zhuanlan.zhihu.com/p/260014354">win10激活的几种方式及其原理</a></p>
 ]]></content>
       <categories>
