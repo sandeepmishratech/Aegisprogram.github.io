@@ -30,7 +30,7 @@
 <meta property="og:description" content="对于过于冗长的Linux或者是git命令，我想要一个快速得出结果的过程，所以学会自定义alias就很必要了。 之前我自己在电脑上给Windows Terminal配置了Vim和Git Bash，相关的过程也就在这里了，这样我平时操作一些文件的时候更加“爽”，万一需要执行什么命令，我基本上可以用WindowsTerminal来取代Windows power shell和CMD。为了进一步提升自己的使">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-07-08T11:27:25.000Z">
-<meta property="article:modified_time" content="2021-07-09T16:34:46.797Z">
+<meta property="article:modified_time" content="2021-07-09T16:47:09.256Z">
 <meta property="article:author" content="Aegisprogram">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-10 01:34:46" itemprop="dateModified" datetime="2021-07-10T01:34:46+09:00">2021-07-10</time>
+                <time title="Modified: 2021-07-10 01:47:09" itemprop="dateModified" datetime="2021-07-10T01:47:09+09:00">2021-07-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,11 +285,11 @@
 <p>这样当我需要使用git commit命令时，我们就可以使用gc来代替它。不过，一旦关闭了终端，那么下次再重新登录的时候，该别名就失效了。所以这只是临时的。</p>
 <p>永久别名</p>
 <p>先在用户目录下(系统盘/User/用户名)看看有没有.bashrc文件，没有就新建一个。</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">`vim .bashrc`</span></span><br><span class="line">编辑你想要设置的别名</span><br><span class="line"><span class="code">`alias lsl=&quot;ls -lh&quot;`</span></span><br><span class="line"><span class="code">`alias lm=&quot;ls -lah&quot;`</span></span><br><span class="line">保存退出</span><br><span class="line">然后 <span class="code">`source ~/.bashrc`</span>，使其生效.</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim .bashrc</span><br><span class="line">编辑你想要设置的别名</span><br><span class="line">alias lsl=&quot;ls -lh&quot;</span><br><span class="line">alias lm=&quot;ls -lah&quot;</span><br><span class="line">保存退出</span><br><span class="line">然后 source ~/.bashrc，使其生效.</span><br></pre></td></tr></table></figure>
 
 <p>如果单纯完成到这里的话，你可能当前能够使用别名，但是当关闭终端再打开之后就会发现命令未找到了，所以我们需要进一步的配置。</p>
-<p>接着查看用户名下面有没有<code>~/.bash_profile</code>文件，如果没有就新建。</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">`vim .bash_profile`</span></span><br><span class="line">在里面输入</span><br><span class="line"><span class="code">`source ~/.bashrc`</span></span><br><span class="line">保存退出</span><br><span class="line">然后<span class="code">`source ~/.bash_profile`</span></span><br></pre></td></tr></table></figure>
+<p>接着查看用户名下面有没有<code>.bash_profile</code>文件，如果没有就新建。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim .bash<span class="emphasis">_profile</span></span><br><span class="line"><span class="emphasis">在里面输入</span></span><br><span class="line"><span class="emphasis">source ~/.bashrc</span></span><br><span class="line"><span class="emphasis">保存退出</span></span><br><span class="line"><span class="emphasis">然后 source ~/.bash_</span>profile</span><br></pre></td></tr></table></figure>
 
 <p>这样就算关闭终端之后再次启动我还是能够使用 我自己设置好的命令别名。</p>
 <h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><p>在Linux中的临时设置变量和上面的一样，主要是在Linux中设置永久的命令别名。永久设置别名只要按照如下操作即可：</p>
