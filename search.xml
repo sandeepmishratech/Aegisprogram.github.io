@@ -205,6 +205,67 @@
       </tags>
   </entry>
   <entry>
+    <title>如何使用hugo+github pages搭建一个个人博客</title>
+    <url>/posts/975b52b0.html</url>
+    <content><![CDATA[<p>除了可以使用hexo来搭建个人博客之外，我们还可以使用hugo博客框架来搭建自己的个人博客。hugo和hexo相比搭建过程更加的简单快捷，需要的依赖较少，搭建过程不容易出错，对于新手来说更加的友好一些。所以如果你还没能成功搭建起hexo博客的话，那么不妨试试hugo+github pages搭建。</p>
+<span id="more"></span>
+
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>hugo是一个基于GO语言开发的博客框架，相比于hexo来说hugo的生成静态资源网页的速度更快。支持Markdown语法，也有较多的主题可以选择，搭建个人博客不失为一个好的选择。</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>其实hugo的搭建不需要借助过多的工具，仅仅需要你的电脑上有一个Git环境（工具），一个GitHub账号。嫌弃麻烦的话可以直接下载使用cmder或者是Git Bash，如果你也是使用的Windows Terminal的话，那么可以参考我之前的<a href="https://aegisprogram.github.io/posts/f5bc5ed5.html#more">Windows Terminal配置</a>中关于将Git Bash集成到Windows Terminal上的博客。下面的操作我将在Windows Terminal上进行。前面说到的其他工具也可以，命令没有什么差别。</p>
+<h3 id="下载hugo"><a href="#下载hugo" class="headerlink" title="下载hugo"></a>下载hugo</h3><p>第一次搭建我建议下载二进制文件，而不是其他命令行方式下载，这样做是为了减少出错的概率。先去GitHub下载<a href="https://github.com/gohugoio/hugo/tags">hugo</a>，根据自己的系统下载对应的二进制文件即可。这里需要注意的是，hugo和hugo_extended是有些区别的，部分主题会指定使用hugo_extended。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/hugo/hugo.5t5uqj8xpdc0.png" alt="image"></p>
+<p>所以你在使用主题的时候，或者说你在下载版本的时候要考虑清楚。在电脑上新建一个文件夹，之后在里面再新建一个bin文件夹，然后将下载的二进制文件解压过去，保证bin下载只有hugo的二进制文件，没有再往下的目录，即<code>D:\hugo\bin\hugo.exe</code>这样的方式。然后在系统环境变量中找到path将二进制文件的路径添加进去。在终端输入<code>hugo version</code>，如果显示版本号则表示环境变量配置正确，否则就要进行检查。</p>
+<h3 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h3><p>我们进入hugo的文件夹中执行<code>hugo new site blog</code>建立站点文件夹（blog只是一个例子，你可以随意取什么名字），进入blog文件夹中我们会发现里面内容如下：</p>
+<blockquote>
+<p>archetypes:配置文章元数据</p>
+<p>content:博客文章所在目录</p>
+<p>data:用来存放数据文件，一般是json文件</p>
+<p>layouts:网站布局</p>
+<p>static:一些静态的内容，例如图片等</p>
+<p>themes:博客主题</p>
+<p>config.yml:站点配置文件,支持yml.toml和json三种格式的</p>
+</blockquote>
+<h3 id="下载配置主题"><a href="#下载配置主题" class="headerlink" title="下载配置主题"></a>下载配置主题</h3><p>这时候我们先去选择一个自己喜欢的主题然后将其克隆下来，我以PaperMod为例。</p>
+<p>我们找到主题仓库，然后在blog下执行</p>
+<p><code>git clonehttps://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod</code></p>
+<p>这个时候我们就会看到themes下面多了一个叫做PaperMod的文件夹，里面存放的就是主题资源。</p>
+<p>这里需要注意的是：不同的主题之前的配置方式是不同的，甚至会对hugo的版本有限制，所以配置主题的时候一定要仔细查阅主题文档。有些主题下面有一个exampleSite文件夹，那么你主要找到下面的config文件，然后复制到blog下面，将原本的config文件替换掉。之后你再对config文件进行自己的配置。</p>
+<p>还有一种主题，例如我这里使用的PaperMod下面就没有exampleSite，所以就需要自己在官方文档中找到示例的配置然后复制到blog下的config中。特别要说明的是必须要在theme中指明主题名称，否则hugo会找不到该主题模块。</p>
+<p>如果没能克隆到主题，那么你需要先执行一次<code>git init</code>。</p>
+<h3 id="部署到GitHub-Pages"><a href="#部署到GitHub-Pages" class="headerlink" title="部署到GitHub Pages"></a>部署到GitHub Pages</h3><p>在GitHub上新建一个仓库，命名方式为<code>你的GitHub用户名+github.io</code>,勾选第一个添加README文件，点击创建。</p>
+<p>我们完成上述的配置之后，我们接下来在blog下执行<code>hugo</code>,这个时候我们会看到blog中多了一个public文件夹。我们先在blog下执行<code>hugo new post/first.md</code>生成一个Markdown文件，vi进去之后我们先输入hello world然后保存退出。我们接着输入<code>hugo -t 主题名</code>生成静态资源文件，输入<code>hugo server -D</code>先在本地预览一下效果，没有问题之后我们进入public文件夹，依次执行以下命令:</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">git init(初始化git)</span><br><span class="line">git add . (添加静态文件到缓存区)</span><br><span class="line">git branch -M master (新建一个master分支)</span><br><span class="line">git commit -m &#x27;initial commit&#x27;(提交说明随便写)</span><br><span class="line">git remote add origin git@github.com:username/username.github.io.git</span><br><span class="line">(这是ssh提交方法， 需要生成Token搭配GitHub Actions自动发布）。</span><br><span class="line">git remote add origin https://github.com/ilemonEllen/ilemonEllen.github.io.git</span><br><span class="line">(这是采用https方法提交，通过本地的public连接远程仓库提交).二者任选其一就可以。</span><br><span class="line">git push -u origin master (提交到master上)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后我们去仓库中点击<code>setting-----pages----GitHub Pages</code>下将发布分支改为master.等待一会儿，不出意外的话很快就能看到你的博客了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/hugo/hugo2.hm80koga1o0.png" alt="image"></p>
+<h3 id="注意问题"><a href="#注意问题" class="headerlink" title="注意问题"></a>注意问题</h3><p>1.如果你的博客已经成功提交但是没有显示内容</p>
+<p>只需要将文章元数据的draft的true改为false，然后提交就可以了。</p>
+<p>2.git 提交上去的是blog下的文件夹，但是GitHub Pages显示404</p>
+<p>提交博客都是在public文件夹中提交的，在提交之前要也特别注意要先执行<code>hugo -t 主题名</code>操作，生成静态资源文件。在public中提交时，要执行<code>git init</code>，不然会出现无法提交或者是只提交上去一个public文件夹。</p>
+<p>3.remote  origin already exists怎么解决</p>
+<p>这是因为你之前于该分支的关联没有解除，所以你需要执行<code>git remote rm origin</code>，然后再与远程仓库分支建立连接。</p>
+<p>4.出现LF will be replaced by CRLF警告</p>
+<p>出现这个现象的原因是在Windows中使用CRLF标识一行的结束，而在Linux/UNIX系统中只使用LF标识一行的结束，其实这对于博客部署来说没有什么影响。如果要去掉的话我们只需要执行以下命令：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">查看core.autocrlf属性</span><br><span class="line">git config --global --get core.autocrlf</span><br><span class="line">git config --get core.autocrlf</span><br><span class="line">true</span><br><span class="line">设置core.autocrlf属性</span><br><span class="line">git config core.autocrlf false</span><br><span class="line">git config --get core.autocrlf</span><br><span class="line">false</span><br></pre></td></tr></table></figure>
+
+<p>到此hugo+github pages的搭建就结束了。至于使用自动脚本+GitHub Actions 自动发布网上的教程有很多，我就不在这里赘述了。</p>
+<h3 id="常用的命令"><a href="#常用的命令" class="headerlink" title="常用的命令"></a>常用的命令</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">hugo -t + 主题名 本地生成静态资源</span><br><span class="line">hugo server -D 本地预览</span><br><span class="line">hugo new post/xxx.md  新建博客文章</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;提交说明&quot;</span><br><span class="line">git push</span><br><span class="line">git remote -v 查看分支连接</span><br><span class="line">git branch -a 查看远程分支</span><br><span class="line">git push origin --delete <span class="xml"><span class="tag">&lt;<span class="name">branchName</span>&gt;</span></span> 删除远程分支</span><br></pre></td></tr></table></figure>
+
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p>1.<a href="https://blog.csdn.net/taiyangdao/article/details/78629107">Git中的“LF will be replaced by CRLF”警告详解</a></p>
+<p>2.<a href="https://adityatelange.github.io/hugo-PaperMod/">PaperMod</a></p>
+<p>3.<a href="https://zhuanlan.zhihu.com/p/350977057">Hugo的基本安装｜网站生成｜托管至Github Pages</a></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>hugo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>alias命令使用以及apt源的更换</title>
     <url>/posts/93b9d9fa.html</url>
     <content><![CDATA[<p>对于过于冗长的Linux或者是git命令，我想要一个快速得出结果的过程，所以学会自定义alias就很必要了。</p>
@@ -514,9 +575,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
+        <tag>主题</tag>
         <tag>教程</tag>
         <tag>文字博客</tag>
-        <tag>主题</tag>
       </tags>
   </entry>
   <entry>
@@ -611,9 +672,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
+        <tag>主题</tag>
         <tag>教程</tag>
         <tag>文字博客</tag>
-        <tag>主题</tag>
       </tags>
   </entry>
   <entry>
@@ -646,9 +707,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
+        <tag>主题</tag>
         <tag>教程</tag>
         <tag>文字博客</tag>
-        <tag>主题</tag>
       </tags>
   </entry>
 </search>
