@@ -227,7 +227,7 @@
 </blockquote>
 <h3 id="下载配置主题"><a href="#下载配置主题" class="headerlink" title="下载配置主题"></a>下载配置主题</h3><p>这时候我们先去选择一个自己喜欢的主题然后将其克隆下来，我以PaperMod为例。</p>
 <p>我们找到主题仓库，然后在blog下执行</p>
-<p><code>git clonehttps://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod</code></p>
+<p><code>git clone https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod</code></p>
 <p>这个时候我们就会看到themes下面多了一个叫做PaperMod的文件夹，里面存放的就是主题资源。</p>
 <p>这里需要注意的是：不同的主题之前的配置方式是不同的，甚至会对hugo的版本有限制，所以配置主题的时候一定要仔细查阅主题文档。有些主题下面有一个exampleSite文件夹，那么你主要找到下面的config文件，然后复制到blog下面，将原本的config文件替换掉。之后你再对config文件进行自己的配置。</p>
 <p>还有一种主题，例如我这里使用的PaperMod下面就没有exampleSite，所以就需要自己在官方文档中找到示例的配置然后复制到blog下的config中。特别要说明的是必须要在theme中指明主题名称，否则hugo会找不到该主题模块。</p>
@@ -266,10 +266,126 @@
       </tags>
   </entry>
   <entry>
+    <title>编程开发资源</title>
+    <url>/posts/4e0b09d6.html</url>
+    <content><![CDATA[<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>以上资源整理自<a href="https://t.me/tieliu">黑洞资源笔记</a>，此外，本篇中英文资源数量较多。</p>
+<h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><p>1.<a href="https://loremipsum.io/">Lorem Ipsum</a>    Lorem Ipsum发生器</p>
+<p>2.<a href="https://realfavicongenerator.net/">RealFaviconGenerator</a>     图标生成器</p>
+<p>3.<a href="https://formito.com/tools/favicon">Favicon Maker</a>    免费的Favicon制造商</p>
+<p>4.<a href="https://metatags.io/">Meta Tags</a>     元标记生成器，预览您的网页在Google，Facebook，Twitter等上的外观</p>
+<p>5.<a href="https://bennettfeely.com/clippy/">Clippy</a>     CSS剪切路径生成器</p>
+<p>6.<a href="https://regex101.com/">Regex101</a>    在线正则表达式测试器</p>
+<p>7.<a href="https://webcode.tools/">Web代码工具</a>     生成HTML5，CSS3，微数据，JSON-LD，Twitter卡，Open Graph等</p>
+<p>8.<a href="https://carbon.now.sh/">Carbon</a>     创建并共享您来源的精美图像</p>
+<p>9.<a href="https://grid.layoutit.com/">CSS网格生成器</a>    快速设计网页布局，并获取HTML和CSS代码。直观地学习CSS Grid，并使用我们的交互式CSS Grid Generator构建Web布局</p>
+<span id="more"></span>
+
+<h3 id="web开发资源"><a href="#web开发资源" class="headerlink" title="web开发资源"></a>web开发资源</h3><h4 id="开发者的roadmaps"><a href="#开发者的roadmaps" class="headerlink" title="开发者的roadmaps"></a>开发者的roadmaps</h4><p>1.<a href="https://roadmap.sh/frontend">Frontend</a>    前端开发路线图</p>
+<p>2.<a href="https://roadmap.sh/backend">Backend</a>     后端开发路线图</p>
+<p>3.<a href="https://roadmap.sh/react">React</a>     React开发路线图</p>
+<p>4.<a href="https://roadmap.sh/android">Andriod</a>     Android开发路线图</p>
+<p>5.<a href="https://roadmap.sh/devops">DevOps</a>    DevOps路线图</p>
+<h4 id="文档和备忘单"><a href="#文档和备忘单" class="headerlink" title="文档和备忘单"></a>文档和备忘单</h4><p>1.<a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a>     MDN Web Docs网站提供有关Open Web技术的信息，包括网站和渐进式Web应用程序的HTML，CSS和API</p>
+<p>2.<a href="https://devdocs.io/https://devdocs.io/">DevDocs</a>    为开发人员提供的快速，离线和免费的文档浏览器。在一个Web应用程序中搜索100多个文档</p>
+<p>3.<a href="https://devhints.io/">DEVHINTS</a>    命令查询备忘单</p>
+<p>4.<a href="https://flexbox.malven.co/">FLEX - Malven</a>     用于CSS flex布局的可视备忘单</p>
+<p>5.<a href="https://grid.malven.co/">GRID - Malven</a>      CSS网格布局的可视备忘单</p>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><h4 id="互联网"><a href="#互联网" class="headerlink" title="互联网"></a>互联网</h4><p>1.<a href="https://www.youtube.com/watch?v=x3c1ih2NJEg">互联网的工作原理视频</a>      互联网如何运作</p>
+<p>2.<a href="https://www.youtube.com/playlist?list=PLzdnOPI1iJNfMRZm5DDxco3UdsFegvuB7">互联网的工作原理简短视频</a>     关于互联网如何工作的简要说明</p>
+<p>3.<a href="https://howdns.works/">域名解析</a>    DNS如何工作</p>
+<p>4.<a href="https://howhttps.works/">HTTPS</a>     HTTPS如何工作</p>
+<p>5.<a href="https://httpstatuses.com/">HTTP状态代码</a>     HTTP状态代码目录，其中包含定义，详细信息和有用的代码参考</p>
+<h4 id="HTML和CSS"><a href="#HTML和CSS" class="headerlink" title="HTML和CSS"></a>HTML和CSS</h4><p>1.<a href="https://www.freecodecamp.org/learn">freeCodeCamp</a>    学习Web开发的免费课程</p>
+<p>2.<a href="https://www.internetingishard.com/">Interneting Is Hard</a>     面向完整初学者的友好的Web开发教程</p>
+<p>3.<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTML Elements</a>     由MDN引用的HTML元素</p>
+<p>4.<a href="https://css-tricks.com/snippets/html/glyphs/">HTML Entity</a>      CSS技巧的HTML实体参考</p>
+<p>5.<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Referencehttps://developer.mozilla.org/en-US/docs/Web/CSS/Reference">CSS3属性</a>      MDN引用的CSS</p>
+<p>6.<a href="https://cssreference.io/">CSS参考</a>      CSS的免费视觉指南</p>
+<p>7.<a href="https://flexboxfroggy.com/">Flexbox Froggy</a>      一款可帮助您学习CSS Flex的游戏</p>
+<p>8.<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS技巧</a>     Flexbox  -Flexbox完整指南</p>
+<p>9.<a href="https://cssgridgarden.com/">网格花园</a>     一个学习CSS网格的游戏</p>
+<p>10.<a href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS TRICKS - A Complete Guide to Grid</a>     CSS网格的全面指南，着重于网格父容器和网格子元素的所有设置</p>
+<p>11.<a href="https://learncssgrid.com/">学习CSS网格</a>      Jonathan Suh撰写的综合指南，可帮助了解和学习CSS网格布局</p>
+<p>12.<a href="https://caniuse.com/">Can I Use</a>      最新的浏览器支持表，以支持台式机和移动Web浏览器上的前端Web技术。</p>
+<p>13.<a href="https://emilkowalski.github.io/css-effects-snippets/">CSS Effects</a>     CSS动画</p>
+<p>14.<a href="https://keyframes.app/">Keyframes</a>      使用可视时间轴编辑器创建基本或复杂的CSS</p>
+<p>15.<a href="https://animista.net/">Animista</a>     CSS动画的集合</p>
+<p>16.<a href="https://9elements.com/bem-cheat-sheet">BEM</a>     BEM命名备忘单</p>
+<p>17.<a href="https://autoprefixer.github.io/">Autoprefixer</a>     一个PostCSS插件，可解析您的CSS并添加供应商前缀</p>
+<p>18.<a href="https://www.cleancss.com/css-beautify/">CSS Formatter</a>    在线CSS Formatter，CSS Beautifier</p>
+<p>19.<a href="https://placeholder.com/">Placeholder</a>     如何使用我们的占位符。只需在我们的URL后指定图像大小，将获得一个占位符图像</p>
+<h4 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h4><p>1.<a href="https://www.freecodecamp.org/learn">freeCodeCamp</a>     最好的免费资源，用于以交互方式学习JavaScript</p>
+<p>2.<a href="https://www.codecademy.com/learn/introduction-to-javascript">Codecademy</a>    免费课程，以交互方式学习JavaScript</p>
+<p>3.<a href="https://javascript.info/">JavaScript.info</a>      现代JavaScript教程</p>
+<p>4.<a href="https://eloquentjavascript.net/">Eloquent JavaScript</a>    这是一本有关JavaScript，编程和数字奇迹的书。您可以在此处在线阅读</p>
+<p>5.J<a href="https://javascript30.com/">avaScript30</a>    30天香草JS编码挑战。在30天内使用30个教程构建30件事</p>
+<p>6.<a href="https://blog.sessionstack.com/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with-2f077c4438b5">JavaScript的工作方式</a>  </p>
+<p>7.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">MDN的JavaScript参考</a></p>
+<p>8.<a href="https://developer.mozilla.org/en-US/docs/Web/Events">JavaScript事件参考</a></p>
+<p>9.<a href="http://youmightnotneedjquery.com/">DOM操作参考</a></p>
+<p>10.<a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/">JavaScript设计模式</a></p>
+<p>11.<a href="https://javascript.info/">JavaScript资讯</a>     现代JavaScript教程</p>
+<h4 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h4><p>1.<a href="https://www.youtube.com/playlist?list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU">Node.js教程</a>     Net Ninja编写的Node.js速成课程教程</p>
+<p>2.<a href="https://github.com/goldbergyoni/nodebestpractices">最佳实践</a>     大量的构建节点应用程序的最佳实践。对于大型项目很重要。</p>
+<p>3.<a href="http://thenodeway.io/">The Node Way</a>     Node.js最佳实践的完整哲学和指导原则，用于编写可维护的模块，可伸缩的应用程序和易于阅读的代码</p>
+<p>4.<a href="https://github.com/sindresorhus/awesome-nodejs">Awesome Nodejs</a>    令人愉快的Node.js软件包和资源</p>
+<p>5.<a href="https://www.freecodecamp.org/news/express-js-security-tips/">Express.js安全提示</a>      如何保存和保护应用程序</p>
+<p>6.<a href="https://github.com/azat-co/you-dont-know-node">你不知道Node.js</a></p>
+<h4 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h4><p>1.<a href="https://www.codecademy.com/learn/learn-python">Codecademy</a>    免费课程，以交互方式学习Python</p>
+<p>2.<a href="https://www.programiz.com/python-programming">Programiz</a>     学习Python编程</p>
+<p>3.<a href="https://github.com/vinta/awesome-python">Awesome Python</a>     精选的Python框架，库，软件和资源的精选清单</p>
+<p>4.<a href="https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world">Flask教程</a>      Miguel Grinberg编写的Flask Mega-Tutorial</p>
+<p>5.<a href="https://realpython.com/">Real Python</a>     在线学习Python：面向所有技能水平的开发人员的Python教程，Python书籍和课程，Python新闻，代码示例，文章等</p>
+<h4 id="APIS"><a href="#APIS" class="headerlink" title="APIS"></a>APIS</h4><p>1.<a href="https://public-apis.io/">公共API</a>     面向开发人员的1000多种免费的公共和开放REST API的汇总列表</p>
+<p>2.<a href="https://jsonplaceholder.typicode.com/">JSONPlaceholder</a>    免费使用伪造的在线REST API进行测试和原型制作</p>
+<p>3.<a href="https://openweathermap.org/guide">OpenWeather</a>    来自OpenWeatherMap的简单，快速，免费的天气API，您可以访问当前的天气数据，每小时，5天和16天的天气预报</p>
+<p>4.<a href="https://swapi.dev/">SWAPI</a>     星际大战API</p>
+<p>5.<a href="http://quotes.rest/">Quotes REST API</a>    这是世界上最大的此类数据库。Quotes API提供了一种简单的方法来访问数据</p>
+<h3 id="开发者工具"><a href="#开发者工具" class="headerlink" title="开发者工具"></a>开发者工具</h3><p>1.<a href="https://www.postman.com/">Postman</a>      使API开发变得容易。简化构建API的每个步骤并简化协作，以便您可以更快地创建更好的API</p>
+<p>2.<a href="https://insomnia.rest/">Insomnia</a>      领先的开源API客户端，以及用于GraphQL和REST的协作API设计平台</p>
+<p>3.<a href="https://github.com/typicode/json-server">JSON Server</a>       在不到30秒的时间内（严重）获得具有零编码的完全伪造的REST API。供需要快速后端进行原型制作和模拟的前端开发人员使用。</p>
+<p>4.<a href="https://www.npmtrends.com/">npm trends</a>      您应该使用哪个NPM软件包？比较一段时间内的NPM软件包下载统计信息。找出趋势，选出赢家</p>
+<p>5.<a href="https://bundlephobia.com/">BUNDLEPHOBIA</a>    查找将npm软件包添加到软件包中的成本</p>
+<p>6.<a href="https://www.figma.com/">Figma</a>     Figma帮助团队从头到尾创建，测试和交付更好的设计</p>
+<p>7.<a href="https://www.adobe.com/products/xd.html">Adobe XD</a>    通过外观和感觉像真实事物的设计分享您的故事。线框，动画，原型，协作等等—一切都在这里，一站式完成。</p>
+<p>8.<a href="https://www.sketch.com/">Sketch</a>     使用超过100万人使用的设计平台，从自由职业者到全球最大的团队，创建，制作原型，进行协作并将您的想法变为现实</p>
+<p>9.<a href="https://whimsical.com/">Whimsical</a>     以思想的速度进行视觉交流–协作流程图，线框，便签和思维导图。</p>
+<p>10.<a href="https://resumegenius.com/">ResumeGenius</a>      唯一可以吸引您面试的在线简历构建器。在几分钟之内创建一份专业的简历，下载并打印</p>
+<p>11.<a href="https://resume.io/">resume.io</a>      免费的在线简历制作工具，可让您在数分钟内创建完美的简历</p>
+<p>12.<a href="https://www.resume-now.com/resume/builder">Resume Now</a>      只需要几分钟,在线简历制作者应该花很长时间使用,我们免费的简历制作者不需要</p>
+<p>13.<a href="https://www.canva.com/create/resumes/">Canva</a>     使用Canva的免费简历生成器，可以轻松快捷地申请理想的工作。从数百种免费中选择</p>
+<p>14.<a href="https://novoresume.com/">novoresume</a>      在2020年制作完美的简历，并使用免费的简历生成器获得理想的工作。选择一个模板。个性化它</p>
+<p>15.<a href="https://rx-resume.web.app/">RX-Resume</a>      轻松建立您的简历</p>
+<p>16.<a href="https://mailsac.com/">mailsac</a>    一次性测试电子邮件收件箱服务</p>
+<p>17.<a href="https://tiny-helpers.dev/">Tiny Helpers</a>     面向Web开发人员的免费的单用途在线工具集合</p>
+<p>18.<a href="https://free-for.dev/#/">Free for Developers</a>     这是为开发人员提供免费套餐的软件和其他产品的列表</p>
+<p>17.</p>
+<h3 id="在线学习资源"><a href="#在线学习资源" class="headerlink" title="在线学习资源"></a>在线学习资源</h3><p>1.<a href="https://www.w3schools.com/">w3schools</a>      世界上最大的Web开发人员网站。教程参考，示例，实践，证书</p>
+<p>2.<a href="https://www.codecademy.com/">Codecademy</a>      学习所需工作所需的技术技能。作为在线教育和学习编码的领导者</p>
+<p>3.<a href="https://www.studytonight.com/">Study Tonight</a>      学习-通过手写的简单教程，测试和视频教程学习诸如Java，C ++，DBMS，数据结构等工程主题的最佳场所</p>
+<p>4.<a href="https://www.programiz.com/">Programiz</a>      通过我们易于遵循的教程，示例，在线编译器和参考资料，学习使用Python，C / C ++，Java和其他流行的编程语言进行编码</p>
+<p>5.<a href="https://dev.to/iamismile/command-line-tutorial-58km">命令行教程</a>      UNIX基本命令教程</p>
+<p>6.<a href="https://try.github.io/">Try Git</a>      一系列互动的挑战，以学习和尝试Git。恢复</p>
+<p>7.<a href="https://devresourc.es/">Dev Resources</a>     开发资源可为您的开发者之旅提供一切，所有内容均列在精选列表中</p>
+<h3 id="开发者站点"><a href="#开发者站点" class="headerlink" title="开发者站点"></a>开发者站点</h3><p>1.<a href="https://dev.to/">DEV</a>    一个建设性和包容性的社交网络。开源且完全透明</p>
+<p>2.<a href="https://medium.com/">Medium</a>     媒介是一个开放的平台，读者可以在其中找到动态思维，专家和未被发现的声音可以在任何主题上分享他们的作品</p>
+<p>3.<a href="https://github.com/iamismile/web-dev-resources/blob/main/news.ycombinator.com">Hacker News</a>     从Hacker News获取最新信息</p>
+<p>4.<a href="https://hackernoon.com/">Hacker Noon</a>     Hacker Noon用真实的技术专家撰写的不受束缚的故事和观点反映了技术行业</p>
+<p>5.<a href="https://www.smashingmagazine.com/">Smashing Magazine</a>      适用于Web设计师和开发人员</p>
+<p>6.<a href="https://hashnode.com/">Hashnode</a>    一个免费的内容创建平台和社区，允许您在自己的域上发布文章</p>
+]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>开发资源</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>alias命令使用以及apt源的更换</title>
     <url>/posts/93b9d9fa.html</url>
     <content><![CDATA[<p>对于过于冗长的Linux或者是git命令，我想要一个快速得出结果的过程，所以学会自定义alias就很必要了。</p>
-<p>之前我自己在电脑上给Windows Terminal配置了Vim和Git Bash，相关的过程也就在<a href="https://aegisprogram.github.io/posts/f5bc5ed5.html#more">这里</a>了，这样我平时操作一些文件的时候更加“爽”，万一需要执行什么命令，我基本上可以用WindowsTerminal来取代Windows power shell和CMD。为了进一步提升自己的使用体验，我决定对一些命令设置自定义的别名。</p>
+<p>之前我自己在电脑上给Windows Terminal配置了Vim和Git Bash，相关的过程也就在<a href="https://aegisprogram.github.io/posts/f5bc5ed5.html#more">这里</a>了，这样我平时操作一些文件的时候更加“爽”，万一需要执行什么命令，我基本上可以用WindowsTerminal来取代Windows powershell和CMD。为了进一步提升自己的使用体验，我决定对一些命令设置自定义的别名。</p>
 <span id="more"></span>
 
 <h3 id="alias命令"><a href="#alias命令" class="headerlink" title="alias命令"></a>alias命令</h3><h4 id="Git-Bash"><a href="#Git-Bash" class="headerlink" title="Git Bash"></a>Git Bash</h4><p>可以这样对于WindowsTerminal中的git bash 进行设置命令别名。</p>
@@ -575,9 +691,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>主题</tag>
         <tag>教程</tag>
         <tag>文字博客</tag>
+        <tag>主题</tag>
       </tags>
   </entry>
   <entry>
@@ -672,9 +788,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>主题</tag>
         <tag>教程</tag>
         <tag>文字博客</tag>
+        <tag>主题</tag>
       </tags>
   </entry>
   <entry>
@@ -707,9 +823,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>主题</tag>
         <tag>教程</tag>
         <tag>文字博客</tag>
+        <tag>主题</tag>
       </tags>
   </entry>
 </search>
