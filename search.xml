@@ -266,6 +266,57 @@
       </tags>
   </entry>
   <entry>
+    <title>Windows的奇技淫巧</title>
+    <url>/posts/aa796245.html</url>
+    <content><![CDATA[<p>了解一些Windows系统使用的奇淫技巧不仅能让你在别人面前显得更加得牛X，而且对于自己的工作和学习也是十分得有帮助的。</p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>此文章中的内容是对于<strong>零度解说</strong>——Win10/Win11 电脑上十个 奇葩 实用的小技巧！你都用过吗？YouTube视频内容的整理，并非原创，仅作个人学习之用。原视频我也已经贴在了下方，可以观看原视频。</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ONoeAg7PuBo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>YouTube视频内容的整理，并非原创，仅作个人学习之用。
+
+<span id="more"></span>
+
+<h3 id="3D相册"><a href="#3D相册" class="headerlink" title="3D相册"></a>3D相册</h3><p><a href="/download/3d.rar">3D相册代码文件下载</a></p>
+<p>想要创建一个哄女朋友开心的3D相册，需要执行以下步骤。</p>
+<p>1.在桌面上创建一个.txt文件，然后把文件中的HTML代码复制进去，保存。接着将文件的后缀名改为<code>index.html</code></p>
+<p>2.在桌面创建一个css文件夹，再在里面创建一个.txt文件，然后将文件中的CSS代码复制进去，保存。将文件名改为<code>index.css</code></p>
+<p>3.在桌面上创建一个img文件夹，然后将你女朋友或者老婆的照片放置进去即可。</p>
+<p>4.最后，你只需要点击桌面上的<code>index.html</code>就可以看到3D相册的效果了。</p>
+<h3 id="电脑上微信多开"><a href="#电脑上微信多开" class="headerlink" title="电脑上微信多开"></a>电脑上微信多开</h3><p>这个操作需要你先找到微信的路径，寻找方式如下：</p>
+<p>找到微信图标右键点击属性-快捷方式-目标-复制目标路径（注意不要复制到目标中的引号）</p>
+<p>之后我们在桌面建立一个.txt文本，输入<code>start “” “C:\Program Files (x86)\Tencent\WeChat\WeChat.exe”</code>（微信路径根据自己的情况进行调整，如果你想增加多开的数量那就多复制几行），最后我们将文件重命名为<code>WeChat.bat</code>,然后点击bat就可以实现微信多开了。</p>
+<h3 id="查看电脑文件操作记录"><a href="#查看电脑文件操作记录" class="headerlink" title="查看电脑文件操作记录"></a>查看电脑文件操作记录</h3><p><code>win+r</code>打开运行框，在里面输入recent，然后回车。之后你就能看到你电脑上的文件在哪一个具体的时间被打开过。</p>
+<h3 id="QQ-微信消息轰炸"><a href="#QQ-微信消息轰炸" class="headerlink" title="QQ,微信消息轰炸"></a>QQ,微信消息轰炸</h3><p>先在电脑上新建一个.txt文件，然后输入</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">set wshshell=wscript.createobject(&quot;wscript.shell&quot;) </span><br><span class="line">wshshell.AppActivate&quot;对方昵称&quot; </span><br><span class="line">for i=1 to 1000   (轰炸信息条数)</span><br><span class="line">wscript.sleep 100 </span><br><span class="line">wshshell.sendKeys &quot;^v&quot; </span><br><span class="line">wshshell.sendKeys &quot;%s&quot; </span><br><span class="line">next</span><br></pre></td></tr></table></figure>
+
+<p>保存之后将文件重名为轰炸.VBS。我们只需要在聊天的输入框里面输入你想说的内容，然后剪切下来双击VBS就可以实现轰炸效果。</p>
+<h3 id="解除联网速度限制"><a href="#解除联网速度限制" class="headerlink" title="解除联网速度限制"></a>解除联网速度限制</h3><p>1.首先我们使用<code>win+r</code>打开运行框，输入<code>gpedit.msc</code>，然后回车</p>
+<p>2.进入之后我们点击左侧的管理模板，接着点击右边的网络，点击Qos数据包计划程序，打开限制可保留带宽</p>
+<p>3.进入之后我们将未配置改为已启用，然后将下面的宽带限制改为0，之后点击应用，确定，重启电脑。</p>
+<h3 id="提升硬盘的读写速度"><a href="#提升硬盘的读写速度" class="headerlink" title="提升硬盘的读写速度"></a>提升硬盘的读写速度</h3><p>我们通过<code>win+i</code>打开设置，进入系统-关于-设备管理器-磁盘驱动器-选择你需要优化的固态硬盘-右键属性-点击策略-点击更好性能-点击确定。</p>
+<p>机械硬盘只需要在策略中开启写入缓存策略即可。</p>
+<p>修改完成之后，重启电脑即可。</p>
+<h3 id="找到家里的WIFI密码"><a href="#找到家里的WIFI密码" class="headerlink" title="找到家里的WIFI密码"></a>找到家里的WIFI密码</h3><p>如果你忘记了家里的WIFI密码的话，那么你可以使用下面的方法进行操作。</p>
+<p>打开控制面板-点击网络和intel-网络和共享中心-找到当前的WIFI连接-双击打开-点击无线属性-点击上方的安全-点击勾选显示密钥。之后你就可以看到家里的WIFI密码了。</p>
+<h3 id="提升电脑的运行速度"><a href="#提升电脑的运行速度" class="headerlink" title="提升电脑的运行速度"></a>提升电脑的运行速度</h3><p><code>win+q</code>打开搜索框，搜索cmd，然后选择以管理员身份运行，接下来输入以下命令</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">chkdsk  等待扫描完成</span><br><span class="line">sfc /scannow  等待扫描完成</span><br><span class="line">最后重启电脑</span><br></pre></td></tr></table></figure>
+
+<h3 id="整人的无限弹窗"><a href="#整人的无限弹窗" class="headerlink" title="整人的无限弹窗"></a>整人的无限弹窗</h3><p><font color='00d00'>请不要在自己电脑真实环境下测试，可在虚拟机中玩玩，也不要随意恶搞他人</font></p>
+<p>我们先在桌面新建一个.txt文本，然后输入</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">:start</span><br><span class="line">start cmd</span><br><span class="line">goto start</span><br></pre></td></tr></table></figure>
+
+<p>然后保存，然后改为后缀名为.bat的文件即可。双击运行就会触发无限的弹窗效果。</p>
+<h3 id="微信优雅表白"><a href="#微信优雅表白" class="headerlink" title="微信优雅表白"></a>微信优雅表白</h3><p>如果你的微信好友中有一个自己暗恋的人，但是你俩之间只隔着一层窗户纸，那么你可以使用下面这个优雅的方式进行表白。</p>
+<p>找到暗恋对象的聊天窗口，然后发送：<code>love.wazf.top/S94</code></p>
+<p>具体的效果可在视频中观看。</p>
+]]></content>
+      <categories>
+        <category>文字博客</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>谷歌商店无法下载或更新应用程序怎么办</title>
     <url>/posts/b28186e0.html</url>
     <content><![CDATA[<p>下列内容来自iYouPort的文章——<a href="https://iyouport.substack.com/p/google-play">Google Play商店无法下载或更新应用程序怎么办？</a>查看原文请戳链接。</p>
@@ -408,7 +459,6 @@
 <p>16.<a href="https://mailsac.com/">mailsac</a>    一次性测试电子邮件收件箱服务</p>
 <p>17.<a href="https://tiny-helpers.dev/">Tiny Helpers</a>     面向Web开发人员的免费的单用途在线工具集合</p>
 <p>18.<a href="https://free-for.dev/#/">Free for Developers</a>     这是为开发人员提供免费套餐的软件和其他产品的列表</p>
-<p>17.</p>
 <h3 id="在线学习资源"><a href="#在线学习资源" class="headerlink" title="在线学习资源"></a>在线学习资源</h3><p>1.<a href="https://www.w3schools.com/">w3schools</a>      世界上最大的Web开发人员网站。教程参考，示例，实践，证书</p>
 <p>2.<a href="https://www.codecademy.com/">Codecademy</a>      学习所需工作所需的技术技能。作为在线教育和学习编码的领导者</p>
 <p>3.<a href="https://www.studytonight.com/">Study Tonight</a>      学习-通过手写的简单教程，测试和视频教程学习诸如Java，C ++，DBMS，数据结构等工程主题的最佳场所</p>
