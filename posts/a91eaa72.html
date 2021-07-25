@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Git是一个分布式的版本控制系统，早期为了管理Linux内核的开发而开发，现在被广泛用于其他项目的开发和管理，在GitHub上开发尤其流行。 需求假如有一个文档你现在需要修改，但是你怕日后需要原文档，所以你不得不复制一遍文档，然后在新复制的文档上进行修改。但是这样的修改过程可能不止一次，次数多了你可能忘记某一个阶段自己修改了什么内容。如果这个文档是多人协作的话，那就更加伤脑经，因为每一次的修改你都">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git学习（一）">
+<meta property="og:url" content="https://example.github.io/posts/a91eaa72.html">
+<meta property="og:site_name" content="Rem Blue">
+<meta property="og:description" content="Git是一个分布式的版本控制系统，早期为了管理Linux内核的开发而开发，现在被广泛用于其他项目的开发和管理，在GitHub上开发尤其流行。 需求假如有一个文档你现在需要修改，但是你怕日后需要原文档，所以你不得不复制一遍文档，然后在新复制的文档上进行修改。但是这样的修改过程可能不止一次，次数多了你可能忘记某一个阶段自己修改了什么内容。如果这个文档是多人协作的话，那就更加伤脑经，因为每一次的修改你都">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/git.5oorlnbt1tw0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95.1hb6ele5kzi8.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E7%9B%AE%E5%BD%95.5y207o4vn7k0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E7%B4%A2%E5%BC%95.1g9kbtmbnirk.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E7%89%88%E6%9C%AC%E5%BA%93.6ymympw4zl00.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%8C%BA%E5%88%AB.w7bx8t1jte8.png">
+<meta property="article:published_time" content="2021-07-24T09:50:12.000Z">
+<meta property="article:modified_time" content="2021-07-25T09:51:24.096Z">
+<meta property="article:author" content="Aegisprogram">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/git.5oorlnbt1tw0.png">
+
+<link rel="canonical" href="https://example.github.io/posts/a91eaa72.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Git学习（一） | Rem Blue</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Rem Blue" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Rem Blue</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">繁华三千异世界,只取一瓢真爱蓝。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">15</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">16</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.github.io/posts/a91eaa72.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E8%95%BE%E5%A7%86.jpg">
+      <meta itemprop="name" content="Aegisprogram">
+      <meta itemprop="description" content="对于不可控的事，我们保持乐观，对于可控的事情，我们保持谨慎。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rem Blue">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git学习（一）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-24 18:50:12" itemprop="dateCreated datePublished" datetime="2021-07-24T18:50:12+09:00">2021-07-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-25 18:51:24" itemprop="dateModified" datetime="2021-07-25T18:51:24+09:00">2021-07-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>3.9k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>4 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Git是一个分布式的版本控制系统，早期为了管理Linux内核的开发而开发，现在被广泛用于其他项目的开发和管理，在GitHub上开发尤其流行。</p>
+<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>假如有一个文档你现在需要修改，但是你怕日后需要原文档，所以你不得不复制一遍文档，然后在新复制的文档上进行修改。但是这样的修改过程可能不止一次，次数多了你可能忘记某一个阶段自己修改了什么内容。如果这个文档是多人协作的话，那就更加伤脑经，因为每一次的修改你都需要告诉别人修改的内容，而且你修改好的内容可能是被某个协作人无意之中覆盖掉。这样一来，消耗大量的人力和时间之后，事情还不一定能做好。所以人们在想有没有一种工具能够记录每次文档的修改内容，还可以进行多人的协作。于是乎，Git出现了。</p>
+<span id="more"></span>
+
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/git.5oorlnbt1tw0.png" alt="image" title="修改变动清晰可见"></p>
+<h3 id="诞生"><a href="#诞生" class="headerlink" title="诞生"></a>诞生</h3><p>同生活中的许多伟大事物一样，Git 诞生于一个极富纷争大举创新的年代。</p>
+<p>Linux 内核开源项目有着为数众多的参与者。 绝大多数的 Linux 内核维护工作都花在了提交补丁和保存归档的繁琐事务上（1991－2002年间）。 到 2002 年，整个项目组开始启用一个专有的分布式版本控制系统 BitKeeper 来管理和维护代码。</p>
+<p>到了 2005 年，开发 BitKeeper 的商业公司同 Linux 内核开源社区的合作关系结束，他们收回了 Linux 内核社区免费使用 BitKeeper 的权力。 这就迫使 Linux 开源社区（特别是 Linux 的缔造者 Linus Torvalds）基于使用 BitKeeper 时的经验教训，开发出自己的版本系统。</p>
+<p>自诞生于 2005 年以来，Git 日臻成熟完善，在高度易用的同时，仍然保留着初期设定的目标。 它的速度飞快，极其适合管理大项目，有着令人难以置信的非线性分支管理系统。</p>
+<p>这里值得一提的是，虽然当时已经有了CVS,SVN这样的版本控制软件，但是Linus坚定地反对CVS和SVN，这些集中式的版本控制系统不但速度慢，而且必须联网才能使用。甚至有一些商用的版本控制系统，虽然比CVS、SVN好用，但那是付费的，和Linux的开源精神不符。所以Linus花了两周时间自己用C写了一个分布式版本控制系统，这就是Git！</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>1.与集中式的版本控制软件不同，Git不需要联网就可以在本地直接编写。</p>
+<p>2.跨平台，可在Linux，Mac OS，Unix、Solaris和Windows上面使用。</p>
+<p>3.处理速度快，设计简单，对非线性开发模式的强力支持（允许成千上万个并行开发的分支）。</p>
+<p>4.有能力高效管理类似 Linux 内核一样的超大规模项目。</p>
+<p>5.完全分布式，每个人的电脑都是一个完整的版本库，减少备份负担。</p>
+<p>6.能够记录每一次的文件变化</p>
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>下面的内容就需要安装好Git之后才能更加好理解，因为Git是跨平台的工具，所以根据你自己当前的系统选择对应的安装方式。</p>
+<p><a target="_blank" rel="noopener" href="https://git-scm.com/downloads">Git官方网站下载</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/git/git">GitHub仓库</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/896067074338496">Git下载安装教程——Linux，Mac OS,Windows</a></p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>初次使用Git，自然免不了对它进行一些配置，当然在此之前你需要先执行 <code>git init</code>。</p>
+<h4 id="gitconfig"><a href="#gitconfig" class="headerlink" title="gitconfig"></a>gitconfig</h4><p>Git 自带一个 <code>git config</code> 的工具来帮助设置控制 Git 外观和行为的配置变量。 这些变量存储在三个不同的位置：</p>
+<ol>
+<li><code>/etc/gitconfig</code> 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果在执行 <code>git config</code> 时带上 <code>--system</code> 选项，那么它就会读写该文件中的配置变量。 （由于它是系统配置文件，因此你需要管理员或超级用户权限来修改它。）</li>
+<li><code>~/.gitconfig</code> 或 <code>~/.config/git/config</code> 文件：只针对当前用户。 你可以传递 <code>--global</code> 选项让 Git 读写此文件，这会对你系统上 所有 的仓库生效。</li>
+<li>当前使用仓库的 Git 目录中的 <code>config</code> 文件（即 <code>.git/config</code>）：针对该仓库。 你可以传递 <code>--local</code> 选项让 Git 强制读写此文件，虽然默认情况下用的就是它。。 （当然，你需要进入某个 Git 仓库中才能让该选项生效。）</li>
+</ol>
+<p>你可以通过以下命令查看所有的配置以及它们所在的文件：</p>
+<p><code>git config --list --show-origin</code></p>
+<h4 id="用户信息"><a href="#用户信息" class="headerlink" title="用户信息"></a>用户信息</h4><p>设置你的用户名和邮件地址。 这一点很重要，因为每一个 Git 提交都会使用这些信息，它们会写入到你的每一次提交中，不可更改：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;John Doe&quot;</span><br><span class="line">git config --global user.email johndoe@example.com</span><br></pre></td></tr></table></figure>
+
+<p>如果使用了 <code>--global</code> 选项，那么该命令只需要运行一次，因为之后无论你在该系统上做任何事情， Git 都会使用那些信息。 当你想针对特定项目使用不同的用户名称与邮件地址时，可以在那个项目目录下运行没有 <code>--global</code> 选项的命令来配置。</p>
+<p>你还可以设置让Git命令显示颜色</p>
+<p><code>git config --global color.ui true</code></p>
+<p>这样，Git会适当地显示不同的颜色</p>
+<p>你甚至可以给Git设置命令的别名，以<code>git status</code>为例</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.st status</span><br></pre></td></tr></table></figure>
+
+<p>这样设置别名之后，我们之后就可以输入<code>git st</code>来代替<code>git status</code>。</p>
+<p>如果你是Windows直接下载的Git的.exe文件安装的Git，那么上面的操作未必有效。你可以参考我之前<a target="_blank" rel="noopener" href="https://aegisprogram.github.io/posts/93b9d9fa.html">alias命令博客</a>来进行设置。</p>
+<p>这样你就可以设置你想要的别名来提高你的工作效率。</p>
+<h4 id="检查配置信息"><a href="#检查配置信息" class="headerlink" title="检查配置信息"></a>检查配置信息</h4><p>如果想要检查你的配置，可以使用 <code>git config --list</code> 命令来列出所有 Git 当时能找到的配置。</p>
+<p>如果想要检查全局配置，可以使用<code>git config --global --list</code>命令来列出所有的全局配置。</p>
+<p>你可能会看到重复的变量名，因为 Git 会从不同的文件中读取同一个配置（例如：<code>/etc/gitconfig</code> 与 <code>~/.gitconfig</code>）。 这种情况下，Git 会使用它找到的每一个变量的最后一个配置。</p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><h4 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h4><p><code>git init</code>初始化Git(建立本地的Git仓库)</p>
+<p>Git的本地仓库由三部分组成，分别是：工作目录，index暂存区和HEAD。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">工作目录：持有实际的工作文件，肉眼可见的工作目录。</span><br><span class="line">index(称为暂存区或者是索引)：保存文件的临时改动。</span><br><span class="line">HEAD：指向最后一次的提交结果</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95.1hb6ele5kzi8.png" alt="image" title="工作流"></p>
+<p>如果想看 HEAD 指向，可以通过 cat .git/HEAD 查看，<br>如果 HEAD 指向的是一个引用，还可以用 git symbolic-ref HEAD 查看它的指向</p>
+<p>版本库：工作区有一个隐藏目录 .git，这个不算工作区，而是 Git 的版本库。</p>
+<p>下面以hexo博客为例：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E7%9B%AE%E5%BD%95.5y207o4vn7k0.png" alt="image"></p>
+<center>这是hexo博客本地的工作目录</center>
+
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E7%B4%A2%E5%BC%95.1g9kbtmbnirk.png" alt="索引"></p>
+<center>这是本地的索引（暂存区）</center>
+
+
+
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E7%89%88%E6%9C%AC%E5%BA%93.6ymympw4zl00.png" alt="image"></p>
+<center>这是本地的版本库</center>
+
+<p>当执行<code>git add &lt;branch-name&gt;</code>之后，工作区修改变动的目录树就会被添加到索引区当中。当执行<code>git commit</code>之后，索引区的目录树写到版本库（对象库）中。关系如下图所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%8C%BA%E5%88%AB.w7bx8t1jte8.png" alt="image"></p>
+<center>工作区、版本库中的索引区和版本库之间的关系</center>
+
+<h4 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h4><p><code>git branch &lt;filename&gt;</code>建立新的分支</p>
+<p>几乎每一种版本控制系统都以某种形式支持分支。使用分支意味着你可以从开发主线上分离开来，然后在不影响主线的同时继续工作。</p>
+<p>进一步具体的解释就是：</p>
+<p>假设你准备开发一个新功能，但是需要两周才能完成，第一周你写了50%的代码，如果立刻提交，由于代码还没写完，不完整的代码库会导致别人不能干活了。如果等代码全部写完再一次提交，又存在丢失每天进度的巨大风险。</p>
+<p>现在有了分支，就不用怕了。你创建了一个属于你自己的分支，别人看不到，还继续在原来的分支上正常工作，而你在自己的分支上干活，想提交就提交，直到开发完毕后，再一次性合并到原来的分支上，这样，既安全，又不影响别人工作。</p>
+<p>而Git对于分支的创建又是十分的便捷，可以说正是由于创建分支十分的便捷，才让Git从众多的版本控制工具中脱颖而出，成为现在最热门的版本控制工具。</p>
+<h4 id="help"><a href="#help" class="headerlink" title="help"></a>help</h4><p>在Linux系统中，如果我们不清楚一个命令如何的使用，那么我们可以执行<code>man keyword</code>或者是<code>info keyword</code>来获取文档中的帮助，里面的内容十分的详细，只要你掌握并熟悉一些英文你就能明白其中的意思。在Git中同样的，也有很详细的帮助文档。当你需要详细的文档的时候，你可以执行<code>git help config</code>来获取文档。</p>
+<p>如果你不需要全面的手册，只需要可用选项的快速参考，那么你可以执行<code>git keyword -h</code>就可以获取该关键词的用法。好消息是：执行这些命令获取帮助文档完全不需要联网，这意味着你可以随时随地的获取帮助。另一个消息是：要求Git使用者掌握，熟悉英语，否则帮助文档也帮不了你。</p>
+<h3 id="入门总结"><a href="#入门总结" class="headerlink" title="入门总结"></a>入门总结</h3><p>Git作为一个高效，流行，便捷的版本控制工具，简单上手还是不难的。并且有着很多自己独一无二的优势，这也是为什么在当下它如此的流行。如果自己有心做一个开源项目，那么了解并掌握使用Git就是你基本功。当然，如果你现在没有做开源项目的想法，但是现在自己又想锻炼一下自己的能力，那么我建议不妨自己搭建一个静态博客，在搭建博客的过程中你不可避免的就要使用到Git的相关命令。这并不是你学习，实践Git的唯一方法。事实上你可以尝试一下<a target="_blank" rel="noopener" href="https://learngitbranching.js.org/">Try Git</a></p>
+<p>TryGit是一个开源的GitHub项目，目的就是给学习Git的新人一个友好的学习平台。网站采用的是交互式的学习界面，生动形象，肉眼可见的变化过程，可选中文但是默认是英文。</p>
+<p>如果你是一个编程的爱好者，那么学习Git对你来说应该是有帮助的。Git学习需要耐心和实践，请不要轻易放弃。</p>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p>1.<a target="_blank" rel="noopener" href="https://git-scm.com/">Git-Scm文档</a></p>
+<p>2.<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600">廖雪峰网站Git学习</a></p>
+<p>3.<a target="_blank" rel="noopener" href="https://www.runoob.com/manual/git-guide/">Git简明指南</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Aegisprogram
+  </li>
+  
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/fa60794d.html" rel="prev" title="除了自建博客之外，还有这些选择">
+      <i class="fa fa-chevron-left"></i> 除了自建博客之外，还有这些选择
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%80%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%9E%E7%94%9F"><span class="nav-number">2.</span> <span class="nav-text">诞生</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Git"><span class="nav-number">4.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">5.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gitconfig"><span class="nav-number">5.1.</span> <span class="nav-text">gitconfig</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="nav-number">5.2.</span> <span class="nav-text">用户信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="nav-number">5.3.</span> <span class="nav-text">检查配置信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">6.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="nav-number">6.1.</span> <span class="nav-text">工作流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%94%AF"><span class="nav-number">6.2.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#help"><span class="nav-number">6.3.</span> <span class="nav-text">help</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A5%E9%97%A8%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">入门总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">8.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Aegisprogram"
+      src="/images/%E8%95%BE%E5%A7%86.jpg">
+  <p class="site-author-name" itemprop="name">Aegisprogram</p>
+  <div class="site-description" itemprop="description">对于不可控的事，我们保持乐观，对于可控的事情，我们保持谨慎。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Aegisprogram" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Aegisprogram" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:haut.fomal@yandex.com" title="E-Mail → mailto:haut.fomal@yandex.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://m.cmx.im/web/accounts/103475" title="Mastodon → https:&#x2F;&#x2F;m.cmx.im&#x2F;web&#x2F;accounts&#x2F;103475" rel="noopener" target="_blank"><i class="fab fa-mastodon fa-fw"></i>Mastodon</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Soulofheart77" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Soulofheart77" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://levisper.github.io/" title="https:&#x2F;&#x2F;levisper.github.io&#x2F;" rel="noopener" target="_blank">Eren的博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ednovas.xyz/" title="https:&#x2F;&#x2F;ednovas.xyz&#x2F;" rel="noopener" target="_blank">EdNovas的小站</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aegisprogram</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">50k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">45 mins.</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("06/24/2021 17:38:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: 'unset',
+  left: '32px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+//新增的内容,如果不是深色模式,则激活深色模式
+if(!darkmode.isActivated())
+{
+  darkmode.toggle();
+}
+</script>
+
+
+</body>
+</html>
