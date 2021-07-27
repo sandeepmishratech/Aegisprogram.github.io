@@ -843,10 +843,10 @@
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/docker5.5l6xgvs3en80.png" alt="image"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/docker6.2gowp4df3jw0.png" alt="image"></p>
 <p>默认的访问方式去访问官方仓库太慢了，我们需要配置一个镜像源。我们在docker engine registry-mirrors中配置镜像站点。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&quot;https://hub-mirror.c.163.com&quot;,</span><br><span class="line">&quot;https://mirror.baidubce.com&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&quot;https://hub-mirror.c.163.com&quot;,</span><br><span class="line">&quot;https://registry.cn-hangzhou.aliyuncs.com&quot;,</span><br><span class="line">&quot;https://05f073ad3c0010ea0f4bc00b7105ec20.mirror.swr.myhuaweicloud.com&quot;,</span><br><span class="line">&quot;http://f1361db2.m.daocloud.io&quot;</span><br></pre></td></tr></table></figure>
 
-<p>这两个分别是网易源和百度源，可以根据自己的情况进行更换，只要保持相对应的格式就可以。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/docker7.5fj7h4zvdt00.png" alt="image"></p>
+<p>这四个分别是网易源，阿里源，华为源，还有daocloud，可以根据自己的情况进行更换，只要保持相对应的格式就可以。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/docker8.788rmr8slcg0.png" alt="image"></p>
 <p>完成这些配置之后，我们现在进行检查。</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">检查wsl2下的安装docker是否成功</span><br><span class="line">输入wsl（一定要保证是wsl2),接着输入 docker version</span><br><span class="line">查看本地的镜像</span><br><span class="line">docker image ls ,如果没有结果就去点击docker上面的image,然后等待一会儿。</span><br><span class="line">检查镜像加速配置</span><br><span class="line">docker info</span><br></pre></td></tr></table></figure>
 
