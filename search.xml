@@ -429,8 +429,8 @@
 <p>2.社区互动方式友好，上手简单。</p>
 <p>3.可以搭建自己的社区。</p>
 <h4 id="不足-2"><a href="#不足-2" class="headerlink" title="不足"></a>不足</h4><p>1.Mastodon更像是一个社交的网络平台，而非一个个人的写作平台</p>
-<p>2.文章有500字符的限制，不适合“长篇大论”。</p>
-<p>3.部分社区域名需要具备自由上网能力。</p>
+<p>2.文章有500字符的限制，不适合“长篇大论”，但是有些实例对于字数要求没那么严格的要求。</p>
+<p>3.社区部分域名需要具备自由上网能力。</p>
 <h3 id="telegraph"><a href="#telegraph" class="headerlink" title="telegraph"></a><a href="https://telegra.ph/">telegraph</a></h3><p><strong>Telegraph</strong>是即时聊天软件Telegram的开发商推出的一个内容发布网站</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/hugo/telegraph.3e5t8qqlviq0.png" alt="image"></p>
 <h4 id="优点-3"><a href="#优点-3" class="headerlink" title="优点"></a>优点</h4><p>1.它允许用户匿名发布文章。</p>
@@ -474,6 +474,10 @@
 <h4 id="优点-9"><a href="#优点-9" class="headerlink" title="优点"></a>优点</h4><p>1.网站界面较为友好，简洁大方，没有无关因素的干扰。</p>
 <p>2.利于整理自己的笔记，可以选择公开和私密。</p>
 <h4 id="不足-8"><a href="#不足-8" class="headerlink" title="不足"></a>不足</h4><p>对于没有接触过GitHub的人来说需要一定的学习时间</p>
+<h3 id="Homer"><a href="#Homer" class="headerlink" title="Homer"></a><a href="https://usehomer.app/">Homer</a></h3><p>Homer是一个作家的平台，从头开始，让他们可以以自己选择的形式向读者表达自己的想法。使用的时候需要登录，目前提供Google和邮箱账号登录。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/homer.78s2e6wyab40.png" alt="image"></p>
+<h4 id="优点-10"><a href="#优点-10" class="headerlink" title="优点"></a>优点</h4><p>页面比较简洁，支持Markdown语法，交互式体验不错。</p>
+<h4 id="不足-9"><a href="#不足-9" class="headerlink" title="不足"></a>不足</h4><p>内置的功能性快捷操作较少，目前只有加粗，斜体，链接，添加章节和保存。</p>
 <h3 id="附"><a href="#附" class="headerlink" title="附"></a>附</h3><p>1.<a href="https://github.com/phodal/github">GitHub 漫游指南</a></p>
 <p>2.<a href="https://docs.o3o.ca/">Mastodon中文用户使用文档</a></p>
 <p>3.<a href="https://zhuanlan.zhihu.com/p/343212233">GitBook使用指南</a></p>
