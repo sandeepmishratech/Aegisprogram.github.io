@@ -101,7 +101,7 @@
 <h3 id="注册使用"><a href="#注册使用" class="headerlink" title="注册使用"></a>注册使用</h3><p>telegram的下载方式前面已经说过了，去指定地址下载即可，接下来是注册使用telegram。由于遭到GFW的封锁，我们在注册账号的时候需要准备好翻墙的工具（请自行准备，不多阐述）。接下来以telegram desktop为例。</p>
 <h4 id="SOCKS5代理注册"><a href="#SOCKS5代理注册" class="headerlink" title="SOCKS5代理注册"></a>SOCKS5代理注册</h4><p>打开翻墙工具之后，打开 Telegram Desktop 桌面版客户端的代理设置，新建代理，选择 SOCKS5，地址设置为 127.0.0.1 ，端口设置为 10808 。</p>
 <p>如果代理显示connected，表示成功，可以开始注册及正常使用。  如果一直显示connecting，表明此代理可能有问题，请尝试更换其他代理。</p>
-<h4 id="MTP代理注册"><a href="#MTP代理注册" class="headerlink" title="MTP代理注册"></a>MTP代理注册</h4><p>打开 Telegram Desktop 桌面客户端后，点击左下角转动的圆圈来配置代理。再点击 use custom proxy 来添加自定义代理。 选择 MRProto 代理方式，依次输入 Hostname（服务器地址）、Port（端口）和 Secret（密码），最后点击 Save 保存。 </p>
+<h4 id="MTP代理注册"><a href="#MTP代理注册" class="headerlink" title="MTP代理注册"></a>MTP代理注册</h4><p>打开 Telegram Desktop 桌面客户端后，点击左下角转动的圆圈来配置代理。再点击 use custom proxy 来添加自定义代理。 选择 MRProto 代理方式，依次输入 Hostname（服务器地址）、Port（端口）和 Secret（密码），最后点击 Save 保存。</p>
 <p>如果代理显示connected，表示成功，可以开始注册及正常使用。  如果一直显示connecting，表明此代理可能有问题，请尝试更换其他代理。</p>
 <p>更多的客户端注册使用方法请前往——<a href="https://www.notion.so/Telegram-95a6c23f0bb1466892b55f9ec8c755fd">telegram教程全指南</a></p>
 <h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><p>1.telegram必须用电话号码才能注册，但是大陆用户我建议使用<a href="https://zh.wikipedia.org/wiki/Google_Voice">google voice</a>来注册telegram。原因不过以下两个方面：</p>
@@ -145,6 +145,18 @@
 <p>6.<a href="https://t.me/NewlearnerChannel">Newlearnerの自留地</a>  不定期推送IT资讯</p>
 <p>7.<a href="https://t.me/bigcrowdev">乌鸦观察</a>  不定期推送新闻和杂谈</p>
 <p>8.<a href="https://t.me/opencfdchannel">开源社区频道</a>  科技人文资讯</p>
+<p>9.<a href="https://t.me/twitter_subscriptions">外媒新闻</a> 从可信任的外媒报道中，了解真实的中国，了解真实的世界。</p>
+<p>10.<a href="https://t.me/random_knowledge_dushu">科学新知</a> 科技 科技新知 IT 程序员 生物 物理 科学 社科</p>
+<p>11.<a href="https://t.me/today_read">今读</a> 随机文章分享</p>
+<p>12.<a href="https://t.me/sspai">少数派</a> 打造你的数字生活指南</p>
+<p>13.<a href="https://t.me/cybergraveyardcn">简中赛博坟场</a> 整理和记录从简中互联网上消失、被篡改的内容</p>
+<p>14.<a href="https://t.me/little_times">小时代</a> 分享精读好文章</p>
+<p>15.<a href="https://t.me/daily_feminist">性别偏见与性别议题</a> 搜集/讨论一些生活中性别偏见的例子，帮助大家认识到偏见的存在，发起对偏见的讨论，致力于打破父权建构，消弭偏见。</p>
+<p>16.<a href="https://t.me/tieliu">黑洞资源笔记</a> 收集优秀的开源项目，公开的学习资料。</p>
+<p>17.<a href="https://t.me/NouveauRoman">为了一种新小说</a> 频道每周五晚19:00(GMT+8)转推一篇文学作品，以短篇小说、散文诗、现代诗为主</p>
+<p>18.<a href="https://t.me/fightdisinformation">辟谣爱好者频道</a> 关于近期不实信息，待证实信息，有争议信息的调研分析汇总。希望保持公正，对信息新闻进行验证。</p>
+<p>19.<a href="https://t.me/FindBlog">Find Blog👁发现博客</a> 发现优秀的博客与创作者,不做博客推荐，不做文章推荐<br>仅仅只是收录优秀博客的地方</p>
+<p>20.<a href="https://t.me/xhqcankao">风向旗参考快讯</a> 风闻奏事，遍查访知。即时发布VPS、网盘等有价值虚拟资产的新闻和交易信息，提供互联网科技新闻快讯。</p>
 <p>当然，要是你乐意的话，你可以在我的博客首页找到我的telegram频道并加入，我会为此感到很高兴的。</p>
 <h3 id="机器人推荐"><a href="#机器人推荐" class="headerlink" title="机器人推荐"></a>机器人推荐</h3><p>不得不说，机器人在telegram中扮演的角色也是十分的重要，使用各种bot，可以让用户更加轻松的管理群组和频道，寻找资源和服务。但是注意的是，机器人分为内联机器人和第三方机器人。内联机器人就是你在任何的频道和群组中可以直接调用而无需添加进来，第三方机器人（也称为外联机器人）的使用需要添加到频道或者群组中才能实行调用。这里推荐几个个人觉得还不错的机器人。</p>
 <p>1.<a href="https://t.me/discussbot">DiscussBot</a>  官方出的评论机器人, 可以在频道每条消息下面点击添加评论</p>
@@ -164,7 +176,7 @@
 <h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>访问和使用Telegraph不需要注册账号与下载软件，只需在网页浏览器中访问 <a href="https://telegra.ph/">https://telegra.ph/</a>  便可看到简约的界面，填入要发布的内容即可匿名发布，（支持Markdown语法和快速插入图片）。内容发布之后，只要清除浏览器的缓存，便无法再编辑文章。内容发布之后，不能追溯到文章作者和发布者。内容同样不会受到任何的审核和监视，给予用户最大的自由空间。</p>
 <p>在telegram上我们只需要找到telegraph，然后用telegram登陆上去，就会看到你用该账号写过的所有的文章内容，而且你还可以在任何的群组和频道中调出你的文章，分享给其他人。所以如果你正在寻找一个自由，简单易用的写作的平台，那么telegraph是一个不错的选择，只需要掌握简单的Markdown语法就能驾驭它。</p>
 <h3 id="滥用和指责"><a href="#滥用和指责" class="headerlink" title="滥用和指责"></a>滥用和指责</h3><p>Pavel Durov的初衷是打造一个自由的社交通讯软件，绕开政府和其他互联网公司的监视。但是正是因为telegram中高度的自由和隐秘，这里也就成了一些犯罪分子的“窝点”。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">2015年11月，由于伊斯兰国（ISIS）相关组织使用频繁，</span><br><span class="line">Telegram移除了近250个所使用广播频道，并屏蔽其所属账号并且持续每天移除近百频道</span><br><span class="line">强调不鼓励色情内容、侵犯著作权的内容存在。</span><br><span class="line">但用户举报的色情组群、频道仅会于iOS、macOS设备（App Store版）无法观看，</span><br><span class="line">官方并不会审查或下架相关频道。 </span><br><span class="line">2018年下半年至2020年3月间，韩国境内有人通过Telegram组建多个聊天室并收取费用，</span><br><span class="line">进行了有组织的、大规模的性虐待事件，即震惊韩国社会的N号房事件。 </span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">2015年11月，由于伊斯兰国（ISIS）相关组织使用频繁，</span><br><span class="line">Telegram移除了近250个所使用广播频道，并屏蔽其所属账号并且持续每天移除近百频道</span><br><span class="line">强调不鼓励色情内容、侵犯著作权的内容存在。</span><br><span class="line">但用户举报的色情组群、频道仅会于iOS、macOS设备（App Store版）无法观看，</span><br><span class="line">官方并不会审查或下架相关频道。</span><br><span class="line">2018年下半年至2020年3月间，韩国境内有人通过Telegram组建多个聊天室并收取费用，</span><br><span class="line">进行了有组织的、大规模的性虐待事件，即震惊韩国社会的N号房事件。</span><br></pre></td></tr></table></figure>
 
 <p>韩国N号房事件发生之后，2018年8月，Telegram修改隐私政策，如果执法调查单位能够证明特定用户的身份为恐怖分子，将配合法院要求提供该用户的IP、电话号码等资料。</p>
 <p>正是因为telegram极度强调自由且不受监管，容易被犯罪分子利用来传播暴力，血腥内容，世界各地的媒体对telegram纷纷进行指责。一时之间，Pavel Durov成为了众矢之的。但是Pavel Durov还是坚持自己的做法，并且他认为：恐怖主义是社会问题，通过对技术的限制并不能解决社会问题。所以他和他的团队开始了<del>旅游式办公</del>(流亡生活)，走到哪儿，团队就带到哪儿。就算面临着外界的舆论压力，当地政府的干预，他还是忠于自己的信仰，他始终坚信言论自由，不受其他因素的干扰是我们当今社会的人们的一项基本权利。偏执，自信，崇尚自由，富有才华，极度自律，这些都是他身上的特质，正是因为他选择让telegram公司保持独立且自由，给予大众隐私和自由的承诺，人们也就逐渐相信这个男人的想法。不可否认的是，telegram的活跃用户还在稳步上升当中，或许有一天他能够成功的超越whatsapp，成为社交软件中的龙头。</p>
@@ -175,7 +187,14 @@
 <p>3.设计简陋，功能欠缺的同时臃肿不堪，专断独行，随意窃取用户的个人信息。（一次最多发9张照片，一次最大只能发送200MB文件，消息不能云端同步）。在腾讯微信软件许可及服务协议你还可以看到这么一条条款：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%BE%AE%E4%BF%A1.3pbu9pfoy2i0.png" alt="image"></p>
 <p>你只有账号的使用权，所以你觉得在微信面前我们还能有自己的隐私吗？在2021年2月3号，深圳市南山法院一审判决认定：微信好友关系不属于用户隐私。</p>
-<p>关于微信其他令人发指的方面我就不一一列举了，有兴趣的可以看看<a href="https://github.com/TomBener/stay-away-from-wechat"> stay-away-from-wechat</a>，上面对于微信那些霸道的描述都比较清楚，当然这个作者可能本身有一些较为强烈的主观倾向，那么你可以看看这个——<a href="https://imzm.im/my-thoughts-on-wechat-ten-years/">微信十年的产品思考</a></p>
+<p>关于微信其他令人发指的方面我就不一一列举了，有兴趣的可以看看<a href="https://github.com/TomBener/stay-away-from-wechat"> stay-away-from-wechat</a>，上面对于微信那些霸道的描述都比较清楚，当然这个作者可能本身有一些较为强烈的主观倾向，那么你可以看看这个——<a href="https://imzm.im/my-thoughts-on-wechat-ten-years/">微信十年的产品思考</a>。</p>
+<p>关于微信监控和隐私安全问题等方面的文章还有不少，这里再补充几篇。</p>
+<p>1.<a href="https://nova.moe/some-finding-on-wechat-privacy-policy/">对于微信「隐私政策」的一点小的发现</a></p>
+<p>2.<a href="https://citizenlab.ca/2020/05/%E5%BE%AE%E4%BF%A1%E7%9B%91%E6%8E%A7%E8%AF%A0%E9%87%8A/">微信监控诠释</a></p>
+<p>3.<a href="https://citizenlab.ca/2018/08/%e6%9c%aa%e9%98%85%e5%85%88%e7%84%9a%ef%bc%9a%e5%be%ae%e4%bf%a1%e6%9c%8b%e5%8f%8b%e5%9c%88%e5%9b%be%e7%89%87%e8%bf%87%e6%bb%a4%e5%8a%9f%e8%83%bd%e5%88%86%e6%9e%90/">“未阅先焚”<br>微信朋友圈图片过滤功能分析</a></p>
+<p>4.<a href="https://citizenlab.ca/2016/12/%e4%b8%80app%e4%b8%a4%e5%88%b6%ef%bc%9a%e5%be%ae%e4%bf%a1%e5%a6%82%e4%bd%95%e5%8c%ba%e5%88%ab%e5%ae%a1%e6%9f%a5%e4%b8%ad%e5%9b%bd%e5%8f%8a%e6%b5%b7%e5%a4%96%e7%94%a8%e6%88%b7/">“一APP两制”微信如何区别审查中国及海外用户</a></p>
+<p>5.<a href="https://www.physixfan.com/ruhedaochuweixinbaokuopengyouquanshuju-liyongoumenggdprfaandailaidequanli/">如何导出微信（包括朋友圈）数据 — 利用欧盟GDPR法案带来的权利</a></p>
+<p>不少人可能会对WeChat和微信的隐私协议方面有一些的困惑，那么不妨阅读一下：<a href="https://telegra.ph/%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%8B%E8%BF%91%E4%B8%80%E5%B9%B4%E7%9A%84%E6%AC%A7%E7%9B%9F-WeChat-%E8%B4%A6%E5%8F%B7%E4%B8%8E%E5%BE%AE%E4%BF%A1%E8%B4%A6%E5%8F%B7%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E5%8A%9F%E8%83%BD%E5%8C%BA%E5%88%AB-03-08-2">分享一下近一年的欧盟 WeChat 账号与微信账号的使用与功能区别</a></p>
 <p>总而言之，我个人对于telegram和微信之间的选择十分的清晰，后面不及前者的百分之一。何况，微信的这些情况，telegram上都不存在。我这么说也并非是指telegram是完美无缺的产品，它也有它自身的不足。我也列举几个方面：</p>
 <p>1.telegram只有秘密私聊才会使用端对端加密，群组和频道内容则没有，且端对端加密需要用户手动开启而非自动开启。</p>
 <p>2.只能通过手机号码进行注册，这对于一些手机号码必须实名的国家所在用户来说简直就是噩梦。这无法保障他们的隐私安全。</p>
