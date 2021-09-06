@@ -6,7 +6,7 @@
   <link href="https://example.github.io/atom.xml" rel="self"/>
   
   <link href="https://example.github.io/"/>
-  <updated>2021-09-01T10:26:33.630Z</updated>
+  <updated>2021-09-06T15:15:59.842Z</updated>
   <id>https://example.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>data-privacy-tips</title>
+    <link href="https://example.github.io/posts/edcf47a7.html"/>
+    <id>https://example.github.io/posts/edcf47a7.html</id>
+    <published>2021-09-06T13:33:08.000Z</published>
+    <updated>2021-09-06T15:15:59.842Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%AE%89%E5%85%A8.o7tdzpxwkcw.png" alt="image"></p><p>本文来自：<a href="https://www.cnet.com/tech/services-and-software/7-data-privacy-tips-digital-security-experts/">7 data privacy tips for your phone from digital security experts</a></p><p>针对文章的内容和排版进行了部分的修改，尽量保持原文的意思</p><p>来自数字安全专家的7个手机数据隐私提示，想要防止应用窃取您的数据吗？我们询问了专家，每个人都应该知道一些相关的信息。</p><span id="more"></span><p>你能相信手机上的应用程序吗？在数据隐私方面，应用程序是难以被信任的。不幸的是，即使您不想被追踪，也无法从表面上判断应用程序是否正在跟踪您，并且在当今技术不断发展的世界中，没有任何保护措施是万无一失的。如果应用程序背后的公司被出售、改变经营策略或因本身的缺陷而最终受到攻击，那么今天表现良好的应用程序明天可能会变成手机上新的威胁。</p><p>并且总是为您提供移动服务的公司最终成为数据泄露的渠道之一。这就是8月份T-Mobile发生的事情，泄露了多达4800万人的姓名、驾照信息和社会安全号码 ——并非所有人都是现有客户。自2015年以来，T-Mobile至少遭受了三起其他违规事件，这是一系列事件中的最新一起。</p><p>虽然用户只能采取有效的措施来保护他们的数据免受运营商的滥用，但采取措施保护自己的数据仍然很重要，尤其是涉及到您使用的应用程序时。有多种方法可以查找和删除Google保存的有关您的数据，以及Android 12和iOS14中的一些新隐私设置，以阻止应用程序跟踪您。而且苹果还在iOS14中推出了“隐私保护标签”，可以让你在下载之前查看应用会收集什么样的数据。</p><p>阅读更多：<a href="https://www.cnet.com/tech/mobile/4-ways-apple-bolsters-your-privacy-on-ios-15-siri-mail-and-more/"> Apple在iOS15上以4种新方式增强您的隐私</a></p><p>但是，您还可以采取更多措施来保护您的数据隐私并提高智能手机的安全性。我们联系了数据隐私专家，了解他们在使用应用程序时保护个人数据的重要提示。这是他们的七个建议。</p><h3 id="1-使用密码管理器"><a href="#1-使用密码管理器" class="headerlink" title="1.使用密码管理器"></a>1.使用密码管理器</h3><p>最强的密码是随机字符串。一系列没有特定顺序的字母、数字和符号不太可能在字典中找到，而且计算机更难用蛮力破解。缺点是这些复杂的密码更难记住。</p><p>这是<a href="https://www.cnet.com/tech/services-and-software/best-password-manager/">密码管理器应用</a>派上用场的地方。密码管理器将您的所有密码保存在一个加密且受密码保护的应用程序中。它们还会生成并记住强密码。虽然 Google Chrome 和三星的专有手机应用程序等应用程序会为您保存密码，但是安全专家更加推荐使用密码管理器来管理你的密码。</p><p>最好避免对多个帐户使用相同的密码。如果一个帐户在数据泄露中被盗用，则所有帐户都将被盗用。使用密码管理器，您的每个帐户都可以拥有不同、复杂且难以破解的密码。有些甚至会为您生成密码（拥有生成随机密码的功能）。</p><p>我们推荐一种名为<a href="https://github.com/bitwarden">Bitwarden</a>的密码管理器，但还有许多其他密码管理器可供选择。</p><h3 id="2-在使用公共WI-FI的时候使用VPN服务"><a href="#2-在使用公共WI-FI的时候使用VPN服务" class="headerlink" title="2.在使用公共WI-FI的时候使用VPN服务"></a>2.在使用公共WI-FI的时候使用VPN服务</h3><p>如果您要在手机上访问公共 Wi-Fi 网络而不是使用移动数据，专家建议使用VPN。虚拟专用网络可以防止您的数据被潜伏在同一公共网络上的其他人窥探。它们还可以屏蔽您的数据传输，避免互联网上的过滤和审查，并允许您访问世界上其他地区的内容。</p><p>出于安全的目的，它可以阻止别人利用公共WI-FI来访问您手机上的数据。在寻找供应商时，重要的是研究该公司以确定它是否知名，是否值得信赖。Apple App Store 和 Google Play Store 有许多免费的VPN应用程序，但有些应用程序本身是有问题的，所以您需要格外小心。</p><p>无论您计划使用VPN的频率如何，阅读服务协议都很重要，这样您才能知道可能会收集哪些数据以及将其存储在哪里。请参阅<a href="https://www.cnet.com/tech/services-and-software/best-vpn/">CNET的最佳VPN指南</a>。(提示：即使是文章中给出的VPN服务推荐，也需要自己仔细甄别)</p><h3 id="3-注意应用权限"><a href="#3-注意应用权限" class="headerlink" title="3.注意应用权限"></a>3.注意应用权限</h3><p>几乎所有专家都提到的一个技巧是仔细检查应用程序要求哪些权限。您还应该问问自己，应用程序请求某些权限是否有意义。应用程序要求访问与其功能无关的数据是一个危险的信号。</p><p>Cardswitcher 的首席执行官斯蒂芬哈特说：“[如果] 你正在下载一个简单的应用程序，例如一个袖珍计算器，并且该应用程序请求访问你的联系人列表和位置。” “为什么计算器需要查看您的联系人列表和位置？这样的请求应该被注意和警惕。”</p><p>除了注意您授予应用程序的权限之外，注意您的手机在下载应用程序后的状态也很重要。HackerOne 的技术项目经理和安全专家 Shlomie Liberow 表示，设备电池寿命的急剧变化是另一个危险信号，因为恶意应用程序可以在后台不断运行。</p><p>Liberow 说：“如果在安装应用程序后，您发现电池寿命比平时减少得更快，这可能表明该应用程序可能正在损害您的设备，并且可能在后台运行。”</p><p>这是一些<a href="https://www.cnet.com/tech/mobile/over-1000-android-apps-were-found-to-steal-your-data-heres-what-you-can-do/">检查应用程序权限</a>的方法。</p><h3 id="4-研究应用程序或公司"><a href="#4-研究应用程序或公司" class="headerlink" title="4.研究应用程序或公司"></a>4.研究应用程序或公司</h3><p>虽然您无法从表面上判断应用程序是否具有险恶动机，但快速的 Google 搜索可以提供更多信息。专家建议搜索该应用程序的名称以及“数据丑闻”或“诈骗”一词。哈特说，结果应该会告诉你该公司最近是否经历过任何隐私或数据泄露。</p><p>哈特说：“这项搜索还应该告诉你，数据泄露是否在该公司很常见，如果他们经历过，他们是如何应对的。” “如果公司多次受到影响并且没有采取任何措施来解决问题，请避免使用该应用程序——这表明他们没有认真对待用户隐私这个问题。”</p><p>Anderson Technologies 的 IT 系统管理员 Joe Baker 表示，如果该应用程序是开发人员开发的唯一应用程序，而开发人员没有对应用的其他可疑之处进行详细说明，则避免使用该应用程序是最明智的做法。</p><h3 id="5-限制社交媒体的曝光"><a href="#5-限制社交媒体的曝光" class="headerlink" title="5.限制社交媒体的曝光"></a>5.限制社交媒体的曝光</h3><p>Facebook 的 Cambridge Analytica 数据丑闻使这个流行的社交网络陷入困境。但即使是那些在事件发生后从 Facebook 的警报声中逃离出来的人（或者从一开始就没有创建个人资料），也可能仍然面临隐私侵犯的风险。如果您出现在朋友或家人的帐户中，您仍然可以在线看到。在观察到这些账户后，公司可以构建一个“影子档案”，详细说明一个人的好恶、政治倾向、宗教信仰等。</p><p>明智的做法是限制您在社交媒体上分享的信息量，无论该网站对您的个人资料有什么要求。您分享的信息越多，可用于为您制作广告的数据就越多。只填写绝对最少的必要信息。如果发生数据泄露，那么您面临更多信息被泄露的风险。</p><p>“在有针对性的广告方面，智能手机应用程序通常更‘彻底’。一些人甚至担心这些程序会访问你手机的麦克风（大概是为了更有针对性的广告），”法律软件帮助负责人鲍比基特尔伯格这样告诉CNET。</p><h3 id="6-始终保持软件是最新的"><a href="#6-始终保持软件是最新的" class="headerlink" title="6.始终保持软件是最新的"></a>6.始终保持软件是最新的</h3><p>Walsh 表示，花时间更新智能手机的操作系统对于确保数据安全至关重要。这些更新让您领先于黑客和他们在互联网上传播的最新漏洞。Hart 建议调整您手机的设置，使其自动更新。</p><p>“想想软件更新，比如为你的智能手机接种疫苗，”哈特说。“犯罪分子用来侵入您的手机并窃取您数据的方法在不断发展，因此我们保护智能手机的方式也需要不断发展。”</p><h3 id="7-只从谷歌和苹果商店下载应用程序"><a href="#7-只从谷歌和苹果商店下载应用程序" class="headerlink" title="7.只从谷歌和苹果商店下载应用程序"></a>7.只从谷歌和苹果商店下载应用程序</h3><p>并非 App Store 或 Google Play 商店中的所有应用程序都是 100% 值得信赖的，但专家仍然表示您应该只从官方商店下载，而不是旁加载应用程序。</p><p>“这些平台上可用的应用程序将经过审查，以确保它们符合数据保护的标准质量，并且还需要为您制定专门的隐私政策，告诉您它们如何保护您的数据，”哈特告诉 CNET。</p><p>Walsh 表示，从非官方或不安全的网站下载应用程序会增加勒索软件、恶意软件、间谍软件和特洛伊木马病毒感染您的设备的风险。他说，在最坏的情况下，黑客可以完全控制您的设备。</p><p>除了避免使用开发商唯一生产的应用程序外，贝克还鼓励用户在下载前看看一个应用程序已经推出了多长时间，并看一看评论。</p><p>“各种自然的评论应该包括不同的排名，”他说。“一些欺诈性应用程序也会显示欺诈性评论。”</p><p>你应该质疑不规则的演讲模式，没有描述或解释的高评分。贝克还说要检查一个应用程序是否已经在第三方网站上登陆过。</p><p>“来自同行的长篇评论将成为这里最好和最可靠的信息来源，”贝克说。</p><p>有关更多信息，请查看如何在 iOS 中阻止应用程序跟踪您。</p><p>于 2019 年 2 月 14 日太平洋时间上午 1:03 首次发布。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%AE%89%E5%85%A8.o7tdzpxwkcw.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;本文来自：&lt;a href=&quot;https://www.cnet.com/tech/services-and-software/7-data-privacy-tips-digital-security-experts/&quot;&gt;7 data privacy tips for your phone from digital security experts&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;针对文章的内容和排版进行了部分的修改，尽量保持原文的意思&lt;/p&gt;
+&lt;p&gt;来自数字安全专家的7个手机数据隐私提示，想要防止应用窃取您的数据吗？我们询问了专家，每个人都应该知道一些相关的信息。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="发现" scheme="https://example.github.io/categories/%E5%8F%91%E7%8E%B0/"/>
+    
+    
+    <category term="隐私安全" scheme="https://example.github.io/tags/%E9%9A%90%E7%A7%81%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>服务器究竟为谁服务？</title>
@@ -468,33 +492,6 @@
     <category term="文字博客" scheme="https://example.github.io/tags/%E6%96%87%E5%AD%97%E5%8D%9A%E5%AE%A2/"/>
     
     <category term="主题" scheme="https://example.github.io/tags/%E4%B8%BB%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>免费激活Windows和office</title>
-    <link href="https://example.github.io/posts/541ef572.html"/>
-    <id>https://example.github.io/posts/541ef572.html</id>
-    <published>2021-06-29T11:37:36.000Z</published>
-    <updated>2021-07-10T04:08:41.173Z</updated>
-    
-    <content type="html"><![CDATA[<p>Windows系统和office办公软件都是我们现在学习，工作中很难离开的工具。由于各种各样的原因，可能有些人会出现Windows未被激活，office产品密钥过期等情况。所以，在这里列举一下如何免费的激活Windows和office。</p><h3 id="Windows激活"><a href="#Windows激活" class="headerlink" title="Windows激活"></a>Windows激活</h3><p>关于Windows的激活方式一般分为数字权利激活和KMS在线激活。</p><h4 id="数字权利激活"><a href="#数字权利激活" class="headerlink" title="数字权利激活"></a>数字权利激活</h4><p>数字权利激活会把当前电脑的硬件信息，上传至微软服务器。当用户重装系统后，设备会自动与服务器中存储的信息进行对比。如果相符，则自动激活。所以，这种激活方式对于用户来说是非常的方便的，有好的。</p><p>首先介绍一个专门用于激活Windows10的数字权利激活工具——云萌激活</p><h5 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h5><p>以数字权利激活Windows10系统（涵盖各个版本）</p><span id="more"></span><p><font color='00dd00'>云萌激活</font>：</p><p><a href="https://cmwtat.cloudmoe.com/cn.html">云萌Windows 10激活工具 - 首页 </a></p><p><a href="https://github.com/TGSAN/CMWTAT_Digital_Edition">GitHub开源地址</a></p><p>这是一款开源免费的数字权利激活工具，你可以使用他免费激活windows10系统。只需要简单的几步操作就可以完成。</p><h5 id="激活步骤"><a href="#激活步骤" class="headerlink" title="激活步骤"></a>激活步骤</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">中文版</span><br><span class="line">下载 Releases 里的 .exe 发行文件。</span><br><span class="line"></span><br><span class="line">运行它。</span><br><span class="line"></span><br><span class="line">点按 Activate 按钮。</span><br><span class="line"></span><br><span class="line">完成~</span><br></pre></td></tr></table></figure><p>可以说是十分的简单易用。</p><h4 id="KMS服务器激活"><a href="#KMS服务器激活" class="headerlink" title="KMS服务器激活"></a>KMS服务器激活</h4><p>密钥管理服务（KMS）是微软为批量许可客户（组织，学校或政府）提供的一种正版激活方法。KMS激活期限最多可以长达180天（6个月），激活每7天自动进行更新（期限自动重置为180天），也就是说如果客户端可以一直连接到KMS主机服务器，那么是可以无限制的使用下去。</p><p>但是对于一些非Windows10系统的用户来说，上面的工具爱莫能助，所以我们需要一款更加强大的激活工具——HEU KMS Activator </p><p><a href="https://github.com/zbezj/HEU_KMS_Activator">GitHub发布地址</a></p><h5 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h5><p>支持KMS激活Microsoft Windows、Office； 2、支持数字许可永久激活、KMS38激活至2038年；  3、支持OEM激活Windows Vista, Windows 7, Windwos Server； 4、支持Microsoft Office  零售版转换为VL批量许可版； 5、支持备份和还原激活信息。 6、支持自定义搭建KMS服务器激活； —激活成功率高、执行速度快、支持几乎所有版本； —在Windows 7上无需依赖安装.NET Framework； —可以自行安装或搭建KMS服务器； —自动识别三种语言（简/繁/英）；  —带参数可静默运行且参数可根据需要自选； —可以一键自动激活、也可以根据需要自选； —包含KMS相关的功能（安装密钥、激活状态查询等）  —完全可离线激活，也可以连接网络服务器进行激活；</p><p>正因为这款激活工具几乎可以解决Windows电脑上所有的激活服务，所以在GitHub上也只是以文件的形式上传，并没有将工具代码开源，个人自行选择是否使用。</p><h5 id="激活步骤-1"><a href="#激活步骤-1" class="headerlink" title="激活步骤"></a>激活步骤</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.打开HEU KMS Activator 并选择一个激活方式(下面以数字激活为例)</span><br><span class="line">2.点击数字激活，点击“橘黄色按钮”，将激活 Windows 和 Office，智能识别最佳 的激活方式（优先顺序依次为数字许可证/KMS38/OEM/KMS），并自动跳过已经 永久激活的版本。</span><br><span class="line">3.完成(更多的激活方式自行选择和查询)</span><br></pre></td></tr></table></figure><h4 id="产品密钥激活"><a href="#产品密钥激活" class="headerlink" title="产品密钥激活"></a>产品密钥激活</h4><p>其实产品密钥激活算不上是另一种激活形式，只是换了一种激活方式。根据密钥的性质（数字权利还是KMS激活密钥）来决定你的设备激活状态。</p><p>如果你能确定自己的密钥是数字权利密钥，那么你可以直接打开设置-更新和安全-激活-更换产品密钥。将你手里面的密钥输入进入激活即可。</p><p>但是如果你是KMS密钥的话建议通过代码来进行激活，代码如下：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX(这里输入你自己的产品密钥)</span><br><span class="line">slmgr /skms kms.03k.org</span><br><span class="line">slmgr /ato</span><br></pre></td></tr></table></figure><p>这样用代码激活的好处就是，当激活使用时间达到180天后，他会自动帮你激活，这样你就不需要再通过手动激活了。</p><p>密钥获取处:<a href="https://t.me/getkeys">Windows与office激活密钥公益发布站</a></p><p>本着互联网“传递，共享，自由”的原则，我希望大家使用公益站发布的密钥之后，能给他一个关注。</p><hr><h3 id="office产品激活"><a href="#office产品激活" class="headerlink" title="office产品激活"></a>office产品激活</h3><p>office激活除了上面说到的HEU KMS Activator ，但是可能由于代码没有开源的缘故，可能让人觉得不太放心，那么下面的office tool plus也是一个不错的选择。</p><p><a href="https://otp.landian.vip/zh-cn/">Office Tool Plus 官方网站 - 一键部署 Office </a></p><p><a href="https://github.com/YerongAI/Office-Tool">GitHub开源地址</a></p><h4 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h4><p>一键生成配置，快速激活office,Office Tool Plus从微软服务器上获取office的版本信息以及安装文件，始终确保下载，安装的office为最新版本。</p><h4 id="激活步骤-2"><a href="#激活步骤-2" class="headerlink" title="激活步骤"></a>激活步骤</h4><p>下载Office Tool Plus之后，激活步骤请参考<a href="https://help.coolhub.top/zh-cn/activate/#%E6%BF%80%E6%B4%BB%E6%AD%A5%E9%AA%A4">官方文档</a>，有详细说明。</p><h3 id="其他方案"><a href="#其他方案" class="headerlink" title="其他方案"></a>其他方案</h3><p>也许你实在不想折腾那么多繁琐的步骤，那么你可以使用产品密钥激活(密钥寻找可以前往上面的telegram频道，如果你没有telegram，那就只能求助于万能的网友了)，或者暂时使用office的替代品。我这里推荐两个替代品：一个是<a href="https://www.wps.com/download/">WPS</a>,另一个是<a href="https://www.libreoffice.org/">Libre Office</a>(开源免费，与Office兼容)。</p><h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p>1.<a href="https://zhuanlan.zhihu.com/p/349931246">Windows系统激活神器HEU KMS Activator v22.1.0激活工具</a></p><p>2.<a href="https://zhuanlan.zhihu.com/p/260014354">win10激活的几种方式及其原理</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;Windows系统和office办公软件都是我们现在学习，工作中很难离开的工具。由于各种各样的原因，可能有些人会出现Windows未被激活，office产品密钥过期等情况。所以，在这里列举一下如何免费的激活Windows和office。&lt;/p&gt;
-&lt;h3 id=&quot;Windows激活&quot;&gt;&lt;a href=&quot;#Windows激活&quot; class=&quot;headerlink&quot; title=&quot;Windows激活&quot;&gt;&lt;/a&gt;Windows激活&lt;/h3&gt;&lt;p&gt;关于Windows的激活方式一般分为数字权利激活和KMS在线激活。&lt;/p&gt;
-&lt;h4 id=&quot;数字权利激活&quot;&gt;&lt;a href=&quot;#数字权利激活&quot; class=&quot;headerlink&quot; title=&quot;数字权利激活&quot;&gt;&lt;/a&gt;数字权利激活&lt;/h4&gt;&lt;p&gt;数字权利激活会把当前电脑的硬件信息，上传至微软服务器。当用户重装系统后，设备会自动与服务器中存储的信息进行对比。如果相符，则自动激活。所以，这种激活方式对于用户来说是非常的方便的，有好的。&lt;/p&gt;
-&lt;p&gt;首先介绍一个专门用于激活Windows10的数字权利激活工具——云萌激活&lt;/p&gt;
-&lt;h5 id=&quot;功能&quot;&gt;&lt;a href=&quot;#功能&quot; class=&quot;headerlink&quot; title=&quot;功能&quot;&gt;&lt;/a&gt;功能&lt;/h5&gt;&lt;p&gt;以数字权利激活Windows10系统（涵盖各个版本）&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="文字博客" scheme="https://example.github.io/categories/%E6%96%87%E5%AD%97%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-    <category term="教程" scheme="https://example.github.io/tags/%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="Windows" scheme="https://example.github.io/tags/Windows/"/>
     
   </entry>
   
