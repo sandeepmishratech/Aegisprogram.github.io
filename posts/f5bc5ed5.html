@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/docker6.2gowp4df3jw0.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/docker8.788rmr8slcg0.png">
 <meta property="article:published_time" content="2021-07-03T05:25:33.000Z">
-<meta property="article:modified_time" content="2021-07-27T02:47:53.069Z">
+<meta property="article:modified_time" content="2021-09-11T02:41:06.520Z">
 <meta property="article:author" content="Aegisprogram">
 <meta property="article:tag" content="教程">
 <meta property="article:tag" content="WSL2">
@@ -240,7 +240,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-27 11:47:53" itemprop="dateModified" datetime="2021-07-27T11:47:53+09:00">2021-07-27</time>
+                <time title="Modified: 2021-09-11 11:41:06" itemprop="dateModified" datetime="2021-09-11T11:41:06+09:00">2021-09-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -297,7 +297,7 @@
 <p><a target="_blank" rel="noopener" href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi">AMD64下载地址</a></p>
 <p>切记要下载对应的指令集的更新包，关于二者的差别这里不展开讲，有兴趣的可以看看<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/X86-64">这个</a></p>
 <p>下载完成之后，双击运行该文件。</p>
-<h3 id="安装Linux"><a href="#安装Linux" class="headerlink" title="安装Linux"></a>安装Linux</h3><p>完成上面的步骤之后，我们现在去Microsoft store安装Linux发行版本，我这里选择的是Ubuntu18.04，个人可以随意选择，自己用着顺手就行。</p>
+<h3 id="安装Linux"><a href="#安装Linux" class="headerlink" title="安装Linux"></a>安装Linux</h3><p>完成上面的步骤之后，我们现在去Microsoftstore安装Linux发行版本，我这里选择的是Ubuntu18.04，个人可以随意选择，自己用着顺手就行。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/linux%E5%8F%91%E8%A1%8C%E7%89%88.1lks55li1tj4.png" alt="image"></p>
 <p>下载完成之后，我们点击启动，创建用户和密码。</p>
 <h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>我们输入<code>wsl -l -v </code>查看当前的版本，如果你的WSL处于1的话，我建议切换至2。因为我个人在安装Linux发行版的时候，当我点击启动Ubuntu打算创建用户和密码的时候，上面显示“当前的网络名已经不再可用”。如果你在过程中也遇到了这样的问题，那么请这样操作。</p>
@@ -306,16 +306,16 @@
 <p><code>wsl --set-default-version 2</code></p>
 <h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>启动Ubuntu的方式有两种，一是通过点击Ubuntu的图标使其运行，另一种就是使用wsl命令运行。因为接下来要与WindowsTerminal结合使用，所以我将会用wsl命令来启用Ubuntu。</p>
 <hr>
-<h3 id="Windows-Terminal"><a href="#Windows-Terminal" class="headerlink" title="Windows Terminal"></a>Windows Terminal</h3><p>注意：以下是关于Windows Terminal的相关的一些配置，可以选择跳过，不影响WSL2和Linux发行版的使用，但是如果希望把Windows Terminal作为一个命令行工具，那么下面的配置你可以考虑一下。</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/microsoft/terminal">Windows Terminal</a>是一款集成了Windows上的<em>PowerShell、CMD以及Windows Linux</em>子系统的终端。<em>Windows</em>自身的命令控制台过于简陋，所以我们不妨使用<em>Windows Terminal</em>来替代<em>cmd和power shell</em>，只需要简单的配置一些功能，就能实现很多常用的<em>Linux</em>操作命令。</p>
+<h3 id="Windows-Terminal"><a href="#Windows-Terminal" class="headerlink" title="Windows Terminal"></a>Windows Terminal</h3><p>注意：以下是关于WindowsTerminal的相关的一些配置，可以选择跳过，不影响WSL2和Linux发行版的使用，但是如果希望把Windows Terminal作为一个命令行工具，那么下面的配置你可以考虑一下。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/microsoft/terminal">WindowsTerminal</a>是一款集成了Windows上的<em>PowerShell、CMD以及Windows Linux</em>子系统的终端。<em>Windows</em>自身的命令控制台过于简陋，所以我们不妨使用<em>Windows Terminal</em>来替代<em>cmd和power shell</em>，只需要简单的配置一些功能，就能实现很多常用的<em>Linux</em>操作命令。</p>
 <h4 id="vim配置"><a href="#vim配置" class="headerlink" title="vim配置"></a>vim配置</h4><p>Vim是一款优秀的Linux文本编辑器。我们在Windows下编辑一些一些配置文件的时候很有作用。</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.首先，我建议先去下载一个Vim,安装的时候注意路径中不要包含中文路径。</span><br><span class="line">2.然后，配置环境变量。找到Vim.exe的二进制文件位置，例如我的Vim安装位置</span><br><span class="line">在C:\Program Files (x86)\Vim\vim82,</span><br><span class="line">然后到设置——系统——关于——高级系统设置——环境变量——path——编辑——新建。</span><br><span class="line">然后将Vim.exe的路径复制粘贴上去。（例如我的就是C:\Program Files (x86)\Vim\vim82）。</span><br><span class="line">然后重新打开Windows Terminal终端就可以了。</span><br></pre></td></tr></table></figure>
 
-<h4 id="Git-Bash-配置"><a href="#Git-Bash-配置" class="headerlink" title="Git Bash 配置"></a>Git Bash 配置</h4><p><em>GitBash</em>是一个用于MicrosoftWindows环境的应用程序，被集成在git下面。更多资料——<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/Git">https://zh.wikipedia.org/zh-cn/Git</a></p>
-<p>其实，我自己在网上看到很多的将Git Bash配置到Windows Terminal下都是通过修改Windows Terminal中的JSON文件来实现的。但是实际中，Windows Terminal已经精简了很多的冗长的代码，添加配置文件也变得更加的简单。</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.首先，你需要去下载一个Git </span><br><span class="line">2.打开Windows Terminal终端，进入设置——添加配置文件。</span><br><span class="line">填写名称，选择文件路径（找到自己git bash.exe的二进制文件路径）</span><br><span class="line">例如我的git 的bash.exe在D:\BigDataTools\Git\Git\bin下。</span><br><span class="line">你可以添加一个图标（当然也可以不要）。之后重启终端就可以了。</span><br></pre></td></tr></table></figure>
+<h4 id="Git-Bash-配置"><a href="#Git-Bash-配置" class="headerlink" title="Git Bash 配置"></a>Git Bash 配置</h4><p><em>GitBash</em>是一个Git命令处理器，通常运行于文本窗口中，并能执行用户直接输入的命令。更多资料——<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/Git">https://zh.wikipedia.org/zh-cn/Git</a></p>
+<p>其实，我自己在网上看到很多的将GitBash配置到WindowsTerminal下都是通过修改WindowsTerminal中的JSON文件来实现的。但是实际中，WindowsTerminal已经精简了很多的冗长的代码，添加配置文件也变得更加的简单。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.首先，你需要去下载一个Git</span><br><span class="line">2.打开WindowsTerminal终端，进入设置——添加配置文件。</span><br><span class="line">填写名称，选择文件路径（找到自己git bash.exe的二进制文件路径）</span><br><span class="line">例如我的git 的bash.exe在D:\BigDataTools\Git\Git\bin下。</span><br><span class="line">你可以添加一个图标（当然也可以不要）。之后重启终端就可以了。</span><br></pre></td></tr></table></figure>
 
-<p>但是，完成相关的bash配置之后我们会发现，当我们使用命令浏览磁盘下具有中文的文件夹时会出现乱码现象。其实，这个很好解决，我们只需要在Git文件路径下找到bash.bashrc文件，例如我的路径D:\BigDataTools\Git\Git\etc。</p>
+<p>但是，完成相关的bash配置之后我们会发现，当我们使用命令浏览磁盘下具有中文的文件夹时会出现乱码现象。其实这个很好解决，我们只需要在Git文件路径下找到bash.bashrc文件，例如我的路径D:\BigDataTools\Git\Git\etc。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/bash.bashrc.g42ff1ndx94.png" alt="image"></p>
 <p>然后打开文件进行编辑，在文件后面添加</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export LANG=&quot;zh<span class="emphasis">_CN.UTF-8&quot;</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">export LC_</span>ALL=&quot;zh<span class="emphasis">_CN.UTF-8&quot;</span></span><br></pre></td></tr></table></figure>
@@ -353,7 +353,7 @@
 <p>启动docker之后，我们需要对docker在WSL2下进行一些设置：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/docker5.5l6xgvs3en80.png" alt="image"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/docker6.2gowp4df3jw0.png" alt="image"></p>
-<p>默认的访问方式去访问官方仓库太慢了，我们需要配置一个镜像源。我们在docker engine registry-mirrors中配置镜像站点。</p>
+<p>默认的访问方式去访问官方仓库太慢了，我们需要配置一个镜像源。我们在<code>docker engine registry-mirrors</code>中配置镜像站点。</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;https://hub-mirror.c.163.com&quot;,</span><br><span class="line">&quot;https://registry.cn-hangzhou.aliyuncs.com&quot;,</span><br><span class="line">&quot;https://05f073ad3c0010ea0f4bc00b7105ec20.mirror.swr.myhuaweicloud.com&quot;,</span><br><span class="line">&quot;http://f1361db2.m.daocloud.io&quot;</span><br></pre></td></tr></table></figure>
 
 <p>这四个分别是网易源，阿里源，华为源，还有daocloud，可以根据自己的情况进行更换，只要保持相对应的格式就可以。</p>
@@ -566,7 +566,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">84k</span>
+    <span title="Symbols count total">83k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
