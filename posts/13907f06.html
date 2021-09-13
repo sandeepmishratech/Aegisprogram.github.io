@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="上个月在YouTube上看到一个博主介绍世界上有名的三大Linux系统，UP着重介绍了manjaro Linux。听完介绍之后，我就有了自己安装一个试试的想法。由于之前的VM虚拟机没有卸载干净，所以导致虚拟机一直不可用。我就干脆Windows+manjaro双系统。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows+manjaro双系统">
+<meta property="og:url" content="https://example.github.io/posts/13907f06.html">
+<meta property="og:site_name" content="Rem Blue">
+<meta property="og:description" content="上个月在YouTube上看到一个博主介绍世界上有名的三大Linux系统，UP着重介绍了manjaro Linux。听完介绍之后，我就有了自己安装一个试试的想法。由于之前的VM虚拟机没有卸载干净，所以导致虚拟机一直不可用。我就干脆Windows+manjaro双系统。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/manjaro.3teqyxbgrtk0.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%8D%B7%E8%BD%B4.68weysn1nd80.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%8D%B7%E5%A4%A7%E5%B0%8F.44cpbxkr4vc0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E9%A9%B1%E5%8A%A8%E5%99%A8.6kui8fmdphs0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%8D%B7.f0l05aw5k0w.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%90%91%E5%AF%BC.4biz3984mnc0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/U%E7%9B%98%E5%90%AF%E5%8A%A8.26t98816zoxs.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%AE%89%E5%85%A8%E5%90%AF%E5%8A%A8.5bq1pdxegk80.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%AE%89%E8%A3%85.6r8invh3vjw0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%88%86%E5%8C%BA.3lr8vyrsox40.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/boot.64zbelivmoc0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/home.4dc9896jbue0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/efi.4rwrv9ccw840.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/EFI2.jrf2d9t7uj4.png">
+<meta property="article:published_time" content="2021-09-12T11:45:45.000Z">
+<meta property="article:modified_time" content="2021-09-13T07:25:57.291Z">
+<meta property="article:author" content="Aegisprogram">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="manjaro">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/manjaro.3teqyxbgrtk0.jpg">
+
+<link rel="canonical" href="https://example.github.io/posts/13907f06.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Windows+manjaro双系统 | Rem Blue</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Rem Blue" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Rem Blue</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">繁华三千异世界,只取一瓢真爱蓝。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">24</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">25</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.github.io/posts/13907f06.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E8%95%BE%E5%A7%86.jpg">
+      <meta itemprop="name" content="Aegisprogram">
+      <meta itemprop="description" content="对于不可控的事，我们保持乐观，对于可控的事情，我们保持谨慎。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rem Blue">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Windows+manjaro双系统
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-12 20:45:45" itemprop="dateCreated datePublished" datetime="2021-09-12T20:45:45+09:00">2021-09-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-13 16:25:57" itemprop="dateModified" datetime="2021-09-13T16:25:57+09:00">2021-09-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>8.9k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>8 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/manjaro.3teqyxbgrtk0.jpg" alt="image"><br>上个月在YouTube上看到一个博主介绍世界上有名的三大Linux系统，UP着重介绍了manjaro Linux。听完介绍之后，我就有了自己安装一个试试的想法。由于之前的VM虚拟机没有卸载干净，所以导致虚拟机一直不可用。我就干脆Windows+manjaro双系统。</p>
+<span id="more"></span>
+<p>UP的安装视频我也放在这里，还是很仔细的。如果是第一次接触安装Windows+Linux双系统安装的话，我建议看看。</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jemh7iCyVoE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><p>首先，第一步你要从自己的硬盘上压缩出一个新的空间出来，大小自己的决定就好，我这里给了100GB。</p>
+<p>在此之前，需要先查看硬盘的格式，右键桌面开始菜单(win图徽)，点击磁盘管理，右键磁盘0或磁盘1后点击属性，弹出窗口选择卷即可查看自己的硬盘格式。我的是GPT格式。<br><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%8D%B7%E8%BD%B4.68weysn1nd80.png" alt="image"></p>
+<h4 id="压缩卷标"><a href="#压缩卷标" class="headerlink" title="压缩卷标"></a>压缩卷标</h4><p>然后选择一块儿要压缩的硬盘，我这里选择的是一块儿机械硬盘，从里面压缩100GB。右键你要压缩空余空间的磁盘，然后找到压缩操作。在弹出的窗口中输入你要压缩的空间。</p>
+<p>当压缩完成之后，右键选择刚才分出来的空间选择新建卷。下面的步骤如图所示(图片来源与网络)：<br><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%8D%B7%E5%A4%A7%E5%B0%8F.44cpbxkr4vc0.png" alt="image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E9%A9%B1%E5%8A%A8%E5%99%A8.6kui8fmdphs0.png" alt="iamge"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%8D%B7.f0l05aw5k0w.png" alt="image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%90%91%E5%AF%BC.4biz3984mnc0.png" alt="image"></p>
+<h4 id="镜像选择"><a href="#镜像选择" class="headerlink" title="镜像选择"></a>镜像选择</h4><p>下一步去下载manjaro的<a target="_blank" rel="noopener" href="https://manjaro.org/download/">官方镜像</a>。这里需要说明的是，manjaro有三个版本，分别是XFCE，KDE和GNOME。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.Xfce是一个用于类UNIX操作系统的轻量级桌面环境。它的目标是快速和系统资源低耗，同时</span><br><span class="line">仍然保持视觉上的吸引力和对用户友好的特性。所以比较适合配置比较低，年代比较久远的电脑</span><br><span class="line">使用。</span><br><span class="line">2.KDE是一个功能丰富多样的桌面环境，提供几种不同风格的菜单来访问应用程序。还有一个</span><br><span class="line">优秀的内置界面，可以方便地访问、下载、安装新的主题、小部件等。 虽然在用户友好度上</span><br><span class="line">做的非常好，但KDE也是相当消耗系统资源的，跟XFCE比较起来，启动程序、使用桌面环境都</span><br><span class="line">明显偏慢。运行Manjaro的64位KDE桌面使用大约需要550MB的内存。</span><br><span class="line">3.GNOME桌面环境是作为GNU项目的一部分来开发的，它旨在简单易用，并且完全可用。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>另外据我所了解的差别就是：GNOME的UI相较于其他的两个比较好看一些，另外，配置中文输入法的时候，GNOME比较简单一些。</p>
+<p>接下来需要去GitHub下载一个开源的写盘工具——<a target="_blank" rel="noopener" href="https://github.com/pbatard/rufus">Rufus</a>。这是一款Windows上的优秀写盘工具。很多博主和UP都是使用的这款工具，很轻量但是功能却是很强大。</p>
+<h4 id="制作引导盘"><a href="#制作引导盘" class="headerlink" title="制作引导盘"></a>制作引导盘</h4><p>现在需要准备一个至少为8GB的U盘插入电脑，然后启动rufus。<br>在上方的设备选项中，选择自己插入的U盘；引导类型选择中选择镜像文件，之后找到之前下载的镜像添加进去。<br>这里需要注意的是：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.保证rufus写盘工具上的分区类型是和之前自己在电脑上查看的分区类型一样的。</span><br><span class="line">2.文件系统要使用FAT32格式（兼容性比较好）</span><br><span class="line">3.建议下载最新版的Rufus，目前最新版是Rufus-3.15。如果使用版本较老的Rufus的话记得</span><br><span class="line">使用DD镜像模式写入。</span><br><span class="line">4.制作引导盘的时候，Rufus会将U盘里面的内容全部清空，所以里面有重要的数据</span><br><span class="line">的话记得备份好。</span><br></pre></td></tr></table></figure>
+<p>不过我在制作引导盘的时候，基本不需要多余的操作，只要选择好之前下载好的manjaro镜像就可以，剩下的都是默认不可改动，已经设置好了。</p>
+<p>这里有一个个人的小问题我说一下。因为我之前开启了Windows上的Bitlocker，所以如果你关掉了Windows的安全启动之后进入Windows可能需要你输入恢复密钥。所以，建议事先关闭Bitlocker，减少后期的工作量。</p>
+<h3 id="开始安装manjaro"><a href="#开始安装manjaro" class="headerlink" title="开始安装manjaro"></a>开始安装manjaro</h3><p>这一部分我需要说明的是，如果自己对于Windows的BIOS模式不清楚的话，那么我建议你先去看看别人是怎么操作的。因为这一部分对于新手来说可能真的会有些不知所措和害怕。下面开始进入正题。</p>
+<p>引导盘制作好了之后，我们重启电脑，然后按住电脑上的键盘进入BIOS模式（不同的电脑进入BIOS的按键是不一样的。上面视频中的是delete键，我的是fn+F2)。进去之后，我们首先需要使用方向键来到boot，将U盘启动设置为第一启动项，然后把安全模式关闭掉，最后按下键盘上的F10键，保存下，接着重启就可以了。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.进入BIOS界面的时候，记得注意观察界面下方给你的提示操作键。其次，在这个界面是无法使用</span><br><span class="line">鼠标的，你只能使用键盘。</span><br><span class="line">2.确保自己的每一步都要小心、准确，不可大意，不要给自己惹上不必要的麻烦。</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/U%E7%9B%98%E5%90%AF%E5%8A%A8.26t98816zoxs.png" alt="image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%AE%89%E5%85%A8%E5%90%AF%E5%8A%A8.5bq1pdxegk80.png" alt="image"></p>
+<p>电脑重启之后就会进入manjaro的安装界面。<br><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%AE%89%E8%A3%85.6r8invh3vjw0.png" alt="image"></p>
+<p>先选择系统语言（lang=en-US),进去之后你可以选择简体中文或者是繁体中文。然后，选择<code>Boot with open source drivers</code>回车进行安装。之后片刻你就可以看到安装界面了。</p>
+<h4 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h4><p>当你进入安装界面之后，前面时间地区的选择都可以按照自己来选择，这里需要重点说的是划分分区和系统引导问题。当你来到分区这一步的时候，接下来的每一步都很重要。</p>
+<p>1.上方选择你压缩空间的的存储器<br><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E5%88%86%E5%8C%BA.3lr8vyrsox40.png" alt="image"><br>2.下面选择手动分区，之后下一步。</p>
+<ul>
+<li><p>找到之前在Windows划分好，没有格式化，没有分配的空余空间。</p>
+</li>
+<li><p>点击创建，然后创建一个/分区，下面选择boot，上面分配的空间可以自己选择。我的100GB我给了52GB过去。分区类型要选择和自己制作启动盘的系统分区保持一致，文件类型保持ext4就好。<br><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/boot.64zbelivmoc0.png" alt="image"></p>
+</li>
+<li><p>现在找到剩下的空余空间，再创建一个home目录，将剩下的空间分配给它，下面保持不动。</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/home.4dc9896jbue0.png" alt="image"></p>
+<p>3.接下来这一步很重要，它直接决定了你的双系统能不能安装成功。</p>
+<p>首先要找到上方的FAT32文件系统，然后内容选项要选择保留，下方的挂载点添加<code>/boot/efi</code>，剩下的保持不动。<br><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/efi.4rwrv9ccw840.png" alt="image"></p>
+<p>理论上来说，这样操作是不会有什么大问题的。但是我在安装manjaro的时候，经过上述的步骤，点击下一步的时候，系统还是提示我没有创建EFI引导文件。事实上，当我第二次安装的时候，我直接忽略这个提示，重启系统之后反而能够成功的进入双系统切换模式。目前我还不知道问题到底出在哪儿，如果你已经确保之前的步骤准确无误，但是也出现这样的提示的话，那么我建议直接忽视，直接下一步。</p>
+<p>当你完成EFI分区之后，接着把剩下安装步骤完成，进入正式安装，大概五分钟过后系统就能够安装成功。安装成过之后，勾选现在重启，然后点击确定。不出意外的话，重启之后你看到的就是这个界面。<br><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/EFI2.jrf2d9t7uj4.png" alt="image"></p>
+<p>这样，你就可以选择第一个manjaroLinux或者是第三个Windows系统，然后回车进入系统。如果你并没有出现这个界面的话，那么很不幸，你的双系统安装可能失败了。而且有极大的可能的是：Windows系统的引导丢失了，或者更加糟糕的是，manjaro系统没有安装成功，Windows引导丢失，导致两个系统都进不去。</p>
+<h3 id="manjaro的相关配置"><a href="#manjaro的相关配置" class="headerlink" title="manjaro的相关配置"></a>manjaro的相关配置</h3><p>我需要说明的是，这个基于ArchLinux的manjaro与一般的红帽系和Debian系不太一样。所以首次使用会感到不习惯。</p>
+<h4 id="配置源"><a href="#配置源" class="headerlink" title="配置源"></a>配置源</h4><p>配置<a target="_blank" rel="noopener" href="https://github.com/archlinuxcn/mirrorlist-repo">中国的mirrors</a>，在终端执行下面的命令从官方的源列表中对中国源进行测速和设置：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman-mirrors -g  # 排列源，可不执行</span><br><span class="line">sudo pacman-mirrors -c China -m rank # 更改源，在跳出的对话框里选择想要的源</span><br></pre></td></tr></table></figure>
+
+<p>为Manjaro加上中文社区的源来加速安装软件，在 <code>/etc/pacman.conf</code>中添加archlinuxcn源，末尾加上：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure>
+<p>安装archlinuxcn-keyring包以导入GPGkey，否则的话key验证失败会无法安装：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></figure>
+
+<p>同步并更新系统：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syyu</span><br></pre></td></tr></table></figure>
+
+<h4 id="常用的pacman命令"><a href="#常用的pacman命令" class="headerlink" title="常用的pacman命令"></a>常用的pacman命令</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu: 升级系统及所有已经安装的软件。</span><br><span class="line">pacman -S 软件名: 安装软件。也可以同时安装多个包，只需以空格分隔包名即可。</span><br><span class="line">pacman -Rs 软件名: 删除软件，同时删除本机上只有该软件依赖的软件。</span><br><span class="line">pacman -Ru 软件名: 删除软件，同时删除不再被任何软件所需要的依赖。</span><br><span class="line">pacman -Ssq 关键字: 在仓库中搜索含关键字的软件包，并用简洁方式显示。</span><br><span class="line">pacman -Qs 关键字: 搜索已安装的软件包。</span><br><span class="line">pacman -Qi 软件名: 查看某个软件包信息，显示软件简介,构架,依赖,大小等详细信息。</span><br><span class="line">pacman -Sg: 列出软件仓库上所有的软件包组。</span><br><span class="line">pacman -Sg 软件包组: 查看某软件包组所包含的所有软件包。</span><br><span class="line">pacman -Sc：清理未安装的包文件，包文件位于 /var/cache/pacman/pkg/ 目录。</span><br><span class="line">pacman -Scc：清理所有的缓存文件。</span><br></pre></td></tr></table></figure>
+<p>更多的pacman命令和使用方法可以参考<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">wiki.archlinux-pacman</a></p>
+<h4 id="安装Yay"><a href="#安装Yay" class="headerlink" title="安装Yay"></a>安装Yay</h4><p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/AUR_helpers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">AUR助手</a>是一个包装程序，允许用户从AUR存储库安装软件包，而无需手动干预。Yay是ArchLinux下基于CLI的最佳AUR助手，使用Go语言编写。Yay 基于yaourt、apacman和pacaur设计的。<br>manjaroLinux本身自带的软件包管理器是pacman，但是AUR助手的很多用例实现了自动化，比如包搜索、解决依赖关系、检索和构建 AUR 包、Web 内容检索和 AUR 包提交之类。相比较而言，使用AUR助手会更加的快捷和方便。<br>关于二者更多的区别可以看<a target="_blank" rel="noopener" href="https://bbs.archlinuxcn.org/viewtopic.php?id=11185">这里</a></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.安装Yay</span><br><span class="line">sudo pacman -S yay</span><br><span class="line">2.配置yay的aur源为清华源AUR镜像：</span><br><span class="line">yay --aururl &quot;https://aur.tuna.tsinghua.edu.cn&quot; --save</span><br><span class="line">修改的配置文件位于 ~/.config/yay/config.json ，还可通过以下命令查看修改过的配置:</span><br></pre></td></tr></table></figure>
+
+<p>Yay常用命令</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yay -S package # 从 AUR 安装软件包</span><br><span class="line">yay -Rns package # 删除包</span><br><span class="line">yay -Syu # 升级所有已安装的包</span><br><span class="line">yay -Ps # 打印系统统计信息</span><br><span class="line">yay -Qi package # 检查安装的版本</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装Vim"><a href="#安装Vim" class="headerlink" title="安装Vim"></a>安装Vim</h4><p>因为下面的安装中文输入法的时候免不了要编辑文件，所以先安装一个Vim编辑器，方便之后的文本编辑。</p>
+<p><code>yay -S vim </code></p>
+<h4 id="安装中文输入法"><a href="#安装中文输入法" class="headerlink" title="安装中文输入法"></a>安装中文输入法</h4><p>看到网上很多人安装的是Fcitx输入法，这个输入法对于中文词库支持的是比较友好的。不过这个输入法需要多几步的配置，如果选择使用系统自带的ibus的话，基本不需要额外的配置。下面我介绍一下两种输入法的安装和配置吧。</p>
+<p>ibus是manjaro系统中自带的一个输入法，我们只需要简单的配置就可以启用它。</p>
+<p>1.首先在软件安装包管理器中安装下载中文输入的框架，并且更新该输入法。<br>2.接着在终端中输入ibus-setup调出配置面板进行配置。在输入法中添加中文输入法和一个英文输入法。<br>3.在系统设置中找到keyboard，在语言选择中添加汉语，将之前添加的中文输入键盘添加进去，同理添加英文键盘。<br>一般来说只要上述的配置之后，系统就会开机自启该输入法。如果没有实现开机自启的话就需要添加以下操作：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">编辑配置文件~/.xprofile（如果文件不存在则创建），增加如下内容：</span><br><span class="line">export GTK<span class="emphasis">_IM_</span>MODULE=ibus</span><br><span class="line">export QT<span class="emphasis">_IM_</span>MODULE=ibus</span><br><span class="line">export XMODIFIERS=&quot;@im=ibus</span><br></pre></td></tr></table></figure>
+<p>然后重启系统即可。</p>
+<p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">Fcitx</a>即小企鹅输入法，它是一个以 GPL 方式发布的输入法平台,可以通过安装引擎支持多种输入法，支持简入繁出，是在 Linux 操作系统中常用的中文输入法。它的优点是，短小精悍、跟程序的兼容性比较好。</p>
+<p>1.安装输入法</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S fcitx-googlepinyin #安装搜狗输入法无法启动，查询好像没法安装fcitx-qt4导致的</span><br><span class="line">sudo pacman -S fcitx-im # 选择全部安装</span><br><span class="line">sudo pacman -S fcitx-configtool # 安装图形化配置工具</span><br><span class="line">sudo pacman -S fcitx-skin-material #皮肤</span><br><span class="line">sudo pacman -S fcitx-cloudpinyin #需要在配置中附加组件里将云拼音来源改为百度，因为 Google 的服务在国内不稳定</span><br></pre></td></tr></table></figure>
+<p>2.配置输入法</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">编辑用户目录~/.config/autostart/ 下的 fcitx-autostart.desktop文件以确认自动启动是否被禁用。</span><br><span class="line">如果用户目录下的文件并不存在，您可以复制自动启动文件</span><br><span class="line"> /etc/xdg/autostart/fcitx-autostart.desktop 到用户目录：</span><br><span class="line"> cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">通过~/.pam<span class="emphasis">_environment添加环境变量</span></span><br><span class="line"><span class="emphasis">GTK_</span>IM<span class="emphasis">_MODULE DEFAULT=fcitx</span></span><br><span class="line"><span class="emphasis">QT_</span>IM<span class="emphasis">_MODULE  DEFAULT=fcitx</span></span><br><span class="line"><span class="emphasis">XMODIFIERS    DEFAULT=\@im=fcitx</span></span><br></pre></td></tr></table></figure>
+<p><code>注意</code>：<br>1.当 iBus 等其它输入法程序同时启动且开启了 Xim 支持时, 可能导致 Fcitx 无法启动，请确保已禁用了其它输入法程序的自动启动。<br>2.如果安装搜狗输入法 sudo pacman -S fcitx-sogoupinyin 会出现无法使用的问题，系统提示如下内容：解决搜狗输入法异常！请删除.config/SogouPY并重启</p>
+<p>更多的相关信息可以参考<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">wiki.archlinux-Fcitx</a></p>
+<h4 id="双系统时间不同步的问题"><a href="#双系统时间不同步的问题" class="headerlink" title="双系统时间不同步的问题"></a>双系统时间不同步的问题</h4><p>安装了双系统（Windows、Linux)会存在时间不同步的问题，导致其原因是Window记录的时间使用的是locatime，而windows记录的时间是UTC。这样当系统将时间同步给硬件后就会出现问题。</p>
+<p>可以将Linux下的时间设置为启动本地硬件时间。在设置中勾选启动本地的硬件时间就可以解决。</p>
+<h3 id="常用的软件安装列表"><a href="#常用的软件安装列表" class="headerlink" title="常用的软件安装列表"></a>常用的软件安装列表</h3><p>这份列表只是作为参考而已，至于自己具体需要什么请按照自己的需求来下载，没必要一股脑全部下载。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># deepin开发的一些软件</span></span><br><span class="line">sudo pacman -S deepin-movie</span><br><span class="line">sudo pacman -S deepin-music</span><br><span class="line">sudo pacman -S deepin-calculator</span><br><span class="line">sudo pacman -S deepin-file-manager</span><br><span class="line">sudo pacman -S deepin-calendar</span><br><span class="line">sudo pacman -S deepin-draw</span><br><span class="line">sudo pacman -S deepin-image-viewer</span><br><span class="line">sudo pacman -S deepin-picker</span><br><span class="line">sudo pacman -S deepin-screen-recorder</span><br><span class="line">sudo pacman -S deepin-screenshot</span><br><span class="line">sudo pacman -S deepin-system-monitor</span><br><span class="line">sudo pacman -S deepin-voice-recorder</span><br><span class="line">sudo pacman -S deepin-editor</span><br><span class="line">yay -S deepin-wine-tim</span><br><span class="line">yay -S deepin-wine-wechat</span><br><span class="line">yay -S deepin.com.thunderspeed</span><br><span class="line">yay -S deepin-wine-qq</span><br><span class="line"></span><br><span class="line"><span class="section">#浏览器</span></span><br><span class="line">sudo pacman -S google-chrome</span><br><span class="line"></span><br><span class="line"><span class="section">#办公</span></span><br><span class="line">sudo pacman -S tusk #evernote第三方客户端</span><br><span class="line">sudo pacman -S wps-office</span><br><span class="line">sudo pacman -S ttf-wps-fonts</span><br><span class="line">sudo pacman -S foxitreader #pdf阅读</span><br><span class="line">sudo pacman -S youdao-dict</span><br><span class="line">sudo pacman -S goldendict</span><br><span class="line">yay -S buka #电子书管理</span><br><span class="line">sudo pacman -S bookworm #电子书阅读器</span><br><span class="line">yay -S xmind</span><br><span class="line"></span><br><span class="line"><span class="section">#图形工具</span></span><br><span class="line">sudo pacman -S gimp #PS</span><br><span class="line">sudo pacman -S inkscape #AI</span><br><span class="line">yay -S vidcutter #视频剪辑</span><br><span class="line">sudo pacman -S krita</span><br><span class="line"></span><br><span class="line"><span class="section">#娱乐</span></span><br><span class="line">sudo pacman -S netease-cloud-music</span><br><span class="line">sudo pacman -S webtorrent-desktop-bin</span><br><span class="line">yay -S popcorntime</span><br><span class="line">sudo pacman -S steam</span><br><span class="line"></span><br><span class="line"><span class="section">#教育</span></span><br><span class="line">sudo pacman -S scratch #幼儿编程</span><br><span class="line">sudo pacman -S stellarium #天文</span><br><span class="line">sudo pacman -S gcompris-qt #幼儿游戏</span><br><span class="line">yay -S google-earth</span><br><span class="line"></span><br><span class="line"><span class="section"># JAVA开发环境</span></span><br><span class="line">yay -S jdk  #可使用archlinux-java命令切换</span><br><span class="line">sudo pacman -S jdk-openjdk</span><br><span class="line">sudo pacman -S maven</span><br><span class="line">sudo pacman -S gradle</span><br><span class="line">sudo pacman -S intellij-idea-ultimate-edition</span><br><span class="line">sudo pacman -S android-studio</span><br><span class="line"><span class="section"># GO语言开发环境</span></span><br><span class="line">sudo pacman -S go</span><br><span class="line">sudo pacman -S goland</span><br><span class="line"><span class="section"># 前端开发环境</span></span><br><span class="line">sudo pacman -S nodejs</span><br><span class="line">sudo pacman -S npm</span><br><span class="line">sudo pacman -S webstorm</span><br><span class="line">sudo pacman -S atom</span><br><span class="line">sudo pacman -S visual-studio-code-bin</span><br><span class="line"><span class="section"># Python开发环境</span></span><br><span class="line">sudo pacman -S pycharm-professional</span><br><span class="line"><span class="section"># C语言开发环境</span></span><br><span class="line">sudo pacman -S geany</span><br><span class="line">sudo pacman -S codeblocks</span><br><span class="line">sudo pacman -S clion</span><br><span class="line">sudo pacman -S qtcreator</span><br><span class="line"><span class="section"># Python开发环境</span></span><br><span class="line">yay -S phpstorm</span><br><span class="line"><span class="section"># ruby开发环境</span></span><br><span class="line">yay -S ruby</span><br><span class="line">yay -S rubymine</span><br><span class="line"><span class="section"># R语言开发工具</span></span><br><span class="line">sudo pacman -S rstudio-desktop-bin</span><br><span class="line"><span class="section"># 数据库</span></span><br><span class="line">sudo pacman -S dbeaver</span><br><span class="line">sudo pacman -S mysql-workbench</span><br><span class="line">sudo pacman -S mycli</span><br><span class="line">yay -S datagrip</span><br><span class="line"><span class="section"># REST模拟工具</span></span><br><span class="line">sudo pacman -S postman-bin</span><br><span class="line">sudo pacman -S insomnia</span><br><span class="line"><span class="section"># 抓包工具</span></span><br><span class="line">yay -S charles</span><br><span class="line">sudo pacman -S wireshark-qt</span><br><span class="line"><span class="section"># GIT管理工具</span></span><br><span class="line">sudo pacman -S gitkraken</span><br><span class="line"><span class="section"># 图案压缩</span></span><br><span class="line">yay -S trimage</span><br><span class="line"></span><br><span class="line"><span class="section"># 系统工具</span></span><br><span class="line">sudo pacman -S vim</span><br><span class="line">sudo pacman -S albert #类似Mac Spotlight，另外一款https://cerebroapp.com/</span><br><span class="line">yay -S remarkable #Markdown</span><br><span class="line">yay -S marktext-bin</span><br><span class="line">sudo pacman -S gedit</span><br><span class="line">sudo pacman -S nano</span><br><span class="line">sudo pacman -S pencil</span><br><span class="line">sudo pacman -S nmap</span><br><span class="line">sudo pacman -S zeal</span><br><span class="line">sudo pacman -S unarchiver #unar解压缩</span><br><span class="line">sudo pacman -S fish</span><br><span class="line">sudo pacman -S electron-ssr</span><br><span class="line">sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</span><br><span class="line">yay -S font-manager-git</span><br><span class="line">sudo pacman -S teamviewer</span><br><span class="line"></span><br><span class="line"><span class="section">#下载工具</span></span><br><span class="line">sudo pacman -S aria2 #命令行工具</span><br><span class="line">sudo pacman -S baidunetdisk-bin</span><br><span class="line"></span><br><span class="line"><span class="section">#系统美化</span></span><br><span class="line">yay -S la-capitaine-icon-theme #或下载后解压到/usr/share/icons</span><br></pre></td></tr></table></figure>
+
+<p>这里还有几份很棒的Linux应用列表和一份详细的Linux发行版列表：</p>
+<p>1.<a target="_blank" rel="noopener" href="https://www.fossmint.com/awesome-linux-software/">FossMint</a>:这是一份根据读者的推荐和建议给出的出色的Linux应用程序和工具列表。<br>2.<a target="_blank" rel="noopener" href="https://luong-komorebi.github.io/Awesome-Linux-Software/">Awesome-linux-software</a>:这是一份发布在GitHub上的Linux的应用程序，软件，工具和其他材料发行版列表。<br><a target="_blank" rel="noopener" href="https://github.com/luong-komorebi/Awesome-Linux-Software">GitHub开源地址-英文版</a><br><a target="_blank" rel="noopener" href="https://github.com/alim0x/Awesome-Linux-Software-zh_CN">GitHub开源地址-中文版</a><br>3.<a target="_blank" rel="noopener" href="https://github.com/inputsh/awesome-linux">Awesome-linux</a>：一份很棒的Linux列表。当然，你也可以选择访问<a target="_blank" rel="noopener" href="https://distrowatch.com/">distrowatch</a>来了解那些备受欢迎的Linux发行版。</p>
+<h3 id="重要说明"><a href="#重要说明" class="headerlink" title="重要说明"></a>重要说明</h3><p>1.这次安装双系统也是自己的第一次尝试，这篇博文也只是做了一个简单的安装过程，算是一个不完备的笔记。所以，如果你也打算安装双系统的话，那么我建议你事先对所有的步骤进行了解，而且要知晓安装失败存在的所有的风险。个人并不建议电脑小白进行尝试，而且本文中的所有步骤仅作为参考，具体请按照自己的实际情况来操作，千万不可盲目跟着操作。</p>
+<p>2.随着自己对于manjaro的进一步了解，日后我会纠正文中存在的错误并且添加相关的内容。</p>
+<p>3.因为ArchLinux与Debian和红帽系等主流的Linux发行版存在一些差异，所以建议多去去<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Main_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">ArchLinux社区</a>逛逛。</p>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p>1.<a target="_blank" rel="noopener" href="https://michael728.github.io/2019/08/03/linux-manjaro-install/">Manjaro安装体验小结</a></p>
+<p>2.<a target="_blank" rel="noopener" href="https://www.biaodianfu.com/install-manjaro-linux.html#comment-161818">ManjaroLinux安装与使用</a></p>
+<p>3.<a target="_blank" rel="noopener" href="https://hustlei.github.io/2018/11/msys2-pacman.html">pacman常用命令</a></p>
+<p>4.<a target="_blank" rel="noopener" href="https://printempw.github.io/setting-up-manjaro-linux/">ManjaroLinux踩坑调教记录</a></p>
+<p>5.<a target="_blank" rel="noopener" href="https://libertyleadingnetwork.blogspot.com/2019/08/manjaro-linux.html">manjarolinux折腾手记</a></p>
+<p>6.<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/52141844">Win10磁盘分区教程</a></p>
+<p>7.<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32364955">NTFS,FAT32和exFAT文件系统有什么区别？</a></p>
+<p>8.<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/376787855">2021【保姆级教程】Win+Manjaro双系统双硬盘安装</a></p>
+<p>9.<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/363666022">yay进阶</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Aegisprogram
+  </li>
+  
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+              <a href="/tags/manjaro/" rel="tag"><i class="fa fa-tag"></i> manjaro</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/edcf47a7.html" rel="prev" title="来自数字安全专家的7个手机数据隐私提示">
+      <i class="fa fa-chevron-left"></i> 来自数字安全专家的7个手机数据隐私提示
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">前期准备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E5%8D%B7%E6%A0%87"><span class="nav-number">1.1.</span> <span class="nav-text">压缩卷标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%95%9C%E5%83%8F%E9%80%89%E6%8B%A9"><span class="nav-number">1.2.</span> <span class="nav-text">镜像选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%B6%E4%BD%9C%E5%BC%95%E5%AF%BC%E7%9B%98"><span class="nav-number">1.3.</span> <span class="nav-text">制作引导盘</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85manjaro"><span class="nav-number">2.</span> <span class="nav-text">开始安装manjaro</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E5%8C%BA"><span class="nav-number">2.1.</span> <span class="nav-text">分区</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#manjaro%E7%9A%84%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">manjaro的相关配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%BA%90"><span class="nav-number">3.1.</span> <span class="nav-text">配置源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84pacman%E5%91%BD%E4%BB%A4"><span class="nav-number">3.2.</span> <span class="nav-text">常用的pacman命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Yay"><span class="nav-number">3.3.</span> <span class="nav-text">安装Yay</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Vim"><span class="nav-number">3.4.</span> <span class="nav-text">安装Vim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95"><span class="nav-number">3.5.</span> <span class="nav-text">安装中文输入法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%90%8C%E6%AD%A5%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.6.</span> <span class="nav-text">双系统时间不同步的问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%88%97%E8%A1%A8"><span class="nav-number">4.</span> <span class="nav-text">常用的软件安装列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E8%AF%B4%E6%98%8E"><span class="nav-number">5.</span> <span class="nav-text">重要说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">6.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Aegisprogram"
+      src="/images/%E8%95%BE%E5%A7%86.jpg">
+  <p class="site-author-name" itemprop="name">Aegisprogram</p>
+  <div class="site-description" itemprop="description">对于不可控的事，我们保持乐观，对于可控的事情，我们保持谨慎。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Aegisprogram" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Aegisprogram" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:haut.fomal@yandex.com" title="E-Mail → mailto:haut.fomal@yandex.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://m.cmx.im/web/accounts/103475" title="Mastodon → https:&#x2F;&#x2F;m.cmx.im&#x2F;web&#x2F;accounts&#x2F;103475" rel="noopener" target="_blank"><i class="fab fa-mastodon fa-fw"></i>Mastodon</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Soulofheart77" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Soulofheart77" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://levisper.github.io/" title="https:&#x2F;&#x2F;levisper.github.io&#x2F;" rel="noopener" target="_blank">Eren的博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ednovas.xyz/" title="https:&#x2F;&#x2F;ednovas.xyz&#x2F;" rel="noopener" target="_blank">EdNovas的小站</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aegisprogram</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">92k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">1:24</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("06/24/2021 17:38:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: 'unset',
+  left: '32px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+//新增的内容,如果不是深色模式,则激活深色模式
+if(!darkmode.isActivated())
+{
+  darkmode.toggle();
+}
+</script>
+
+
+</body>
+</html>
