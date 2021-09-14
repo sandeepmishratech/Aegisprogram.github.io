@@ -22,24 +22,27 @@
     var CONFIG = {"hostname":"example.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="hexo博客主题配置过程中不仅有不少的踩坑问题，还比较的琐碎，需要不少的耐心。 1.主题的标签，分类，关于页面的生成其实这一部分在next主题配置中还算简单的，也没有什么坑，主要是说说如何生成这些页面以及修改相关内容。  标签页 想要生成标签页，我们首先需要在博客的根目录（例如我将整个博客放在D:\BigDataTools\hexo下，那么hexo文件下就是我的博客根目录）在当下目录输入 hexo">
+  <meta name="description" content="之前我推荐过一款颜值很高的开源终端——Tabby，但是那款终端毕竟使用electron和Typescipt，所以性能上就会略显得有些不足。本来是没打算给它美化的，但是Tabbby用了一段时间之后再打开WindowsTerminal感觉少了些什么。所以还是决定对WindowsTerminal进行一波儿美化。美化后的效果如图所示。 WindowsTerminal美化首先，先找到WindowsTerm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo博客相关配置（2）">
-<meta property="og:url" content="https://example.github.io/posts/e863b3d6.html">
+<meta property="og:title" content="Zsh配置以及Windows Terminal美化">
+<meta property="og:url" content="https://example.github.io/posts/fb4e3479.html">
 <meta property="og:site_name" content="Rem Blue">
-<meta property="og:description" content="hexo博客主题配置过程中不仅有不少的踩坑问题，还比较的琐碎，需要不少的耐心。 1.主题的标签，分类，关于页面的生成其实这一部分在next主题配置中还算简单的，也没有什么坑，主要是说说如何生成这些页面以及修改相关内容。  标签页 想要生成标签页，我们首先需要在博客的根目录（例如我将整个博客放在D:\BigDataTools\hexo下，那么hexo文件下就是我的博客根目录）在当下目录输入 hexo">
+<meta property="og:description" content="之前我推荐过一款颜值很高的开源终端——Tabby，但是那款终端毕竟使用electron和Typescipt，所以性能上就会略显得有些不足。本来是没打算给它美化的，但是Tabbby用了一段时间之后再打开WindowsTerminal感觉少了些什么。所以还是决定对WindowsTerminal进行一波儿美化。美化后的效果如图所示。 WindowsTerminal美化首先，先找到WindowsTerm">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/social.501i9rss0r40.png">
-<meta property="article:published_time" content="2021-06-29T01:43:42.000Z">
-<meta property="article:modified_time" content="2021-07-09T16:12:41.645Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/Windowsterminal.4dze8gcsy000.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/vscode.6a4izsb57u80.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/shell.6zr4ve2c67k0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/ohmyzsh.4jd9r9he7hm0.png">
+<meta property="article:published_time" content="2021-09-14T13:37:35.000Z">
+<meta property="article:modified_time" content="2021-09-14T15:16:12.446Z">
 <meta property="article:author" content="Aegisprogram">
-<meta property="article:tag" content="教程">
-<meta property="article:tag" content="文字博客">
-<meta property="article:tag" content="主题">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="WSL2">
+<meta property="article:tag" content="Windows Terminal">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/social.501i9rss0r40.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/Windowsterminal.4dze8gcsy000.jpg">
 
-<link rel="canonical" href="https://example.github.io/posts/e863b3d6.html">
+<link rel="canonical" href="https://example.github.io/posts/fb4e3479.html">
 
 
 <script id="page-configurations">
@@ -52,7 +55,7 @@
   };
 </script>
 
-  <title>hexo博客相关配置（2） | Rem Blue</title>
+  <title>Zsh配置以及Windows Terminal美化 | Rem Blue</title>
   
 
 
@@ -203,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.github.io/posts/e863b3d6.html">
+    <link itemprop="mainEntityOfPage" href="https://example.github.io/posts/fb4e3479.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E8%95%BE%E5%A7%86.jpg">
@@ -216,7 +219,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          hexo博客相关配置（2）
+          Zsh配置以及Windows Terminal美化
         </h1>
 
         <div class="post-meta">
@@ -227,14 +230,14 @@
               
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-06-29 10:43:42" itemprop="dateCreated datePublished" datetime="2021-06-29T10:43:42+09:00">2021-06-29</time>
+              <time title="Created: 2021-09-14 22:37:35" itemprop="dateCreated datePublished" datetime="2021-09-14T22:37:35+09:00">2021-09-14</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-10 01:12:41" itemprop="dateModified" datetime="2021-07-10T01:12:41+09:00">2021-07-10</time>
+                <time title="Modified: 2021-09-15 00:16:12" itemprop="dateModified" datetime="2021-09-15T00:16:12+09:00">2021-09-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,7 +245,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
                 </span>
             </span>
 
@@ -259,14 +262,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.4k</span>
+              <span>2.7k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>2 mins.</span>
             </span>
 
         </div>
@@ -278,40 +281,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>hexo博客主题配置过程中不仅有不少的踩坑问题，还比较的琐碎，需要不少的耐心。</p>
-<h3 id="1-主题的标签，分类，关于页面的生成"><a href="#1-主题的标签，分类，关于页面的生成" class="headerlink" title="1.主题的标签，分类，关于页面的生成"></a>1.主题的标签，分类，关于页面的生成</h3><p>其实这一部分在next主题配置中还算简单的，也没有什么坑，主要是说说如何生成这些页面以及修改相关内容。</p>
-<ul>
-<li><p>标签页</p>
-<p>想要生成标签页，我们首先需要在博客的根目录（例如我将整个博客放在D:\BigDataTools\hexo下，那么hexo文件下就是我的博客根目录）在当下目录输入</p>
-<p><code>hexo new page tags</code></p>
-<p>之后就会在hexo/source下生成相对应的文件夹和index文件，我们对其进行修改：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: all tags</span><br><span class="line">date: xxxx-xx-xx</span><br><span class="line">type: tags</span><br></pre></td></tr></table></figure></li>
-<li><p>分类页</p>
-<p>同样，我们在博客的根目录下输入</p>
-<p><code>hexo new page  categories</code></p>
-<span id="more"></span>
-
-<p>对index文件进行如下修改：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: all categories</span><br><span class="line">date:  xxxx-xx-xx</span><br><span class="line">type: categories</span><br></pre></td></tr></table></figure></li>
-<li><p>关于页</p>
-<p>在博客的根目录下输入</p>
-<p><code>hexo new page about</code></p>
-<p>对其中的index文件进行如下编辑：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title: 关于</span><br><span class="line">date:</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">正文内容</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>然后找到主题的配置文件（hexo/themes/主题名/_config.yml)中的menu，将tags,categories,about对应前面的注释去掉即可。我们可以顺便将主题配置文件中tags_icon设置为true,这样你的博客标签将会以图标的方式展现出来而不再是#。</p>
-<h3 id="2-添加社交方式"><a href="#2-添加社交方式" class="headerlink" title="2.添加社交方式"></a>2.添加社交方式</h3><p>其实主题中会内置一些社交的方式，我们只需要在主题配置文件中打开就可以（我以next主题为例）。我们首先来到主题配置文件中，找到social<img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/social.501i9rss0r40.png" alt="image"></p>
-<p>将我们需要的打开，把后面的联系地址填上去就可以了。当然，也许这上面提供的联系方式不能满足你的要求，那么你可以自定义添加自己想要的联系方式。在这个<a target="_blank" rel="noopener" href="https://fontawesome.com/v5.15/icons?d=gallery&p=2">图标网站</a>上你不需要复制链接，也不需要下载图标，你只需要在这个网站上找到对应联系方式的图标，确认没有错误就可以。然后我们回到配置文件中，添加自定义的联系方式（需要注意书写的格式）。网站只是帮助你确认联系方式的图标。</p>
-<h3 id="3-博客文章置顶"><a href="#3-博客文章置顶" class="headerlink" title="3.博客文章置顶"></a>3.博客文章置顶</h3><p>比如说我想让进入这个网站的朋友最先看到的就是如何搭建hexo博客的文章，那么文章置顶对于我来说就很有必要的了。我们需要进行如下操作</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save(卸载原来的插件)</span><br><span class="line">npm install hexo-generator-index-pin-top --save(安装置顶插件)</span><br></pre></td></tr></table></figure>
-
-<p>设置置顶标志：</p>
-<p>进入/theme/主题名/layout/_macro/post.swig，找到</p>
-<p><code>&lt;div class = &#39;post-meta&#39;&gt;</code>下面插入代码</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if post.top %&#125;</span><br><span class="line"><span class="code">    &lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt;</span></span><br><span class="line"><span class="code">    &lt;font color=&quot;RED&quot;&gt;置顶&lt;/font&gt; (置顶文字的颜色可以自行修改)</span></span><br><span class="line"><span class="code">    &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span></span><br><span class="line"><span class="code">&#123;% endif %&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>之后，我们只需要在编写一篇新的博客的时候在元数据中加入<code>top: true</code>就可以了。</p>
-<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904037465194503">hexo next主题设置文章置顶</a></p>
+        <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/Windowsterminal.4dze8gcsy000.jpg" alt="image"></p>
+<p>之前我推荐过一款颜值很高的开源终端——<a target="_blank" rel="noopener" href="https://github.com/Eugeny/tabby">Tabby</a>，但是那款终端毕竟使用electron和Typescipt，所以性能上就会略显得有些不足。<br>本来是没打算给它美化的，但是Tabbby用了一段时间之后再打开WindowsTerminal感觉少了些什么。所以还是决定对WindowsTerminal进行一波儿美化。美化后的效果如图所示。</p>
+<h3 id="WindowsTerminal美化"><a href="#WindowsTerminal美化" class="headerlink" title="WindowsTerminal美化"></a>WindowsTerminal美化</h3><p>首先，先找到WindowsTerminal上的<code>setting</code>。在上面窗口的下拉菜单里面可以找到，也可以使用<code>ctrl+,</code>默认的快捷键打开。然后找到<code>open JSON file</code>打开（我是使用VScode打开的）。接下来找到里面的<code>profiles</code>,在下面的<code>defaults</code>的<code>&#123;&#125;</code>中添加自定义的配置。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/vscode.6a4izsb57u80.png" alt="image"></p>
+<p>自定义配置（仅供参考）：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  &quot;useAcrylic&quot;: true, #开启亚克力效果</span><br><span class="line">&quot;acrylicOpacity&quot;: 0.5, #设置亚克力效果的透明度</span><br><span class="line"><span class="code">          &quot;backgroundImage&quot;: &quot;D:\\\u5fc3\u7075\u9b54\u6cd5\u5e08zg\\Pictures\\Wallhaven\u9ad8\u6e05\u58c1\u7eb8\\catalina.jpg&quot;,</span></span><br><span class="line"><span class="code">           #设置终端背景图片</span></span><br><span class="line"><span class="code">          &quot;backgroundImageAlignment&quot;: &quot;center&quot;, #背景图片位置</span></span><br><span class="line"><span class="code">          &quot;backgroundImageOpacity&quot;: 0.69999999999999996, #背景图片的透明度</span></span><br><span class="line"><span class="code">          &quot;backgroundImageStretchMode&quot;: &quot;uniformToFill&quot; #背景图片的拉伸模式</span></span><br><span class="line"><span class="code"></span></span><br></pre></td></tr></table></figure>
+<p><code>说明</code>：</p>
+<p>1.背景图片可以使用动图。<br>2.设置背景图片之后，亚克力色背景效果并不明显，二者选其一就可以。<br>3.编写的时候注意标点和格式。</p>
+<p>我的背景图片使用的是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/MacOS_Catalina">MacOS catalina</a>的经典桌面壁纸，可以去这个<a target="_blank" rel="noopener" href="https://wallspic.com/cn">网站</a>下载。</p>
+<h3 id="zsh配置"><a href="#zsh配置" class="headerlink" title="zsh配置"></a>zsh配置</h3><p>在MacOS和Linux的默认shell基本上都是zshell(zsh)，这个zsh功能十分的强大，不过配置起来相对麻烦一些。不过GitHub上有一个开源的<code>on-my-zsh</code>，它能够帮助我们更快更好的对zsh进行配置。</p>
+<p>在Windows安装配置zsh需要一些准备工作：<br>1.需要安装WSL并且完成相关的配置<br>2.电脑上需要git<br>3.需要在下载的Linux发行版上创建好账户<br>4.将WSL集成到WindowsTerminal中</p>
+<p>接下来的操作都是在WindowsTerminal中进行，如果上面几步没有做好的话，那么可以参考我之前的<a target="_blank" rel="noopener" href="https://aegisprogram.github.io/posts/f5bc5ed5.html">博客</a>。我的WSL中使用的Linux发行版是Ubuntu18.04</p>
+<p>首先在Ubuntu中下载好zsh <code>sudo apt install -y zsh</code><br><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/shell.6zr4ve2c67k0.png" alt="image"></p>
+<p>接着将shell切换成zsh <code>clsh -s /bin/shell</code>，重启终端，输入<code>echo $SHELL</code>输出/bin/zsh表示成功。</p>
+<p>下一步安装oh-my-zsh，官方推荐的下载方式有两种：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl:</span><br><span class="line">sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span><br><span class="line">wget:</span><br><span class="line">sh -c &quot;$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span><br></pre></td></tr></table></figure>
+<p>安装好了就如下图所示<br><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/ohmyzsh.4jd9r9he7hm0.png" alt="image"></p>
+<h4 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h4><p>oh-my-zsh的主题有很多，你可以通过命令查看已有的主题 <code>ls .oh-my-zsh/themes</code><br>挑选一个自己喜欢的主题的话，你可以去官方的开源仓库<a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">wiki</a>看看。上面对于每一个主题都有图片展示。<br>我使用的是ys，配置主题进行如下操作：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo vim ~/.zshrc</span><br><span class="line">找到ZSH<span class="emphasis">_THEME那一行，将后面的主题名换成你想要的主题名字。</span></span><br></pre></td></tr></table></figure>
+<h4 id="插件-plugins"><a href="#插件-plugins" class="headerlink" title="插件(plugins)"></a>插件(plugins)</h4><p>oh-my-zsh的插件生态非常丰富，大家根据自己的需要去安装就可以，这里列举几个个人觉得比较需要的。</p>
+<p><code>incr</code>是一款自动提示插件，功能非常强大。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget http://mimosa-pudica.net/src/incr-0.2.zsh</span><br><span class="line">mkdir ~/.oh-my-zsh/plugins/incr</span><br><span class="line">mv incr-0.2.zsh ~/.oh-my-zsh/plugins/incr</span><br><span class="line">echo &#x27;source ~/.oh-my-zsh/plugins/incr/incr<span class="emphasis">*.zsh&#x27; &gt;&gt; ~/.zshrc</span></span><br><span class="line"><span class="emphasis">source ~/.zshrc</span></span><br></pre></td></tr></table></figure>
+<p><code>zsh-syntax-highlighting</code>是一款高亮可用命令的插件。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $&#123;ZSH<span class="emphasis">_CUSTOM:-~/.oh-my-zsh/custom&#125;/plugins/zsh-syntax-highlighting</span></span><br><span class="line"><span class="emphasis">vim ~/.zshrc</span></span><br><span class="line"><span class="emphasis"># 加入插件列表</span></span><br><span class="line"><span class="emphasis">plugins=(</span></span><br><span class="line"><span class="emphasis">  git</span></span><br><span class="line"><span class="emphasis">  zsh-autosuggestions</span></span><br><span class="line"><span class="emphasis">  zsh-syntax-highlighting</span></span><br><span class="line"><span class="emphasis">)</span></span><br><span class="line"><span class="emphasis">source ~/.zshrc</span></span><br></pre></td></tr></table></figure>
+<p><code>zsh-autosuggestions</code>这是一个命令自动补全插件，当你输入命令的几个字母，它会自动根据历史输入进行自动补全。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH<span class="emphasis">_CUSTOM/plugins/zsh-autosuggestions</span></span><br><span class="line"><span class="emphasis">vim ~/.zshrc</span></span><br><span class="line"><span class="emphasis"># 加入插件列表</span></span><br><span class="line"><span class="emphasis">plugins=(</span></span><br><span class="line"><span class="emphasis">  git</span></span><br><span class="line"><span class="emphasis">  zsh-autosuggestions</span></span><br><span class="line"><span class="emphasis">)</span></span><br><span class="line"><span class="emphasis">source ~/.zshrc</span></span><br></pre></td></tr></table></figure>
+<p><code>注意</code>：如果操作过程中出现_arguments:448: _vim_files: function definition file not found错误，请执行：rm -f ~/.zcompdump即可。</p>
+<p>至此，zsh和oh-my-zsh的相关配置就差不多了。还有什么自己需要可以前往官网查看文档或者上网寻找教程，关于给zsh配置代理的教程可以参考这个<a target="_blank" rel="noopener" href="https://keer.me/zsh-configuration-proxy.html">文章</a>。</p>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p>1.<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/62501175">oh-my-zsh：让终端飞</a></p>
+<p>2.<a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh">ohmyzsh</a></p>
+<p>3.<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000022817521">2020年了，还没用上最新最炫酷的WindowsTerminal？</a></p>
 
     </div>
 
@@ -336,9 +336,9 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 教程</a>
-              <a href="/tags/%E6%96%87%E5%AD%97%E5%8D%9A%E5%AE%A2/" rel="tag"><i class="fa fa-tag"></i> 文字博客</a>
-              <a href="/tags/%E4%B8%BB%E9%A2%98/" rel="tag"><i class="fa fa-tag"></i> 主题</a>
+              <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
+              <a href="/tags/WSL2/" rel="tag"><i class="fa fa-tag"></i> WSL2</a>
+              <a href="/tags/Windows-Terminal/" rel="tag"><i class="fa fa-tag"></i> Windows Terminal</a>
           </div>
 
         
@@ -347,13 +347,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/fad61c38.html" rel="prev" title="hexo博客相关配置（1）">
-      <i class="fa fa-chevron-left"></i> hexo博客相关配置（1）
+    <a href="/posts/13907f06.html" rel="prev" title="Windows+manjaro双系统">
+      <i class="fa fa-chevron-left"></i> Windows+manjaro双系统
     </a></div>
-      <div class="post-nav-item">
-    <a href="/posts/541ef572.html" rel="next" title="免费激活Windows和office">
-      免费激活Windows和office <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -412,7 +409,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%BB%E9%A2%98%E7%9A%84%E6%A0%87%E7%AD%BE%EF%BC%8C%E5%88%86%E7%B1%BB%EF%BC%8C%E5%85%B3%E4%BA%8E%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%94%9F%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text">1.主题的标签，分类，关于页面的生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%B7%BB%E5%8A%A0%E7%A4%BE%E4%BA%A4%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">2.添加社交方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E7%BD%AE%E9%A1%B6"><span class="nav-number">3.</span> <span class="nav-text">3.博客文章置顶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">4.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#WindowsTerminal%E7%BE%8E%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">WindowsTerminal美化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zsh%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">zsh配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6-plugins"><span class="nav-number">2.2.</span> <span class="nav-text">插件(plugins)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
