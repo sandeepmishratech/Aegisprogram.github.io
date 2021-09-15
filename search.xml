@@ -296,6 +296,8 @@
     <url>/posts/fb4e3479.html</url>
     <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/Windowsterminal.4dze8gcsy000.jpg" alt="image"></p>
 <p>之前我推荐过一款颜值很高的开源终端——<a href="https://github.com/Eugeny/tabby">Tabby</a>，但是那款终端毕竟使用electron和Typescipt，所以性能上就会略显得有些不足。<br>本来是没打算给它美化的，但是Tabbby用了一段时间之后再打开WindowsTerminal感觉少了些什么。所以还是决定对WindowsTerminal进行一波儿美化。美化后的效果如图所示。</p>
+<span id="more"></span>
+
 <h3 id="WindowsTerminal美化"><a href="#WindowsTerminal美化" class="headerlink" title="WindowsTerminal美化"></a>WindowsTerminal美化</h3><p>首先，先找到WindowsTerminal上的<code>setting</code>。在上面窗口的下拉菜单里面可以找到，也可以使用<code>ctrl+,</code>默认的快捷键打开。然后找到<code>open JSON file</code>打开（我是使用VScode打开的）。接下来找到里面的<code>profiles</code>,在下面的<code>defaults</code>的<code>&#123;&#125;</code>中添加自定义的配置。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/vscode.6a4izsb57u80.png" alt="image"></p>
 <p>自定义配置（仅供参考）：</p>

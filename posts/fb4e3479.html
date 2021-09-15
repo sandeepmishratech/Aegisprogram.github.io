@@ -22,19 +22,19 @@
     var CONFIG = {"hostname":"example.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="之前我推荐过一款颜值很高的开源终端——Tabby，但是那款终端毕竟使用electron和Typescipt，所以性能上就会略显得有些不足。本来是没打算给它美化的，但是Tabbby用了一段时间之后再打开WindowsTerminal感觉少了些什么。所以还是决定对WindowsTerminal进行一波儿美化。美化后的效果如图所示。 WindowsTerminal美化首先，先找到WindowsTerm">
+  <meta name="description" content="之前我推荐过一款颜值很高的开源终端——Tabby，但是那款终端毕竟使用electron和Typescipt，所以性能上就会略显得有些不足。本来是没打算给它美化的，但是Tabbby用了一段时间之后再打开WindowsTerminal感觉少了些什么。所以还是决定对WindowsTerminal进行一波儿美化。美化后的效果如图所示。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Zsh配置以及Windows Terminal美化">
 <meta property="og:url" content="https://example.github.io/posts/fb4e3479.html">
 <meta property="og:site_name" content="Rem Blue">
-<meta property="og:description" content="之前我推荐过一款颜值很高的开源终端——Tabby，但是那款终端毕竟使用electron和Typescipt，所以性能上就会略显得有些不足。本来是没打算给它美化的，但是Tabbby用了一段时间之后再打开WindowsTerminal感觉少了些什么。所以还是决定对WindowsTerminal进行一波儿美化。美化后的效果如图所示。 WindowsTerminal美化首先，先找到WindowsTerm">
+<meta property="og:description" content="之前我推荐过一款颜值很高的开源终端——Tabby，但是那款终端毕竟使用electron和Typescipt，所以性能上就会略显得有些不足。本来是没打算给它美化的，但是Tabbby用了一段时间之后再打开WindowsTerminal感觉少了些什么。所以还是决定对WindowsTerminal进行一波儿美化。美化后的效果如图所示。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/Windowsterminal.4dze8gcsy000.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/vscode.6a4izsb57u80.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/shell.6zr4ve2c67k0.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/ohmyzsh.4jd9r9he7hm0.png">
 <meta property="article:published_time" content="2021-09-14T13:37:35.000Z">
-<meta property="article:modified_time" content="2021-09-14T15:16:12.446Z">
+<meta property="article:modified_time" content="2021-09-15T00:05:14.835Z">
 <meta property="article:author" content="Aegisprogram">
 <meta property="article:tag" content="Windows">
 <meta property="article:tag" content="WSL2">
@@ -237,7 +237,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-15 00:16:12" itemprop="dateModified" datetime="2021-09-15T00:16:12+09:00">2021-09-15</time>
+                <time title="Modified: 2021-09-15 09:05:14" itemprop="dateModified" datetime="2021-09-15T09:05:14+09:00">2021-09-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -283,6 +283,8 @@
       
         <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/Windowsterminal.4dze8gcsy000.jpg" alt="image"></p>
 <p>之前我推荐过一款颜值很高的开源终端——<a target="_blank" rel="noopener" href="https://github.com/Eugeny/tabby">Tabby</a>，但是那款终端毕竟使用electron和Typescipt，所以性能上就会略显得有些不足。<br>本来是没打算给它美化的，但是Tabbby用了一段时间之后再打开WindowsTerminal感觉少了些什么。所以还是决定对WindowsTerminal进行一波儿美化。美化后的效果如图所示。</p>
+<span id="more"></span>
+
 <h3 id="WindowsTerminal美化"><a href="#WindowsTerminal美化" class="headerlink" title="WindowsTerminal美化"></a>WindowsTerminal美化</h3><p>首先，先找到WindowsTerminal上的<code>setting</code>。在上面窗口的下拉菜单里面可以找到，也可以使用<code>ctrl+,</code>默认的快捷键打开。然后找到<code>open JSON file</code>打开（我是使用VScode打开的）。接下来找到里面的<code>profiles</code>,在下面的<code>defaults</code>的<code>&#123;&#125;</code>中添加自定义的配置。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/vscode.6a4izsb57u80.png" alt="image"></p>
 <p>自定义配置（仅供参考）：</p>
