@@ -30,7 +30,7 @@
 <meta property="og:description" content="hexo博客是一个Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。我将在这里说说自己是如何搭建hexo博客的。 安装node.js和Git首先第一步，你需要首先下载Node.js（安装的时候记得勾选add to path)和Git,这两个是你搭建hexo博客必备的东西（Hexo是一款基于Node.js">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-06-24T02:08:18.000Z">
-<meta property="article:modified_time" content="2021-07-09T16:12:21.130Z">
+<meta property="article:modified_time" content="2021-11-02T08:02:01.044Z">
 <meta property="article:author" content="Aegisprogram">
 <meta property="article:tag" content="教程">
 <meta property="article:tag" content="文字博客">
@@ -80,8 +80,8 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Rem Blue" type="application/atom+xml">
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}</style></head>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}</style><link rel="alternate" href="/atom.xml" title="Rem Blue" type="application/atom+xml">
+</head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -131,7 +131,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">24</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">26</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -141,7 +141,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">26</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">27</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -235,7 +235,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-10 01:12:21" itemprop="dateModified" datetime="2021-07-10T01:12:21+09:00">2021-07-10</time>
+                <time title="Modified: 2021-11-02 17:02:01" itemprop="dateModified" datetime="2021-11-02T17:02:01+09:00">2021-11-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,7 +284,7 @@
 <p>完成安装之后，我们打开cmder分别输入</p>
 <span id="more"></span>
 
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v </span><br><span class="line">git --version(直接使用的cmder就省略这一步)</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">git --version(直接使用的cmder就省略这一步)</span><br></pre></td></tr></table></figure>
 
 <p>如果看到有版本号输出的话，那就代表安装成功且环境变量没有问题。如果没有，那就建议看看是不是安装的时候忘记勾选add to path，建议查看node.js的环境变量（卸载重新安装node.js也可以）。</p>
 <p>当你完成这些工具的下载，检查之后，你接着需要去<a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>注册一个账号，接下来我以hexo+github pages的部署为例。账号注册过程很简单，这里就不赘述了，不会的话建议自行百度或者Google。</p>
@@ -296,16 +296,16 @@
 <p><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
 <p>检查：cnpm是否安装成功 <code>cnpm -v</code>  如果输出版本号就是成功了</p>
 <p>2.安装hexo</p>
-<p>在cmder中输入 </p>
+<p>在cmder中输入</p>
 <p><code>cnpm install hexo-cli -g</code></p>
 <p>完成之后，在你电脑上选择一个位置新建一个文件夹用来保存hexo文件。例如我就是：D:\BigDataTools\hexo</p>
 <p>现在使用cmder  cd 到你刚才新建的文件夹下面，然后执行</p>
-<p><code>hexo init</code> </p>
+<p><code>hexo init</code></p>
 <p>到<code>Install dependencies</code></p>
 <p>的时候你可能会卡住，这是大多数人基本都会遇到的，我们只需要在这里的时候结束命令，按<code>Ctrl + c</code>就可以结束命令（我在安装的过程中并没有遇到，如果你遇到了，那么请执行上述操作）。</p>
 <p>下一步执行<code>cnpm install</code> 完成初始化工作，等待完成结束之后，接下来输入<code>hexo s</code>在本地预览。按住ctrl单击<code>http://localhost:4000</code>就可以在本地实现预览效果了。</p>
 <h3 id="配置hexo博客"><a href="#配置hexo博客" class="headerlink" title="配置hexo博客"></a>配置hexo博客</h3><h4 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h4><p>你可能觉得那个主题并不好看，所以现在我们去挑选一个自己喜欢的主题吧——<a target="_blank" rel="noopener" href="https://hexo.io/themes/">hexo主题</a>，所有的主题都在这里了。在上面挑选一个自己喜欢的就好，<strong>不同的主题之间配置不尽相同，略有差异</strong>。下面我以<a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">next</a>主题为例,主题的下载你可以直接克隆，也可以下载压缩包解压出来。我这里就直接克隆了。直接在cmder中输入</p>
-<p><code>git clone https://github.com/theme-next/hexo-theme-next.git themes/next</code> </p>
+<p><code>git clone https://github.com/theme-next/hexo-theme-next.git themes/next</code></p>
 <p>简单解释一下：前面的git clone就是克隆命令 中间一段是主题的地址 后面是将其命名为next。</p>
 <h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><p>在博客的根目录下找到__config.yml文件，vi进去找到theme那一行，将原来的主题替换为next。然后执行<code>hexo s</code>在本地预览效果。默认是白色的背景，如果想要使用黑色的背景就在<strong>themes-next-_config.yml</strong>中找到darkmode，将false改为true即可，但是这里有一点我必须说明一下，next主题下的Darkmode会根据设备来自行决定是light还是dark，意思就是如果你的手机是深色模式，电脑是浅色模式，那么你在手机上看到的博客样式就是深色的，而在电脑上看到的就会是浅色的。（注意,博客根目录下的配置文件和主题下面的配置文件都是一样的名字_config.yml，千万不要混淆）</p>
 <h4 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h4><p>博客页面默认是英文的，我们现在使用的是next主题（不同的主题之间可能有所不一样，前面我已经提到过了，若有差异则以你所使用的主题官方文档为准）我们需要进入根目录下的_config.yml，找到language,然后将其改为zh-CN。</p>
@@ -443,7 +443,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -456,7 +456,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">26</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -523,13 +523,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">95k</span>
+    <span title="Symbols count total">98k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">1:27</span>
+    <span title="Reading time total">1:29</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
