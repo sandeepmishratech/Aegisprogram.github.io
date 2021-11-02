@@ -294,7 +294,7 @@
   <entry>
     <title>完全卸载VM虚拟机以及winget初体验</title>
     <url>/posts/cbbea4f4.html</url>
-    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/vm.5vyvlui8frc0.png" alt="image"></p>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/vm.5vyvlui8frc0.png" alt="image"><center>VMWorkStation16pro</center></p>
 <span id="more"></span>
 <h3 id="虚拟机问题的由来"><a href="#虚拟机问题的由来" class="headerlink" title="虚拟机问题的由来"></a>虚拟机问题的由来</h3><p>之前安装WSL2的时候，我本来想在线将自己原本的VM虚拟机15pro升级为16pro，但是很不幸的是我升级失败了。之后卸载过程中出现个弹窗说我缺少了一个xxx执行文件（具体是什么我现在也忘记了），当时没太在意，等卸载过程结束之后打开一看，好像什么都没有变动😪。结果就导致我的电脑上装不上新的虚拟机，也没有办法再卸载原来的虚拟机。后来去网上找解决方法，然后大部分人给出的答案都是注册表没有删除干净，有残留。但是解决整个问题的过程是十分过程的。下面简单说说我的解决过程，每个人遇到的情况可能大同小异，所以具体情况具体分析，个人笔记仅供参考。</p>
 <h3 id="完全卸载虚拟机过程"><a href="#完全卸载虚拟机过程" class="headerlink" title="完全卸载虚拟机过程"></a>完全卸载虚拟机过程</h3><p>下面的过程针对的是虚拟机卸载残留情况的。</p>
