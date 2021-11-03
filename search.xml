@@ -303,7 +303,7 @@
 <h4 id="卸载删除网络适配器"><a href="#卸载删除网络适配器" class="headerlink" title="卸载删除网络适配器"></a>卸载删除网络适配器</h4><p>打开文件资源管理器——此电脑——右键点击管理——驱动管理——网络适配器——找到VM1和VM8,然后右键卸载。<br><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/%E8%99%9A%E6%8B%9F%E7%BD%91%E5%8D%A1.1y1hd3el24e8.png" alt="image"></p>
 <h4 id="删除虚拟机的相关注册表"><a href="#删除虚拟机的相关注册表" class="headerlink" title="删除虚拟机的相关注册表"></a>删除虚拟机的相关注册表</h4><p><code>win+R</code>打开运行对话框，输入<code>regedit</code>回车，然后<code>ctrl+F</code>输入VM找到相关的注册表将其删除干净。<br><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/vm%E6%B3%A8%E5%86%8C%E8%A1%A8.5w6k3dj3org0.png" alt="image"></p>
 <h4 id="利用旧的虚拟机二进制文件清除注册表"><a href="#利用旧的虚拟机二进制文件清除注册表" class="headerlink" title="利用旧的虚拟机二进制文件清除注册表"></a>利用旧的虚拟机二进制文件清除注册表</h4><p>如果当你执行完上述的步骤之后，安装新的虚拟机的时候出现下面这个提示的话，那么需要进行旧的安装包清除之前的安装信息。<br><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/EULAS.179f5ycnp68w.png" alt="image"></p>
-<p>1.首先需要下载旧的安装包文件——<a href="/download/VMware-workstation-full-15.0.2-10952284.exe">点此下载</a></p>
+<p>1.首先需要下载旧的安装包文件——<a href="https://blog.csdn.net/qq_37380575/article/details/105074465">点此下载</a></p>
 <p>2.在powershell里使用命令<br>“D:\BigDataTools\Linux\new\VMware-workstation-full-15.0.2-10952284.exe /c”<br>也就是在你存放二进制文件的目录下执行该命令。<br><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/vm%E6%B3%A8%E5%86%8C%E8%A1%A82.4t4731cyaww0.png" alt="iamge"><br>之后就会显示成功清除注册表信息。<br><img src="https://cdn.jsdelivr.net/gh/ilemonEllen/image_github@master/blog_image/vm%E6%B3%A8%E5%86%8C%E8%A1%A83.3swmquz6vty0.png" alt="image"></p>
 <p>看到这样的弹窗之后，你就可以在电脑上安装虚拟机了。</p>
 <p>注：因为VM15pro是不能和Windows的虚拟化服务共存的，所以当初安装了WSL2之后我就必须安装VM16pro。</p>
